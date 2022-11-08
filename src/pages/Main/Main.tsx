@@ -1,5 +1,4 @@
 import React from 'react'
-import { Helmet } from 'react-helmet'
 
 import {
   Navbar,
@@ -7,8 +6,6 @@ import {
   Landing,
   About,
   Skills,
-  Testimonials,
-  Blog,
   Education,
   Experience,
   Contacts,
@@ -16,17 +13,10 @@ import {
   Services,
   Achievement,
 } from '../../components'
-import { headerData } from '../../data/headerData'
 
-function Main() {
+export const Main = () => {
   return (
-    <div>
-      <Helmet>
-        <title>
-          {headerData.name} | {headerData.title}
-        </title>
-      </Helmet>
-
+    <>
       <Navbar />
       <Landing />
       <About />
@@ -36,11 +26,8 @@ function Main() {
       <Projects />
       <Achievement />
       <Services />
-      {/* <Blog /> */}
       <Contacts />
-      {/* <Footer /> */}
-    </div>
+      <Footer />
+    </>
   )
 }
-
-export default Main
