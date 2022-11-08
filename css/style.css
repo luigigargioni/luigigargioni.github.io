@@ -1,0 +1,324 @@
+html, body {
+  margin:0;border:0;padding:0;
+  font-size:16px;
+  font-family:'Proxima';
+  overflow-x:hidden;
+  position: relative;
+  vertical-align: baseline;
+}
+
+html {
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-image: url("../images/background.jpg");
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {font-size:40px;}
+h2 {font-size:36px;}
+h3 {font-size:30px;}
+h4 {font-size:24px;}
+h5 {font-size:20px;}
+h6 {font-size:18px;}
+
+h2 {
+  padding-bottom: 14px;
+}
+
+a {
+  color: inherit
+}
+
+a:hover {
+  color: inherit
+}
+
+.accent {
+  font-family: 'Proxima Bold';
+  line-height: 14px;
+  color: #A7FF6D;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.tm-border {
+	border: 5px solid #fff;
+	box-shadow: 2px 2px #000;
+}
+
+.shadow {
+	text-shadow: 1px 1px #000;
+}
+
+.tm-title {
+	color: #A7FF6D;
+}
+
+.white {
+  color: #fff;
+}
+
+.about,.skills,
+.education,.languages,
+.contact, .experience {
+  padding: 40px;
+  min-height: 330px;
+}
+
+.education, .languages,
+.contact, .experience {
+  margin-top: 30px;
+}
+
+@font-face {
+    font-family: 'Proxima';
+    src: url(../fonts/ProximaNova-Regular.otf);
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proxima Bold';
+    src: url(../fonts/ProximaNova-Bold.otf);
+    font-display: swap;
+}
+
+/* header section */
+header {
+  text-align: center;
+  min-height: 400px;
+  overflow: hidden;
+  position: relative;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+header img {
+  display: inline-block !important;
+}
+header h2 {
+  padding-top: 40px;
+}
+header hr {
+  border-color: #146600;
+  width: 100px;
+}
+
+/* about section */
+.about {
+  background: #fff;
+  box-shadow: 0px 1px 5px rgba(50,50,50,0.08);
+}
+
+/* skills section */
+.skills {
+  background: #146600;
+  color: #f5f5f5;
+}
+.skills .progress {
+  border-radius: 1rem;
+  height: 6px;
+}
+.skills .progress .progress-bar-primary {
+  background: #A7FF6D;
+  border-right: 2px solid #146600;
+  border-radius: 1rem;
+}
+
+/* animation progress bar */
+.progress-bar-animation-100 {
+  animation: progressBar100 1.5s ease-in-out;
+}
+@keyframes progressBar100 {
+  0% { width: 0; }
+  100% { width: 100%}
+}
+.progress-bar-animation-90 {
+  animation: progressBar90 1.5s ease-in-out;
+}
+@keyframes progressBar90 {
+  0% { width: 0; }
+  100% { width: 90%}
+}
+.progress-bar-animation-80 {
+  animation: progressBar80 1.5s ease-in-out;
+}
+@keyframes progressBar80 {
+  0% { width: 0; }
+  100% { width: 80%}
+}
+.progress-bar-animation-70 {
+  animation: progressBar70 1.5s ease-in-out;
+}
+@keyframes progressBar70 {
+  0% { width: 0; }
+  100% { width: 70%}
+}
+.progress-bar-animation-60 {
+  animation: progressBar60 1.5s ease-in-out;
+}
+@keyframes progressBar60 {
+  0% { width: 0; }
+  100% { width: 60%}
+}
+
+.skills strong {
+  display: inline-block;
+  font-weight: normal;
+  padding-bottom: 6px;
+}
+
+/* education section */
+.education {
+  background: #146600;
+  color: #f5f5f5;
+}
+.education .education-content {
+  padding-bottom: 14px;
+}
+.education h5 {
+  display: inline-block;
+}
+.education span {
+  padding-right: 10px;
+  padding-left: 20px;
+}
+
+/* languages section */
+.languages {
+  background: #fff;
+ box-shadow: 0px 1px 5px rgba(50,50,50,0.08);
+}
+.languages ul {
+  padding: 10px;
+}
+.languages ul li {
+  padding-bottom: 6px;
+}
+
+/* contact section */
+.contact {
+  background: #fff;
+ box-shadow: 0px 1px 5px rgba(50,50,50,0.08);
+}
+.contact .fa {
+  padding-right: 6px;
+}
+
+/* experience section */
+.experience {
+  background: #146600;
+  color: #f5f5f5;
+}
+.experience .experience-content {
+  padding-bottom: 14px;
+  text-align: justify;
+}
+.experience h5 {
+  display: inline-block;
+}
+.experience span {
+  padding-right: 10px;
+  padding-left: 20px;
+}
+
+/* footer section */
+footer {
+  color: #f9f9f9;
+  text-align: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* social icon section */
+.social-icons {
+  padding: 0;
+  margin: 0;
+}
+.social-icons li {
+  display: inline-block;
+  list-style: none;
+}
+.social-icons li a {
+  background: #146600;
+  border-radius: 50%;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  transition: all 0.4s ease-in;
+  position: relative;
+  bottom: 10px;
+  top: 10px;
+}
+.social-icons li a:hover {
+  background: #fff;
+  color: #146600;
+}
+
+@media ( max-width: 980px ) {
+  .skills {
+    margin-top: 30px;
+  }
+}
+
+@media ( max-width: 360px ) {
+  header h1 {
+    font-size: 30px;
+  }
+  .about h2 {
+    font-size: 24px;
+  }
+  .education h4,
+  .experience h4 {
+    font-size: 20px;
+  }
+}
+
+/* scrollbar */
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #d9d9d9;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #bfbfbf;
+  border-radius: 8px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #8c8c8c;
+}
+
+/* card */ 
+.card {
+  border-radius: 1rem;
+  animation-duration: 0.5s;
+  animation-name: animate-pop;
+  animation-timing-function: cubic-bezier(.26, .53, .74, 1.48);
+}
+
+@keyframes animate-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
