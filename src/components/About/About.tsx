@@ -30,10 +30,13 @@ export const About = () => {
         <div className="about-description">
           <h2 style={{ color: theme.primary }}>{aboutData.title}</h2>
           <p style={{ color: theme.tertiary80 }}>
-            {aboutData.description1}
-            <br />
-            <br />
-            {aboutData.description2}
+            {aboutData.description.map((paragraph, index) => (
+              <span key={index}>
+                {paragraph}
+                <br />
+                <br />
+              </span>
+            ))}
           </p>
         </div>
         <div className="about-img">

@@ -26,18 +26,20 @@ export const NavMenu = styled(IoMenuSharp)(() => ({
 }))
 
 export const MuiDrawer = styled(Drawer)(({ theme: t }) => ({
-  padding: '0em 1.8em',
-  width: '14em',
-  fontFamily: ' var(--primaryFont)',
-  fontStyle: ' normal',
-  fontWeight: ' normal',
-  fontSize: ' 24px',
-  background: theme.secondary,
-  overflow: 'hidden',
-  borderTopRightRadius: '40px',
-  borderBottomRightRadius: '40px',
-  [t.breakpoints.down('sm')]: {
-    width: '12em',
+  '.paper': {
+    padding: '0em 1.8em',
+    width: '14em',
+    fontFamily: ' var(--primaryFont)',
+    fontStyle: ' normal',
+    fontWeight: ' normal',
+    fontSize: ' 24px',
+    background: theme.secondary,
+    overflow: 'hidden',
+    borderTopRightRadius: '40px',
+    borderBottomRightRadius: '40px',
+    [t.breakpoints.down('sm')]: {
+      width: '12em',
+    },
   },
 }))
 
