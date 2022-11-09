@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import { makeStyles } from '@mui/material'
 import Fade from 'react-reveal/Fade'
 
 import { ThemeContext } from '../../contexts/ThemeContext'
@@ -8,6 +7,7 @@ import expImgWhite from '../../assets/svg/expImgWhite.svg'
 
 import './Experience.css'
 import { ExperienceType } from 'data/experienceData'
+import { themeData } from 'data/themeData'
 
 export const ExperienceCard = ({
   id,
@@ -18,20 +18,9 @@ export const ExperienceCard = ({
 }: ExperienceType) => {
   const { theme } = useContext(ThemeContext)
 
-  const useStyles: any = makeStyles((t) => ({
-    experienceCard: {
-      backgroundColor: theme.primary30,
-      '&:hover': {
-        backgroundColor: theme.primary50,
-      },
-    },
-  }))
-
-  const classes = useStyles()
-
   return (
     <Fade bottom>
-      <div key={id} className={`experience-card ${classes.experienceCard}`}>
+      <div key={id} className="experience-card">
         <div className="expcard-img" style={{ backgroundColor: theme.primary }}>
           <img src={expImgWhite} alt="" />
         </div>
