@@ -12,6 +12,7 @@ import { themeData } from 'data/themeData'
 export const ExperienceCard = ({
   id,
   company,
+  companyUrl,
   jobtitle,
   startYear,
   endYear,
@@ -26,10 +27,14 @@ export const ExperienceCard = ({
         </div>
         <div className="experience-details">
           <h6 style={{ color: theme.primary }}>
-            {startYear}-{endYear}
+            {startYear ? `${startYear}-${endYear}` : endYear}
           </h6>
           <h4 style={{ color: theme.tertiary }}>{jobtitle}</h4>
-          <h5 style={{ color: theme.tertiary80 }}>{company}</h5>
+          <h5 style={{ color: theme.tertiary80 }}>
+            <a href={companyUrl} target="_blank">
+              {company}
+            </a>
+          </h5>
         </div>
       </div>
     </Fade>

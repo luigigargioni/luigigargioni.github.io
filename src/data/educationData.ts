@@ -1,7 +1,9 @@
 export type EducationType = {
   id: number
   institution: string
+  institutionUrl: string
   course: string
+  courseUrl: string
   startYear: string
   endYear: string
 }
@@ -9,23 +11,38 @@ export type EducationType = {
 export const educationData: EducationType[] = [
   {
     id: 1,
-    institution: 'Ramjas College, Delhi University',
-    course: 'B.A. Honours History',
-    startYear: '2015',
-    endYear: '2018',
+    institution: 'University of Brescia',
+    institutionUrl: 'https://www.unibs.it/it',
+    course: 'Bachelor Degree, Computer Engineering',
+    courseUrl: 'https://corsi.unibs.it/it/ingegneriainformatica',
+    startYear: '',
+    endYear: '10/2017',
   },
   {
     id: 2,
-    institution: 'Delhi University',
-    course: 'M.A. History',
-    startYear: '2019',
-    endYear: '2021',
+    institution: 'University of Brescia',
+    institutionUrl: 'https://www.unibs.it/it',
+    course: 'Master Degree, Computer Engineering',
+    courseUrl: 'https://corsi.unibs.it/it/ingegneriainformaticamagistrale',
+    startYear: '',
+    endYear: '10/2019',
   },
   {
     id: 3,
-    institution: 'Masai School of Coding',
-    course: 'Fullstack Web-Development',
-    startYear: '2021',
+    institution: 'University of Brescia',
+    institutionUrl: 'https://www.unibs.it/it',
+    course: 'Professional Practice Exam',
+    courseUrl: 'https://www.unibs.it/it/didattica/post-laurea/esami-di-stato',
+    startYear: '',
+    endYear: '07/2020',
+  },
+  {
+    id: 4,
+    institution: 'University of Brescia',
+    institutionUrl: 'https://www.unibs.it/it',
+    course: 'PhD Candidate Technology for Health',
+    courseUrl: 'https://tech4health.unibs.it/',
+    startYear: '',
     endYear: 'Present',
   },
 ]

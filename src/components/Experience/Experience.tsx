@@ -21,16 +21,19 @@ export const Experience = () => {
         </div>
         <div className="experience-description">
           <h1 style={{ color: theme.primary }}>Experience</h1>
-          {experienceData.map((exp) => (
-            <ExperienceCard
-              key={exp.id}
-              id={exp.id}
-              jobtitle={exp.jobtitle}
-              company={exp.company}
-              startYear={exp.startYear}
-              endYear={exp.endYear}
-            />
-          ))}
+          {experienceData
+            .sort((a, b) => b.id - a.id)
+            .map((exp) => (
+              <ExperienceCard
+                key={exp.id}
+                id={exp.id}
+                jobtitle={exp.jobtitle}
+                company={exp.company}
+                companyUrl={exp.companyUrl}
+                startYear={exp.startYear}
+                endYear={exp.endYear}
+              />
+            ))}
         </div>
       </div>
     </div>

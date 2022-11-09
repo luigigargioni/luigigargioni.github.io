@@ -11,7 +11,9 @@ import { themeData } from 'data/themeData'
 export const EducationCard = ({
   id,
   institution,
+  institutionUrl,
   course,
+  courseUrl,
   startYear,
   endYear,
 }: EducationType) => {
@@ -25,10 +27,18 @@ export const EducationCard = ({
         </div>
         <div className="education-details">
           <h6 style={{ color: theme.primary }}>
-            {startYear}-{endYear}
+            {startYear ? `${startYear}-${endYear}` : endYear}
           </h6>
-          <h4 style={{ color: theme.tertiary }}>{course}</h4>
-          <h5 style={{ color: theme.tertiary80 }}>{institution}</h5>
+          <h4 style={{ color: theme.tertiary }}>
+            <a href={courseUrl} target="_blank">
+              {course}
+            </a>
+          </h4>
+          <h5 style={{ color: theme.tertiary80 }}>
+            <a href={institutionUrl} target="_blank">
+              {institution}
+            </a>
+          </h5>
         </div>
       </div>
     </Fade>

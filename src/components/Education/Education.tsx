@@ -18,16 +18,20 @@ export const Education = () => {
       <div className="education-body">
         <div className="education-description">
           <h1 style={{ color: theme.primary }}>Education</h1>
-          {educationData.map((edu) => (
-            <EducationCard
-              key={edu.id}
-              id={edu.id}
-              institution={edu.institution}
-              course={edu.course}
-              startYear={edu.startYear}
-              endYear={edu.endYear}
-            />
-          ))}
+          {educationData
+            .sort((a, b) => b.id - a.id)
+            .map((edu) => (
+              <EducationCard
+                key={edu.id}
+                id={edu.id}
+                institution={edu.institution}
+                institutionUrl={edu.institutionUrl}
+                course={edu.course}
+                courseUrl={edu.courseUrl}
+                startYear={edu.startYear}
+                endYear={edu.endYear}
+              />
+            ))}
         </div>
         <div className="education-image">
           <img src={theme.eduimg} alt="" />
