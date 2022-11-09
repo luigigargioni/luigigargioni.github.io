@@ -1,8 +1,11 @@
-export const contactsData = {
-  email: '***REMOVED***',
-  phone: '***REMOVED***',
-  address:
-    '412 Ground Floor, Indraprastha Colony, Sector 30-33, Faridabad, Haryana, 121003',
+type ContactsType = {
+  email: string
+  phone: string
+  address: string
+}
 
-  sheetAPI: '',
+export const contactsData: ContactsType = {
+  email: 'luigi.gargioni@gmail.com',
+  phone: '***REMOVED***',
+  address: 'Gottolengo, Brescia, Italy',
 }

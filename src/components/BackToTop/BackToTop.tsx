@@ -1,9 +1,15 @@
 import React, { useState, useContext } from 'react'
 import { IoIosArrowDropupCircle } from 'react-icons/io'
-import { makeStyles } from '@mui/material'
+import { styled } from '@mui/material/styles'
 
 import { ThemeContext } from '../../contexts/ThemeContext'
 import './BackToTop.css'
+import { themeData } from 'data/themeData'
+
+const IconStyled = styled(IoIosArrowDropupCircle)(() => ({
+  fontSize: '3rem',
+  color: themeData.theme.tertiary,
+}))
 
 export const BackToTop = () => {
   const [visible, setVisible] = useState(false)
@@ -28,19 +34,10 @@ export const BackToTop = () => {
 
   window.addEventListener('scroll', toggleVisible)
 
-  const useStyles: any = makeStyles(() => ({
-    icon: {
-      fontSize: '3rem',
-      color: theme.tertiary,
-    },
-  }))
-
-  const classes = useStyles()
-
   return (
     <div style={{ display: visible ? 'inline' : 'none' }} className="backToTop">
       <button onClick={scrollToTop} aria-label="Back to top">
-        <IoIosArrowDropupCircle className={classes.icon} />
+        <IconStyled />
       </button>
     </div>
   )
