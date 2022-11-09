@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@mui/material'
 
 import { ThemeContext } from '../../contexts/ThemeContext'
 import { projectsData } from '../../data/projectsData'
@@ -12,7 +12,7 @@ import { SingleProject } from './SingleProject/SingleProject'
 export const Projects = () => {
   const { theme } = useContext(ThemeContext)
 
-  const useStyles = makeStyles(() => ({
+  const useStyles: any = makeStyles(() => ({
     viewAllBtn: {
       color: theme.tertiary,
       backgroundColor: theme.primary,

@@ -7,8 +7,7 @@ import { BsFillGearFill } from 'react-icons/bs'
 import { AiOutlineClose } from 'react-icons/ai'
 import { MdPhone } from 'react-icons/md'
 import { FaUser, FaFolderOpen } from 'react-icons/fa'
-import { makeStyles, Theme } from '@material-ui/core/styles'
-import Drawer from '@material-ui/core/Drawer'
+import { makeStyles, Drawer } from '@mui/material'
 
 import './Navbar.css'
 import { headerData } from '../../data/headerData'
@@ -29,7 +28,7 @@ export const Navbar = () => {
     setHandleDrawer()
   }
 
-  const useStyles = makeStyles<Theme, {}, any>((t): any => ({
+  const useStyles: any = makeStyles((t): any => ({
     navMenu: {
       fontSize: '2.5rem',
       color: theme.tertiary,
