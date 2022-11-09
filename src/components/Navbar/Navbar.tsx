@@ -45,6 +45,7 @@ export const Navbar = () => {
         }}
         anchor="left"
         open={open}
+        classes={{ paper: 'paper' }}
         className="drawer"
         disableScrollLock={true}
       >
@@ -102,14 +103,14 @@ export const Navbar = () => {
               </HashLink>
             </Fade>
 
-            <Fade left>
+            {/*             <Fade left>
               <HashLink to="/#projects" smooth={true}>
                 <DrawerItem>
                   <DrawerIconFaFolderOpen />
                   <DrawerLinks>Projects</DrawerLinks>
                 </DrawerItem>
               </HashLink>
-            </Fade>
+            </Fade> */}
 
             <Fade left>
               <HashLink to="/#contacts" smooth={true}>

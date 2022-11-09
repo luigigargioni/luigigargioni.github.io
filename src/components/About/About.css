@@ -1,5 +1,5 @@
 .about {
-    min-height: 100vh;
+    min-height: 70vh;
     position: relative;
 }
 
@@ -44,6 +44,7 @@
     flex: 0.5;
     width: 100%;
     height: fit-content;
+    text-align: justify;
 }
 
 .about-description >h2 {

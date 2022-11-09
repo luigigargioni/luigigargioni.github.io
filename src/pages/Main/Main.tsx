@@ -9,7 +9,7 @@ import {
   Education,
   Experience,
   Contacts,
-  Projects,
+  /* Projects, */
   Services,
   Achievement,
 } from '../../components'
@@ -23,7 +23,7 @@ export const Main = () => {
       <Skills />
       <Experience />
       <Education />
-      <Projects />
+      {/*       <Projects /> */}
       <Achievement />
       <Services />
       <Contacts />
