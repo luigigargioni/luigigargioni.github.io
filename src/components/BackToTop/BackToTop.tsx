@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { IoIosArrowDropupCircle } from 'react-icons/io'
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@mui/material'
 
 import { ThemeContext } from '../../contexts/ThemeContext'
 import './BackToTop.css'
@@ -28,7 +28,7 @@ export const BackToTop = () => {
 
   window.addEventListener('scroll', toggleVisible)
 
-  const useStyles = makeStyles(() => ({
+  const useStyles: any = makeStyles(() => ({
     icon: {
       fontSize: '3rem',
       color: theme.tertiary,

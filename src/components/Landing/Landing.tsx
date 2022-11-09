@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
-import { Button, Theme } from '@material-ui/core'
+import { Button, makeStyles } from '@mui/material'
 import { NavHashLink } from 'react-router-hash-link'
-import { makeStyles } from '@material-ui/core/styles'
 
 import './Landing.css'
 import { ThemeContext } from '../../contexts/ThemeContext'
@@ -13,7 +12,7 @@ import { FaLinkedin, FaGithub } from 'react-icons/fa'
 export const Landing = () => {
   const { theme, drawerOpen } = useContext(ThemeContext)
 
-  const useStyles = makeStyles<Theme, {}, any>((t): any => ({
+  const useStyles: any = makeStyles((t) => ({
     resumeBtn: {
       color: theme.primary,
       borderRadius: '30px',

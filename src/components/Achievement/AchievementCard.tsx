@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
-import { makeStyles } from '@material-ui/core/styles'
 import Fade from 'react-reveal/Fade'
+import { makeStyles } from '@mui/material'
 
 import { ThemeContext } from '../../contexts/ThemeContext'
 
@@ -19,7 +19,7 @@ export const AchievementCard = ({
 }: AchievementType) => {
   const { theme } = useContext(ThemeContext)
 
-  const useStyles = makeStyles((t) => ({
+  const useStyles: any = makeStyles((t) => ({
     achievementCard: {
       backgroundColor: theme.primary30,
       '&:hover': {

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@mui/material'
 import Fade from 'react-reveal/Fade'
 
 import { ThemeContext } from '../../contexts/ThemeContext'
@@ -17,7 +17,7 @@ export const EducationCard = ({
 }: EducationType) => {
   const { theme } = useContext(ThemeContext)
 
-  const useStyles = makeStyles((t) => ({
+  const useStyles: any = makeStyles((t) => ({
     educationCard: {
       backgroundColor: theme.primary30,
       '&:hover': {

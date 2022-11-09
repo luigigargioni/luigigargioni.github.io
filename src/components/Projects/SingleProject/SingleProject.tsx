@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@mui/material'
 import { FaPlay, FaCode } from 'react-icons/fa'
 import Fade from 'react-reveal/Fade'
 
@@ -17,7 +17,7 @@ export const SingleProject = ({
   image,
   theme,
 }: ProjectType & { theme: ThemeType }) => {
-  const useStyles = makeStyles((t) => ({
+  const useStyles: any = makeStyles((t) => ({
     iconBtn: {
       display: 'flex',
       alignItems: 'center',

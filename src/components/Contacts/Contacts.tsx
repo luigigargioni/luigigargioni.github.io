@@ -1,6 +1,10 @@
 import React, { useContext, useState } from 'react'
-import { Snackbar, IconButton, SnackbarContent } from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles'
+import {
+  Snackbar,
+  IconButton,
+  SnackbarContent,
+  makeStyles,
+} from '@mui/material'
 import {
   FaTwitter,
   FaLinkedinIn,
@@ -44,7 +48,7 @@ export const Contacts = () => {
     setOpen(false)
   }
 
-  const useStyles = makeStyles((t) => ({
+  const useStyles: any = makeStyles((t) => ({
     input: {
       border: `4px solid ${theme.primary80}`,
       backgroundColor: `${theme.secondary}`,
