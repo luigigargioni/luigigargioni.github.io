@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import Fade from 'react-reveal/Fade'
+import { Fade } from 'react-awesome-reveal'
 
 import { ThemeContext } from '../../contexts/ThemeContext'
 
@@ -20,7 +20,7 @@ export const EducationCard = ({
   const { theme } = useContext(ThemeContext)
 
   return (
-    <Fade bottom>
+    <Fade direction="down" triggerOnce style={{ width: '100%' }}>
       <div key={id} className="education-card">
         <div className="educard-img" style={{ backgroundColor: theme.primary }}>
           <img src={eduImgWhite} alt="" />

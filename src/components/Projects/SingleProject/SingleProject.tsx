@@ -1,5 +1,5 @@
 import React from 'react'
-import Fade from 'react-reveal/Fade'
+import { Fade } from 'react-awesome-reveal'
 
 import './SingleProject.css'
 import { ProjectType } from 'data/projectsData'
@@ -17,7 +17,7 @@ export const SingleProject = ({
   theme,
 }: ProjectType & { theme: ThemeType }) => {
   return (
-    <Fade bottom>
+    <Fade direction="up" triggerOnce style={{ width: '100%' }}>
       <div
         key={id}
         className="singleProject"
