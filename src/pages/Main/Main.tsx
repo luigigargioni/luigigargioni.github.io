@@ -11,7 +11,6 @@ import {
   Contacts,
   /* Projects, */
   Services,
-  /* Achievement */
 } from '../../components'
 
 export const Main = () => {
@@ -24,7 +23,6 @@ export const Main = () => {
       <Experience />
       <Education />
       {/*       <Projects /> */}
-      {/*       <Achievement /> */}
       <Services />
       <Contacts />
       <Footer />

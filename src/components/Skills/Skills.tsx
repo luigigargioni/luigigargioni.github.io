@@ -4,7 +4,7 @@ import Marquee from 'react-fast-marquee'
 import './Skills.css'
 
 import { ThemeContext } from '../../contexts/ThemeContext'
-import { skillsData } from '../../data/skillsData'
+import { skillsData, skillsData2 } from '../../data/skillsData'
 import { skillsImage } from '../../utils/skillsImage'
 
 export const Skills = () => {
@@ -36,6 +36,22 @@ export const Skills = () => {
             direction="left"
           >
             {skillsData.map((skill, id) => (
+              <div className="skill--box" key={id} style={skillBoxStyle}>
+                <img src={skillsImage(skill)} alt={skill} />
+                <h3 style={{ color: theme.tertiary }}>{skill}</h3>
+              </div>
+            ))}
+          </Marquee>
+          <Marquee
+            gradient={false}
+            speed={80}
+            pauseOnHover={true}
+            pauseOnClick={true}
+            delay={0}
+            play={true}
+            direction="right"
+          >
+            {skillsData2.map((skill, id) => (
               <div className="skill--box" key={id} style={skillBoxStyle}>
                 <img src={skillsImage(skill)} alt={skill} />
                 <h3 style={{ color: theme.tertiary }}>{skill}</h3>

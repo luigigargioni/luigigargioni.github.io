@@ -20,7 +20,7 @@ export const EducationCard = ({
   const { theme } = useContext(ThemeContext)
 
   return (
-    <Fade direction="down" triggerOnce style={{ width: '100%' }}>
+    <Fade direction="up" triggerOnce style={{ width: '100%' }}>
       <div key={id} className="education-card">
         <div className="educard-img" style={{ backgroundColor: theme.primary }}>
           <img src={eduImgWhite} alt="" />

@@ -102,15 +102,6 @@ export const Navbar = () => {
               </HashLink>
             </Fade>
 
-            {/*             <Fade direction="left" style={{ width: '100%' }}>
-              <HashLink to="/#achievement" smooth={true}>
-                <DrawerItem>
-                  <DrawerIconHiDocumentText />
-                  <DrawerLinks>Achievements</DrawerLinks>
-                </DrawerItem>
-              </HashLink>
-            </Fade> */}
-
             <Fade direction="left" style={{ width: '100%' }}>
               <HashLink to="/#services" smooth={true}>
                 <DrawerItem>
