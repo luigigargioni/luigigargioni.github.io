@@ -1,3 +1,5 @@
+import React from 'react'
+
 export type EducationType = {
   id: number
   institution: string
@@ -6,6 +8,7 @@ export type EducationType = {
   courseUrl: string
   startYear: string
   endYear: string
+  description: JSX.Element
 }
 
 export const educationData: EducationType[] = [
@@ -17,6 +20,12 @@ export const educationData: EducationType[] = [
     courseUrl: 'https://corsi.unibs.it/it/ingegneriainformatica',
     startYear: '',
     endYear: '10/2017',
+    description: (
+      <p>
+        Thesis: "Vulnerability checking of systems: general concepts and
+        analysis of the OpenVAS tool"
+      </p>
+    ),
   },
   {
     id: 2,
@@ -26,6 +35,12 @@ export const educationData: EducationType[] = [
     courseUrl: 'https://corsi.unibs.it/it/ingegneriainformaticamagistrale',
     startYear: '',
     endYear: '10/2019',
+    description: (
+      <p>
+        Thesis: "A domain-independent environment for user-oriented programming
+        of collaborative robots"
+      </p>
+    ),
   },
   {
     id: 3,
@@ -35,6 +50,7 @@ export const educationData: EducationType[] = [
     courseUrl: 'https://www.unibs.it/it/didattica/post-laurea/esami-di-stato',
     startYear: '',
     endYear: '07/2020',
+    description: <></>,
   },
   {
     id: 4,
@@ -44,5 +60,6 @@ export const educationData: EducationType[] = [
     courseUrl: 'https://tech4health.unibs.it/',
     startYear: '',
     endYear: 'Present',
+    description: <></>,
   },
 ]

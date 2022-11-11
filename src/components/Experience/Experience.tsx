@@ -32,6 +32,7 @@ export const Experience = () => {
                 companyUrl={exp.companyUrl}
                 startYear={exp.startYear}
                 endYear={exp.endYear}
+                description={exp.description}
               />
             ))}
         </div>
