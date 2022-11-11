@@ -28,7 +28,7 @@ export const NavMenu = styled(IoMenuSharp)(() => ({
 export const MuiDrawer = styled(Drawer)(({ theme: t }) => ({
   '.paper': {
     padding: '0em 1.8em',
-    width: '14em',
+    width: '16em',
     fontFamily: ' var(--primaryFont)',
     fontStyle: ' normal',
     fontWeight: ' normal',
@@ -70,7 +70,7 @@ export const DrawerItem = styled('div')(({ theme: t }) => ({
   height: '60px',
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'space-evenly',
+  justifyContent: 'flex-start',
   padding: '0 30px',
   boxSizing: 'border-box',
   border: '2px solid',
@@ -92,6 +92,7 @@ export const DrawerLinks = styled('span')(({ theme: t }) => ({
   width: '50%',
   fontSize: '1.3rem',
   fontWeight: 600,
+  marginLeft: '1rem',
   [t.breakpoints.down('sm')]: {
     fontSize: '1.125rem',
   },
