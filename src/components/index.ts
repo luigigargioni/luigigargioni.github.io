@@ -10,6 +10,5 @@ export { Projects } from './Projects/Projects'
 export { Services } from './Services/Services'
 export { SingleProject } from './Projects/SingleProject/SingleProject'
 export { SingleService } from './Services/SingleService/SingleService'
-export { Achievement } from './Achievement/Achievement'
 
 export { BackToTop } from './BackToTop/BackToTop'
