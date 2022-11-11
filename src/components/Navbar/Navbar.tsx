@@ -7,17 +7,16 @@ import { headerData } from '../../data/headerData'
 import { ThemeContext } from '../../contexts/ThemeContext'
 import {
   ClosebtnIcon,
-  DrawerIconBsFillGearFill,
-  DrawerIconFaFolderOpen,
-  DrawerIconFaUser,
-  DrawerIconHiDocumentText,
-  DrawerIconIoHomeSharp,
-  DrawerIconMdPhone,
   DrawerItem,
   DrawerLinks,
   MuiDrawer,
   NavMenu,
 } from './Navbar.styled'
+import { BiUser } from 'react-icons/bi'
+import { BsCodeSlash, BsGear } from 'react-icons/bs'
+import { MdWorkOutline } from 'react-icons/md'
+import { IoSchoolOutline } from 'react-icons/io5'
+import { AiOutlinePhone } from 'react-icons/ai'
 
 export const Navbar = () => {
   const { theme, setHandleDrawer } = useContext(ThemeContext)
@@ -68,28 +67,10 @@ export const Navbar = () => {
         <div onClick={() => handleDrawerOpen(false)}>
           <div className="navLink--container">
             <Fade direction="left" style={{ width: '100%' }}>
-              <HashLink to="/" smooth={true}>
-                <DrawerItem>
-                  <DrawerIconIoHomeSharp />
-                  <DrawerLinks>Home</DrawerLinks>
-                </DrawerItem>
-              </HashLink>
-            </Fade>
-
-            <Fade direction="left" style={{ width: '100%' }}>
               <HashLink to="/#about" smooth={true}>
                 <DrawerItem>
-                  <DrawerIconFaUser />
+                  <BiUser />
                   <DrawerLinks>About</DrawerLinks>
-                </DrawerItem>
-              </HashLink>
-            </Fade>
-
-            <Fade direction="left" style={{ width: '100%' }}>
-              <HashLink to="/#education" smooth={true}>
-                <DrawerItem>
-                  <DrawerIconHiDocumentText />
-                  <DrawerLinks>Education</DrawerLinks>
                 </DrawerItem>
               </HashLink>
             </Fade>
@@ -97,25 +78,52 @@ export const Navbar = () => {
             <Fade direction="left" style={{ width: '100%' }}>
               <HashLink to="/#skills" smooth={true}>
                 <DrawerItem>
-                  <DrawerIconBsFillGearFill />
+                  <BsCodeSlash />
                   <DrawerLinks>Skills</DrawerLinks>
                 </DrawerItem>
               </HashLink>
             </Fade>
 
-            {/*             <Fade direction="left" style={{ width: '100%' }}>
-              <HashLink to="/#projects" smooth={true}>
+            <Fade direction="left" style={{ width: '100%' }}>
+              <HashLink to="/#experience" smooth={true}>
                 <DrawerItem>
-                  <DrawerIconFaFolderOpen />
-                  <DrawerLinks>Projects</DrawerLinks>
+                  <MdWorkOutline />
+                  <DrawerLinks>Experience</DrawerLinks>
+                </DrawerItem>
+              </HashLink>
+            </Fade>
+
+            <Fade direction="left" style={{ width: '100%' }}>
+              <HashLink to="/#education" smooth={true}>
+                <DrawerItem>
+                  <IoSchoolOutline />
+                  <DrawerLinks>Education</DrawerLinks>
+                </DrawerItem>
+              </HashLink>
+            </Fade>
+
+            {/*             <Fade direction="left" style={{ width: '100%' }}>
+              <HashLink to="/#achievement" smooth={true}>
+                <DrawerItem>
+                  <DrawerIconHiDocumentText />
+                  <DrawerLinks>Achievements</DrawerLinks>
                 </DrawerItem>
               </HashLink>
             </Fade> */}
 
+            <Fade direction="left" style={{ width: '100%' }}>
+              <HashLink to="/#services" smooth={true}>
+                <DrawerItem>
+                  <BsGear />
+                  <DrawerLinks>Services</DrawerLinks>
+                </DrawerItem>
+              </HashLink>
+            </Fade>
+
             <Fade direction="left">
               <HashLink to="/#contacts" smooth={true}>
                 <DrawerItem>
-                  <DrawerIconMdPhone />
+                  <AiOutlinePhone />
                   <DrawerLinks>Contact</DrawerLinks>
                 </DrawerItem>
               </HashLink>
