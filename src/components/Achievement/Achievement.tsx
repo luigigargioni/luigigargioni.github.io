@@ -17,7 +17,9 @@ export const Achievement = () => {
         >
           <div className="achievement-body">
             <h1 style={{ color: theme.primary }}>Achievements</h1>
-            <h4 style={{ color: theme.tertiary }}>{achievementData.bio}</h4>
+            <h4 style={{ color: theme.tertiary }}>
+              <i>{achievementData.bio}</i>
+            </h4>
           </div>
           <div className="achievement-cards">
             {achievementData.achievements.map((achieve) => (

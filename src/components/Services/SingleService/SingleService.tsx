@@ -1,6 +1,6 @@
 import { ServiceType } from 'data/servicesData'
 import React, { useContext } from 'react'
-import Fade from 'react-reveal/Fade'
+import { Fade } from 'react-awesome-reveal'
 
 import { ThemeContext } from '../../../contexts/ThemeContext'
 
@@ -9,7 +9,7 @@ import './SingleService.css'
 export const SingleService = ({ id, title, icon }: ServiceType) => {
   const { theme } = useContext(ThemeContext)
   return (
-    <Fade bottom>
+    <Fade direction="up" triggerOnce>
       <div
         key={id}
         className="single-service"

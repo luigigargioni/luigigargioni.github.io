@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import Fade from 'react-reveal/Fade'
+import { Fade } from 'react-awesome-reveal'
 import { styled } from '@mui/material/styles'
 
 import { ThemeContext } from '../../contexts/ThemeContext'
@@ -28,7 +28,7 @@ export const AchievementCard = ({
   const { theme } = useContext(ThemeContext)
 
   return (
-    <Fade bottom>
+    <Fade direction="up" triggerOnce style={{ width: '100%' }}>
       <AchievementCardStyled key={id} className="achievement-card">
         <div className="achievecard-content">
           <div className="achievecard-details1">

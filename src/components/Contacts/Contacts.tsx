@@ -66,6 +66,7 @@ export const Contacts = () => {
           <div className="contacts-details">
             <a
               href={`mailto:${contactsData.email}`}
+              target="_blank"
               className="personal-details"
             >
               <div className={classes.detailsIcon}>
@@ -79,12 +80,16 @@ export const Contacts = () => {
               </div>
               <p style={{ color: theme.tertiary }}>{contactsData.phone}</p>
             </a>
-            <div className="personal-details">
+            <a
+              href="https://goo.gl/maps/zeqVc8fyGjZi5yUMA"
+              target="_blank"
+              className="personal-details"
+            >
               <div className={classes.detailsIcon}>
                 <HiOutlineLocationMarker />
               </div>
               <p style={{ color: theme.tertiary }}>{contactsData.address}</p>
-            </div>
+            </a>
 
             <div className="socialmedia-icons">
               {socialsData.github && (

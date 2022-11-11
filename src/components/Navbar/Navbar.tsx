@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { HashLink } from 'react-router-hash-link'
-import Fade from 'react-reveal/Fade'
+import { Fade } from 'react-awesome-reveal'
 
 import './Navbar.css'
 import { headerData } from '../../data/headerData'
@@ -67,7 +67,7 @@ export const Navbar = () => {
 
         <div onClick={() => handleDrawerOpen(false)}>
           <div className="navLink--container">
-            <Fade left>
+            <Fade direction="left" style={{ width: '100%' }}>
               <HashLink to="/" smooth={true}>
                 <DrawerItem>
                   <DrawerIconIoHomeSharp />
@@ -76,7 +76,7 @@ export const Navbar = () => {
               </HashLink>
             </Fade>
 
-            <Fade left>
+            <Fade direction="left" style={{ width: '100%' }}>
               <HashLink to="/#about" smooth={true}>
                 <DrawerItem>
                   <DrawerIconFaUser />
@@ -85,7 +85,7 @@ export const Navbar = () => {
               </HashLink>
             </Fade>
 
-            <Fade left>
+            <Fade direction="left" style={{ width: '100%' }}>
               <HashLink to="/#education" smooth={true}>
                 <DrawerItem>
                   <DrawerIconHiDocumentText />
@@ -94,7 +94,7 @@ export const Navbar = () => {
               </HashLink>
             </Fade>
 
-            <Fade left>
+            <Fade direction="left" style={{ width: '100%' }}>
               <HashLink to="/#skills" smooth={true}>
                 <DrawerItem>
                   <DrawerIconBsFillGearFill />
@@ -103,7 +103,7 @@ export const Navbar = () => {
               </HashLink>
             </Fade>
 
-            {/*             <Fade left>
+            {/*             <Fade direction="left" style={{ width: '100%' }}>
               <HashLink to="/#projects" smooth={true}>
                 <DrawerItem>
                   <DrawerIconFaFolderOpen />
@@ -112,7 +112,7 @@ export const Navbar = () => {
               </HashLink>
             </Fade> */}
 
-            <Fade left>
+            <Fade direction="left">
               <HashLink to="/#contacts" smooth={true}>
                 <DrawerItem>
                   <DrawerIconMdPhone />
