@@ -28,7 +28,7 @@ export const Skills = () => {
         <div className="skill--scroll">
           <Marquee
             gradient={false}
-            speed={80}
+            speed={100}
             pauseOnHover={true}
             pauseOnClick={true}
             delay={0}
@@ -44,7 +44,7 @@ export const Skills = () => {
           </Marquee>
           <Marquee
             gradient={false}
-            speed={80}
+            speed={100}
             pauseOnHover={true}
             pauseOnClick={true}
             delay={0}

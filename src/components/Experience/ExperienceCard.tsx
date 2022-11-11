@@ -16,6 +16,7 @@ export const ExperienceCard = ({
   jobtitle,
   startYear,
   endYear,
+  description,
 }: ExperienceType) => {
   const { theme } = useContext(ThemeContext)
 
@@ -35,6 +36,7 @@ export const ExperienceCard = ({
               {company}
             </a>
           </h5>
+          <h6>{description}</h6>
         </div>
       </div>
     </Fade>

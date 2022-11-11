@@ -13,7 +13,7 @@ export const SingleService = ({ id, title, icon }: ServiceType) => {
       <div
         key={id}
         className="single-service"
-        style={{ backgroundColor: theme.primary400 }}
+        style={{ backgroundColor: theme.primary80 }}
       >
         <div className="service-content" style={{ color: theme.tertiary }}>
           <i className="service-icon">{icon}</i>

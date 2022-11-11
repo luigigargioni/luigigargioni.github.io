@@ -124,8 +124,8 @@ export const Landing = () => {
           style={{ backgroundColor: theme.secondary }}
         >
           <div className="lcr--content" style={{ color: theme.tertiary }}>
-            <h6>{headerData.title}</h6>
             <h1>{headerData.name}</h1>
+            <h2>{headerData.title}</h2>
             <p>
               <i>{headerData.description}</i>
             </p>
@@ -134,7 +134,7 @@ export const Landing = () => {
               {headerData.resumePdf && (
                 <a
                   href={headerData.resumePdf}
-                  download="resume"
+                  download="CV_LUIGI_GARGIONI"
                   target="_blank"
                   rel="noreferrer"
                 >

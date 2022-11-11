@@ -16,6 +16,7 @@ export const EducationCard = ({
   courseUrl,
   startYear,
   endYear,
+  description,
 }: EducationType) => {
   const { theme } = useContext(ThemeContext)
 
@@ -39,6 +40,7 @@ export const EducationCard = ({
               {institution}
             </a>
           </h5>
+          <h6>{description}</h6>
         </div>
       </div>
     </Fade>

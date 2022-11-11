@@ -30,6 +30,7 @@ export const Education = () => {
                 courseUrl={edu.courseUrl}
                 startYear={edu.startYear}
                 endYear={edu.endYear}
+                description={edu.description}
               />
             ))}
         </div>
