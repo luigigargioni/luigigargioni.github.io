@@ -29,14 +29,14 @@ export const Skills = () => {
           <Marquee
             gradient={false}
             speed={100}
-            pauseOnHover={true}
-            pauseOnClick={true}
+            pauseOnHover
+            pauseOnClick
             delay={0}
-            play={true}
+            play
             direction="left"
           >
-            {skillsData.map((skill, id) => (
-              <div className="skill--box" key={id} style={skillBoxStyle}>
+            {skillsData.map((skill) => (
+              <div className="skill--box" key={skill} style={skillBoxStyle}>
                 <img src={skillsImage(skill)} alt={skill} />
                 <h3 style={{ color: theme.tertiary }}>{skill}</h3>
               </div>
@@ -45,14 +45,14 @@ export const Skills = () => {
           <Marquee
             gradient={false}
             speed={100}
-            pauseOnHover={true}
-            pauseOnClick={true}
+            pauseOnHover
+            pauseOnClick
             delay={0}
-            play={true}
+            play
             direction="right"
           >
-            {skillsData2.map((skill, id) => (
-              <div className="skill--box" key={id} style={skillBoxStyle}>
+            {skillsData2.map((skill) => (
+              <div className="skill--box" key={skill} style={skillBoxStyle}>
                 <img src={skillsImage(skill)} alt={skill} />
                 <h3 style={{ color: theme.tertiary }}>{skill}</h3>
               </div>

@@ -8,7 +8,7 @@ export type EducationType = {
   courseUrl: string
   startYear: string
   endYear: string
-  description: JSX.Element
+  description: JSX.Element | null
 }
 
 export const educationData: EducationType[] = [
@@ -22,8 +22,8 @@ export const educationData: EducationType[] = [
     endYear: '10/2017',
     description: (
       <p>
-        Thesis: "Vulnerability checking of systems: general concepts and
-        analysis of the OpenVAS tool"
+        Thesis: &quot;Vulnerability checking of systems: general concepts and
+        analysis of the OpenVAS tool&quot;
       </p>
     ),
   },
@@ -37,8 +37,8 @@ export const educationData: EducationType[] = [
     endYear: '10/2019',
     description: (
       <p>
-        Thesis: "A domain-independent environment for user-oriented programming
-        of collaborative robots"
+        Thesis: &quot;A domain-independent environment for user-oriented
+        programming of collaborative robots&quot;
       </p>
     ),
   },
@@ -50,7 +50,7 @@ export const educationData: EducationType[] = [
     courseUrl: 'https://www.unibs.it/it/didattica/post-laurea/esami-di-stato',
     startYear: '',
     endYear: '07/2020',
-    description: <></>,
+    description: null,
   },
   {
     id: 4,
@@ -60,6 +60,6 @@ export const educationData: EducationType[] = [
     courseUrl: 'https://tech4health.unibs.it/',
     startYear: '',
     endYear: 'Present',
-    description: <></>,
+    description: null,
   },
 ]

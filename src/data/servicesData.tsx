@@ -1,17 +1,7 @@
 import React from 'react'
-import { BiShoppingBag, BiPencil, BiWorld } from 'react-icons/bi'
-import { BsCodeSlash, BsClipboardData, BsGear } from 'react-icons/bs'
-import { AiOutlineMail, AiFillAudio } from 'react-icons/ai'
-import {
-  FaInternetExplorer,
-  FaChalkboardTeacher,
-  FaCameraRetro,
-  FaPinterest,
-  FaVideo,
-  FaTabletAlt,
-  FaRegNewspaper,
-  FaPeopleCarry,
-} from 'react-icons/fa'
+import { BiWorld } from 'react-icons/bi'
+import { BsCodeSlash, BsGear } from 'react-icons/bs'
+import { FaChalkboardTeacher, FaPeopleCarry } from 'react-icons/fa'
 
 export type ServiceType = {
   id: number

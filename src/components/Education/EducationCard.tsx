@@ -1,12 +1,11 @@
 import React, { useContext } from 'react'
 import { Fade } from 'react-awesome-reveal'
 
+import { EducationType } from 'data/educationData'
 import { ThemeContext } from '../../contexts/ThemeContext'
 
 import eduImgWhite from '../../assets/svg/eduImgWhite.svg'
 import './Education.css'
-import { EducationType } from 'data/educationData'
-import { themeData } from 'data/themeData'
 
 export const EducationCard = ({
   id,
@@ -31,12 +30,12 @@ export const EducationCard = ({
             {startYear ? `${startYear}-${endYear}` : endYear}
           </h6>
           <h4 style={{ color: theme.tertiary }}>
-            <a href={courseUrl} target="_blank">
+            <a href={courseUrl} target="_blank" rel="noreferrer">
               {course}
             </a>
           </h4>
           <h5 style={{ color: theme.primary }}>
-            <a href={institutionUrl} target="_blank">
+            <a href={institutionUrl} target="_blank" rel="noreferrer">
               {institution}
             </a>
           </h5>

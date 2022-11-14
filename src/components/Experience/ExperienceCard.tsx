@@ -1,13 +1,11 @@
 import React, { useContext } from 'react'
 import { Fade } from 'react-awesome-reveal'
 
+import { ExperienceType } from 'data/experienceData'
 import { ThemeContext } from '../../contexts/ThemeContext'
-
 import expImgWhite from '../../assets/svg/expImgWhite.svg'
 
 import './Experience.css'
-import { ExperienceType } from 'data/experienceData'
-import { themeData } from 'data/themeData'
 
 export const ExperienceCard = ({
   id,
@@ -32,7 +30,7 @@ export const ExperienceCard = ({
           </h6>
           <h4 style={{ color: theme.tertiary }}>{jobtitle}</h4>
           <h5 style={{ color: theme.primary }}>
-            <a href={companyUrl} target="_blank">
+            <a href={companyUrl} target="_blank" rel="noreferrer">
               {company}
             </a>
           </h5>
