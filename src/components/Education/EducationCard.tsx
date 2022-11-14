@@ -35,12 +35,14 @@ export const EducationCard = ({
               {course}
             </a>
           </h4>
-          <h5 style={{ color: theme.tertiary80 }}>
+          <h5 style={{ color: theme.primary }}>
             <a href={institutionUrl} target="_blank">
               {institution}
             </a>
           </h5>
-          <h6>{description}</h6>
+          <h6 style={{ color: theme.tertiary80, textAlign: 'justify' }}>
+            {description}
+          </h6>
         </div>
       </div>
     </Fade>

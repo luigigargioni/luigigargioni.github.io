@@ -201,12 +201,20 @@
   .lcr--content h1 {
     font-size: 2.5rem;
     text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  .lcr--content h2 {
+    display: flex;
+    justify-content: center;
   }
   .lcr--content p {
     font-size: 0.95rem;
     text-align: center;
     margin: 0 auto;
     width: 90%;
+    display: flex;
+    justify-content: center;
   }
   .lcr-buttonContainer {
     margin: 0 auto;

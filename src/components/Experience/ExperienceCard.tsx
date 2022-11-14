@@ -31,12 +31,14 @@ export const ExperienceCard = ({
             {startYear ? `${startYear}-${endYear}` : endYear}
           </h6>
           <h4 style={{ color: theme.tertiary }}>{jobtitle}</h4>
-          <h5 style={{ color: theme.tertiary80 }}>
+          <h5 style={{ color: theme.primary }}>
             <a href={companyUrl} target="_blank">
               {company}
             </a>
           </h5>
-          <h6>{description}</h6>
+          <h6 style={{ color: theme.tertiary80, textAlign: 'justify' }}>
+            {description}
+          </h6>
         </div>
       </div>
     </Fade>
