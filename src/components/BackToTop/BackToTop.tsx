@@ -1,10 +1,9 @@
-import React, { useState, useContext } from 'react'
+import React, { useState } from 'react'
 import { IoIosArrowDropupCircle } from 'react-icons/io'
 import { styled } from '@mui/material/styles'
 
-import { ThemeContext } from '../../contexts/ThemeContext'
-import './BackToTop.css'
 import { themeData } from 'data/themeData'
+import './BackToTop.css'
 
 const IconStyled = styled(IoIosArrowDropupCircle)(() => ({
   fontSize: '3rem',
@@ -13,8 +12,6 @@ const IconStyled = styled(IoIosArrowDropupCircle)(() => ({
 
 export const BackToTop = () => {
   const [visible, setVisible] = useState(false)
-
-  const { theme } = useContext(ThemeContext)
 
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop
@@ -36,7 +33,7 @@ export const BackToTop = () => {
 
   return (
     <div style={{ display: visible ? 'inline' : 'none' }} className="backToTop">
-      <button onClick={scrollToTop} aria-label="Back to top">
+      <button type="button" onClick={scrollToTop} aria-label="Back to top">
         <IconStyled />
       </button>
     </div>

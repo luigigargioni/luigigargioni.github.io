@@ -1,5 +1,5 @@
-import { greenThemeDark } from '../theme/theme'
+import { customTheme } from '../theme/theme'
 
 export const themeData = {
-  theme: greenThemeDark,
+  theme: customTheme,
 }

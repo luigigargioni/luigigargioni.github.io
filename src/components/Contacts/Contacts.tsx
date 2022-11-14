@@ -4,17 +4,17 @@ import { FaLinkedinIn, FaGithub, FaStackOverflow } from 'react-icons/fa'
 import { FiPhone, FiAtSign } from 'react-icons/fi'
 import { HiOutlineLocationMarker } from 'react-icons/hi'
 
+import { IoMdSchool } from 'react-icons/io'
 import { ThemeContext } from '../../contexts/ThemeContext'
 
 import { socialsData } from '../../data/socialsData'
 import { contactsData } from '../../data/contactsData'
 import './Contacts.css'
-import { IoMdSchool } from 'react-icons/io'
 
 export const Contacts = () => {
   const { theme } = useContext(ThemeContext)
 
-  const useStyles = makeStyles((t) => ({
+  const useStyles = makeStyles(() => ({
     socialIcon: {
       width: '45px',
       height: '45px',
@@ -68,6 +68,7 @@ export const Contacts = () => {
               href={`mailto:${contactsData.email}`}
               target="_blank"
               className="personal-details"
+              rel="noreferrer"
             >
               <div className={classes.detailsIcon}>
                 <FiAtSign />
@@ -84,6 +85,7 @@ export const Contacts = () => {
               href="https://goo.gl/maps/zeqVc8fyGjZi5yUMA"
               target="_blank"
               className="personal-details"
+              rel="noreferrer"
             >
               <div className={classes.detailsIcon}>
                 <HiOutlineLocationMarker />

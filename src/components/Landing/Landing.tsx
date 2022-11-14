@@ -2,15 +2,14 @@ import React, { useContext } from 'react'
 import { Button } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import { HashLink } from 'react-router-hash-link'
+import { IoMdSchool } from 'react-icons/io'
+import { FaLinkedin, FaGithub, FaStackOverflow } from 'react-icons/fa'
 
 import './Landing.css'
+import { themeData } from 'data/themeData'
 import { ThemeContext } from '../../contexts/ThemeContext'
 import { headerData } from '../../data/headerData'
 import { socialsData } from '../../data/socialsData'
-
-import { FaLinkedin, FaGithub, FaStackOverflow } from 'react-icons/fa'
-import { themeData } from 'data/themeData'
-import { IoMdSchool } from 'react-icons/io'
 
 const ResumeBtn = styled(Button)(({ theme }) => ({
   color: themeData.theme.primary,
@@ -141,7 +140,7 @@ export const Landing = () => {
                   <ResumeBtn>Download CV</ResumeBtn>
                 </a>
               )}
-              <HashLink to="/#contacts" smooth={true}>
+              <HashLink to="/#contacts" smooth>
                 <ContactBtn>Contact</ContactBtn>
               </HashLink>
             </div>

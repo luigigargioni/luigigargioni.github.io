@@ -1,6 +1,11 @@
 import React, { useContext, useState } from 'react'
 import { HashLink } from 'react-router-hash-link'
 import { Fade } from 'react-awesome-reveal'
+import { BiUser } from 'react-icons/bi'
+import { BsCodeSlash, BsGear } from 'react-icons/bs'
+import { MdWorkOutline } from 'react-icons/md'
+import { IoSchoolOutline } from 'react-icons/io5'
+import { AiOutlinePhone } from 'react-icons/ai'
 
 import './Navbar.css'
 import { headerData } from '../../data/headerData'
@@ -12,18 +17,13 @@ import {
   MuiDrawer,
   NavMenu,
 } from './Navbar.styled'
-import { BiUser } from 'react-icons/bi'
-import { BsCodeSlash, BsGear } from 'react-icons/bs'
-import { MdWorkOutline } from 'react-icons/md'
-import { IoSchoolOutline } from 'react-icons/io5'
-import { AiOutlinePhone } from 'react-icons/ai'
 
 export const Navbar = () => {
   const { theme, setHandleDrawer } = useContext(ThemeContext)
   const [open, setOpen] = useState(false)
 
-  const handleDrawerOpen = (open: boolean) => {
-    setOpen(open)
+  const handleDrawerOpen = (value: boolean) => {
+    setOpen(value)
     setHandleDrawer()
   }
 
@@ -46,7 +46,7 @@ export const Navbar = () => {
         open={open}
         classes={{ paper: 'paper' }}
         className="drawer"
-        disableScrollLock={true}
+        disableScrollLock
       >
         <div className="div-closebtn">
           <ClosebtnIcon
@@ -64,62 +64,84 @@ export const Navbar = () => {
         </div>
         <br />
 
-        <div onClick={() => handleDrawerOpen(false)}>
-          <div className="navLink--container">
-            <Fade direction="left" style={{ width: '100%' }}>
-              <HashLink to="/#about" smooth={true}>
-                <DrawerItem>
-                  <BiUser />
-                  <DrawerLinks>About</DrawerLinks>
-                </DrawerItem>
-              </HashLink>
-            </Fade>
+        <div className="navLink--container">
+          <Fade direction="left" style={{ width: '100%' }}>
+            <HashLink
+              to="/#about"
+              smooth
+              onClick={() => handleDrawerOpen(false)}
+            >
+              <DrawerItem>
+                <BiUser />
+                <DrawerLinks>About</DrawerLinks>
+              </DrawerItem>
+            </HashLink>
+          </Fade>
 
-            <Fade direction="left" style={{ width: '100%' }}>
-              <HashLink to="/#skills" smooth={true}>
-                <DrawerItem>
-                  <BsCodeSlash />
-                  <DrawerLinks>Skills</DrawerLinks>
-                </DrawerItem>
-              </HashLink>
-            </Fade>
+          <Fade direction="left" style={{ width: '100%' }}>
+            <HashLink
+              to="/#skills"
+              smooth
+              onClick={() => handleDrawerOpen(false)}
+            >
+              <DrawerItem>
+                <BsCodeSlash />
+                <DrawerLinks>Skills</DrawerLinks>
+              </DrawerItem>
+            </HashLink>
+          </Fade>
 
-            <Fade direction="left" style={{ width: '100%' }}>
-              <HashLink to="/#experience" smooth={true}>
-                <DrawerItem>
-                  <MdWorkOutline />
-                  <DrawerLinks>Experience</DrawerLinks>
-                </DrawerItem>
-              </HashLink>
-            </Fade>
+          <Fade direction="left" style={{ width: '100%' }}>
+            <HashLink
+              to="/#experience"
+              smooth
+              onClick={() => handleDrawerOpen(false)}
+            >
+              <DrawerItem>
+                <MdWorkOutline />
+                <DrawerLinks>Experience</DrawerLinks>
+              </DrawerItem>
+            </HashLink>
+          </Fade>
 
-            <Fade direction="left" style={{ width: '100%' }}>
-              <HashLink to="/#education" smooth={true}>
-                <DrawerItem>
-                  <IoSchoolOutline />
-                  <DrawerLinks>Education</DrawerLinks>
-                </DrawerItem>
-              </HashLink>
-            </Fade>
+          <Fade direction="left" style={{ width: '100%' }}>
+            <HashLink
+              to="/#education"
+              smooth
+              onClick={() => handleDrawerOpen(false)}
+            >
+              <DrawerItem>
+                <IoSchoolOutline />
+                <DrawerLinks>Education</DrawerLinks>
+              </DrawerItem>
+            </HashLink>
+          </Fade>
 
-            <Fade direction="left" style={{ width: '100%' }}>
-              <HashLink to="/#services" smooth={true}>
-                <DrawerItem>
-                  <BsGear />
-                  <DrawerLinks>Services</DrawerLinks>
-                </DrawerItem>
-              </HashLink>
-            </Fade>
+          <Fade direction="left" style={{ width: '100%' }}>
+            <HashLink
+              to="/#services"
+              smooth
+              onClick={() => handleDrawerOpen(false)}
+            >
+              <DrawerItem>
+                <BsGear />
+                <DrawerLinks>Services</DrawerLinks>
+              </DrawerItem>
+            </HashLink>
+          </Fade>
 
-            <Fade direction="left">
-              <HashLink to="/#contacts" smooth={true}>
-                <DrawerItem>
-                  <AiOutlinePhone />
-                  <DrawerLinks>Contact</DrawerLinks>
-                </DrawerItem>
-              </HashLink>
-            </Fade>
-          </div>
+          <Fade direction="left">
+            <HashLink
+              to="/#contacts"
+              smooth
+              onClick={() => handleDrawerOpen(false)}
+            >
+              <DrawerItem>
+                <AiOutlinePhone />
+                <DrawerLinks>Contact</DrawerLinks>
+              </DrawerItem>
+            </HashLink>
+          </Fade>
         </div>
       </MuiDrawer>
     </div>

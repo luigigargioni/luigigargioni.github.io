@@ -21,7 +21,7 @@ export type ThemeType = {
   contactsimg: string
 }
 
-export const greenThemeDark: ThemeType = {
+export const customTheme: ThemeType = {
   type: 'dark',
   primary: '#3fc337',
   primary400: '#57d750',

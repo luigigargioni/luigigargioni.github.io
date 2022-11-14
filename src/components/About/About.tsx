@@ -16,22 +16,22 @@ export const About = () => {
         <div
           className="style-circle"
           style={{ backgroundColor: theme.primary }}
-        ></div>
+        />
         <div
           className="style-circle"
           style={{ backgroundColor: theme.primary }}
-        ></div>
+        />
         <div
           className="style-line"
           style={{ backgroundColor: theme.primary }}
-        ></div>
+        />
       </div>
       <div className="about-body">
         <div className="about-description">
           <h2 style={{ color: theme.primary }}>{aboutData.title}</h2>
           <p style={{ color: theme.tertiary80 }}>
-            {aboutData.description.map((paragraph, index) => (
-              <span key={index}>
+            {aboutData.description.map((paragraph) => (
+              <span key={paragraph}>
                 {paragraph}
                 <br />
                 <br />

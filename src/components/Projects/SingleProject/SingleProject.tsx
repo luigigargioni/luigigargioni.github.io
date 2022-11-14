@@ -80,8 +80,8 @@ export const SingleProject = ({
             color: theme.tertiary80,
           }}
         >
-          {tags.map((tag, id) => (
-            <span key={id}>{tag}</span>
+          {tags.map((tag) => (
+            <span key={tag}>{tag}</span>
           ))}
         </div>
       </div>
