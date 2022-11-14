@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.2a703f5b.css",
-    "main.js": "/static/js/main.689f22ca.js",
+    "main.css": "/static/css/main.95b746c0.css",
+    "main.js": "/static/js/main.b3f7254c.js",
     "static/media/CV_LUIGI_GARGIONI.pdf": "/static/media/CV_LUIGI_GARGIONI.49301152ed671c38648a.pdf",
     "static/media/expGreen.svg": "/static/media/expGreen.dffa1cc66a55ae11be49b61753f4c221.svg",
     "static/media/contactsGreen.svg": "/static/media/contactsGreen.808a7bb5da2c3cc90faa6cc86e5e2a44.svg",
@@ -37,7 +37,7 @@
     "static/media/oracle.svg": "/static/media/oracle.9e0f17cdcef2c1137d6d0b0ae8a5f6a9.svg"
   },
   "entrypoints": [
-    "static/css/main.2a703f5b.css",
-    "static/js/main.689f22ca.js"
+    "static/css/main.95b746c0.css",
+    "static/js/main.b3f7254c.js"
   ]
 }
