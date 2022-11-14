@@ -19,12 +19,12 @@ import {
 } from './Navbar.styled'
 
 export const Navbar = () => {
-  const { theme, setHandleDrawer } = useContext(ThemeContext)
+  const { theme, setDrawerOpen, drawerOpen } = useContext(ThemeContext)
   const [open, setOpen] = useState(false)
 
   const handleDrawerOpen = (value: boolean) => {
     setOpen(value)
-    setHandleDrawer()
+    setDrawerOpen(!drawerOpen)
   }
 
   return (
