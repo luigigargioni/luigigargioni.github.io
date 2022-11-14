@@ -1,12 +1,20 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useMemo, useState } from 'react'
+import { ThemeType } from 'theme/theme'
 
 import { themeData } from '../data/themeData'
 
-export const ThemeContext = createContext({
+interface ThemeContextData {
+  theme: ThemeType
+  drawerOpen: boolean
+  setDrawerOpen: (value: boolean) => void
+}
+
+export const ThemeContext = createContext<ThemeContextData>({
   theme: themeData.theme,
   drawerOpen: false,
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  setHandleDrawer: () => {},
+  setDrawerOpen: () => {
+    /* void */
+  },
 })
 
 export const ThemeContextProvider = ({
@@ -17,11 +25,9 @@ export const ThemeContextProvider = ({
   const { theme } = themeData
   const [drawerOpen, setDrawerOpen] = useState(false)
 
-  const setHandleDrawer = () => {
-    setDrawerOpen(!drawerOpen)
-  }
-
-  // eslint-disable-next-line react/jsx-no-constructed-context-values
-  const value = { theme, drawerOpen, setHandleDrawer }
+  const value = useMemo(
+    () => ({ theme, drawerOpen, setDrawerOpen }),
+    [theme, drawerOpen, setDrawerOpen]
+  )
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
 }
