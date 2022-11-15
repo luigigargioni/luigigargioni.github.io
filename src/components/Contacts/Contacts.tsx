@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import { makeStyles } from '@mui/styles'
 import { FaLinkedinIn, FaGithub, FaStackOverflow } from 'react-icons/fa'
 import { FiPhone, FiAtSign } from 'react-icons/fi'
 import { HiOutlineLocationMarker } from 'react-icons/hi'
@@ -10,49 +9,10 @@ import { ThemeContext } from '../../contexts/ThemeContext'
 import { socialsData } from '../../data/socialsData'
 import { contactsData } from '../../data/contactsData'
 import './Contacts.css'
+import { DetailsIcon, SocialIcon } from './Contacts.style'
 
 export const Contacts = () => {
   const { theme } = useContext(ThemeContext)
-
-  const useStyles = makeStyles(() => ({
-    socialIcon: {
-      width: '45px',
-      height: '45px',
-      borderRadius: '50%',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      fontSize: '21px',
-      backgroundColor: theme.primary,
-      color: theme.secondary,
-      transition: '250ms ease-in-out',
-      '&:hover': {
-        transform: 'scale(1.1)',
-        color: theme.secondary,
-        backgroundColor: theme.tertiary,
-      },
-    },
-    detailsIcon: {
-      backgroundColor: theme.primary,
-      color: theme.secondary,
-      borderRadius: '50%',
-      width: '45px',
-      height: '45px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      fontSize: '23px',
-      transition: '250ms ease-in-out',
-      flexShrink: 0,
-      '&:hover': {
-        transform: 'scale(1.1)',
-        color: theme.secondary,
-        backgroundColor: theme.tertiary,
-      },
-    },
-  }))
-
-  const classes = useStyles()
 
   return (
     <div
@@ -70,15 +30,15 @@ export const Contacts = () => {
               className="personal-details"
               rel="noreferrer"
             >
-              <div className={classes.detailsIcon}>
+              <DetailsIcon>
                 <FiAtSign />
-              </div>
+              </DetailsIcon>
               <p style={{ color: theme.tertiary }}>{contactsData.email}</p>
             </a>
             <a href={`tel:${contactsData.phone}`} className="personal-details">
-              <div className={classes.detailsIcon}>
+              <DetailsIcon>
                 <FiPhone />
-              </div>
+              </DetailsIcon>
               <p style={{ color: theme.tertiary }}>{contactsData.phone}</p>
             </a>
             <a
@@ -87,52 +47,48 @@ export const Contacts = () => {
               className="personal-details"
               rel="noreferrer"
             >
-              <div className={classes.detailsIcon}>
+              <DetailsIcon>
                 <HiOutlineLocationMarker />
-              </div>
+              </DetailsIcon>
               <p style={{ color: theme.tertiary }}>{contactsData.address}</p>
             </a>
 
             <div className="socialmedia-icons">
               {socialsData.github && (
-                <a
+                <SocialIcon
                   href={socialsData.github}
                   target="_blank"
                   rel="noreferrer"
-                  className={classes.socialIcon}
                 >
                   <FaGithub aria-label="GitHub" />
-                </a>
+                </SocialIcon>
               )}
               {socialsData.linkedIn && (
-                <a
+                <SocialIcon
                   href={socialsData.linkedIn}
                   target="_blank"
                   rel="noreferrer"
-                  className={classes.socialIcon}
                 >
                   <FaLinkedinIn aria-label="LinkedIn" />
-                </a>
+                </SocialIcon>
               )}
               {socialsData.stackOverflow && (
-                <a
+                <SocialIcon
                   href={socialsData.stackOverflow}
                   target="_blank"
                   rel="noreferrer"
-                  className={classes.socialIcon}
                 >
                   <FaStackOverflow aria-label="Stack Overflow" />
-                </a>
+                </SocialIcon>
               )}
               {socialsData.scholar && (
-                <a
+                <SocialIcon
                   href={socialsData.scholar}
                   target="_blank"
                   rel="noreferrer"
-                  className={classes.socialIcon}
                 >
                   <IoMdSchool aria-label="Stack Overflow" />
-                </a>
+                </SocialIcon>
               )}
             </div>
           </div>
