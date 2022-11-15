@@ -16,7 +16,7 @@ import {
   DrawerLinks,
   MuiDrawer,
   NavMenu,
-} from './Navbar.styled'
+} from './Navbar.style'
 
 export const Navbar = () => {
   const { theme, setDrawerOpen, drawerOpen } = useContext(ThemeContext)
