@@ -4,8 +4,8 @@
   "homepage": "https://luigigargioni.github.io",
   "private": true,
   "scripts": {
-    "start": "SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
-    "build": "SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "lint": "eslint . --ext .ts,.tsx",
     "lintfix": "eslint . --ext .ts,.tsx --fix",
     "pretty": "prettier --write **/*.{ts,tsx}",
