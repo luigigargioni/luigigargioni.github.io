@@ -2,9 +2,8 @@ import React from 'react'
 
 import './Education.css'
 import { customTheme } from 'style/theme'
-import { EducationCard } from './EducationCard'
-
 import { educationData } from 'data/educationData'
+import { EducationCard } from './EducationCard'
 
 export const Education = () => (
   <div
