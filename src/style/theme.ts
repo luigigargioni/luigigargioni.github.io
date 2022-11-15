@@ -1,7 +1,7 @@
 import { greenThemeboy, eduGreen, expGreen, contactsGreen } from './images'
 
 export type ThemeType = {
-  type: string
+  type: 'dark' | 'light'
   primary: string
   primary400: string
   primary600: string

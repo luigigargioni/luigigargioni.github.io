@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import { IoIosArrowDropupCircle } from 'react-icons/io'
 import { styled } from '@mui/material/styles'
 
-import { themeData } from 'data/themeData'
+import { customTheme } from 'style/theme'
 import './BackToTop.css'
 
 const IconStyled = styled(IoIosArrowDropupCircle)(() => ({
   fontSize: '3rem',
-  color: themeData.theme.tertiary,
+  color: customTheme.tertiary,
 }))
 
 export const BackToTop = () => {

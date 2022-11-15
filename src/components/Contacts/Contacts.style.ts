@@ -1,7 +1,5 @@
 import { styled } from '@mui/material/styles'
-import { themeData } from 'data/themeData'
-
-const { theme } = themeData
+import { customTheme } from 'style/theme'
 
 export const SocialIcon = styled('a')(() => ({
   width: '45px',
@@ -11,19 +9,19 @@ export const SocialIcon = styled('a')(() => ({
   alignItems: 'center',
   justifyContent: 'center',
   fontSize: '21px',
-  backgroundColor: theme.primary,
-  color: theme.secondary,
+  backgroundColor: customTheme.primary,
+  color: customTheme.secondary,
   transition: '250ms ease-in-out',
   '&:hover': {
     transform: 'scale(1.1)',
-    color: theme.secondary,
-    backgroundColor: theme.tertiary,
+    color: customTheme.secondary,
+    backgroundColor: customTheme.tertiary,
   },
 }))
 
 export const DetailsIcon = styled('div')(() => ({
-  backgroundColor: theme.primary,
-  color: theme.secondary,
+  backgroundColor: customTheme.primary,
+  color: customTheme.secondary,
   borderRadius: '50%',
   width: '45px',
   height: '45px',
@@ -35,7 +33,7 @@ export const DetailsIcon = styled('div')(() => ({
   flexShrink: 0,
   '&:hover': {
     transform: 'scale(1.1)',
-    color: theme.secondary,
-    backgroundColor: theme.tertiary,
+    color: customTheme.secondary,
+    backgroundColor: customTheme.tertiary,
   },
 }))

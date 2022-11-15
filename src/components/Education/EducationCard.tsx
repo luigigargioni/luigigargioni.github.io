@@ -1,10 +1,10 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Fade } from 'react-awesome-reveal'
 
 import { EducationType } from 'data/educationData'
-import { ThemeContext } from '../../contexts/ThemeContext'
 
-import eduImgWhite from '../../assets/svg/eduImgWhite.svg'
+import { customTheme } from 'style/theme'
+import eduImgWhite from 'assets/svg/eduImgWhite.svg'
 import './Education.css'
 
 export const EducationCard = ({
@@ -16,34 +16,33 @@ export const EducationCard = ({
   startYear,
   endYear,
   description,
-}: EducationType) => {
-  const { theme } = useContext(ThemeContext)
-
-  return (
-    <Fade direction="up" triggerOnce style={{ width: '100%' }}>
-      <div key={id} className="education-card">
-        <div className="educard-img" style={{ backgroundColor: theme.primary }}>
-          <img src={eduImgWhite} alt="" />
-        </div>
-        <div className="education-details">
-          <h6 style={{ color: theme.primary }}>
-            {startYear ? `${startYear}-${endYear}` : endYear}
-          </h6>
-          <h4 style={{ color: theme.tertiary }}>
-            <a href={courseUrl} target="_blank" rel="noreferrer">
-              {course}
-            </a>
-          </h4>
-          <h5 style={{ color: theme.primary }}>
-            <a href={institutionUrl} target="_blank" rel="noreferrer">
-              {institution}
-            </a>
-          </h5>
-          <h6 style={{ color: theme.tertiary80, textAlign: 'justify' }}>
-            {description}
-          </h6>
-        </div>
+}: EducationType) => (
+  <Fade direction="up" triggerOnce style={{ width: '100%' }}>
+    <div key={id} className="education-card">
+      <div
+        className="educard-img"
+        style={{ backgroundColor: customTheme.primary }}
+      >
+        <img src={eduImgWhite} alt="" />
       </div>
-    </Fade>
-  )
-}
+      <div className="education-details">
+        <h6 style={{ color: customTheme.primary }}>
+          {startYear ? `${startYear}-${endYear}` : endYear}
+        </h6>
+        <h4 style={{ color: customTheme.tertiary }}>
+          <a href={courseUrl} target="_blank" rel="noreferrer">
+            {course}
+          </a>
+        </h4>
+        <h5 style={{ color: customTheme.primary }}>
+          <a href={institutionUrl} target="_blank" rel="noreferrer">
+            {institution}
+          </a>
+        </h5>
+        <h6 style={{ color: customTheme.tertiary80, textAlign: 'justify' }}>
+          {description}
+        </h6>
+      </div>
+    </div>
+  </Fade>
+)

@@ -1,4 +1,4 @@
-import { SkillsEnum } from 'utils/skillsImage'
+import { SkillsEnum } from 'components/Skills/skillsImage'
 
 export const skillsData: SkillsEnum[] = [
   SkillsEnum.HTML,

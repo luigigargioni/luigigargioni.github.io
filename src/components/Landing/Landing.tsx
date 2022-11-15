@@ -6,13 +6,13 @@ import { IoMdSchool } from 'react-icons/io'
 import { FaLinkedin, FaGithub, FaStackOverflow } from 'react-icons/fa'
 
 import './Landing.css'
-import { themeData } from 'data/themeData'
-import { ThemeContext } from '../../contexts/ThemeContext'
-import { headerData } from '../../data/headerData'
-import { socialsData } from '../../data/socialsData'
+import { customTheme } from 'style/theme'
+import { CustomContext } from 'context'
+import { headerData } from 'data/headerData'
+import { socialsData } from 'data/socialsData'
 
 const ResumeBtn = styled(Button)(({ theme }) => ({
-  color: themeData.theme.primary,
+  color: customTheme.primary,
   borderRadius: '30px',
   textTransform: 'inherit',
   textDecoration: 'none',
@@ -21,12 +21,12 @@ const ResumeBtn = styled(Button)(({ theme }) => ({
   fontWeight: '500',
   height: '50px',
   fontFamily: 'var(--primaryFont)',
-  border: `3px solid ${themeData.theme.primary}`,
+  border: `3px solid ${customTheme.primary}`,
   transition: '100ms ease-out',
   '&:hover': {
-    backgroundColor: themeData.theme.tertiary,
-    color: themeData.theme.secondary,
-    border: `3px solid ${themeData.theme.tertiary}`,
+    backgroundColor: customTheme.tertiary,
+    color: customTheme.secondary,
+    border: `3px solid ${customTheme.tertiary}`,
   },
   [theme.breakpoints.down('sm')]: {
     width: '180px',
@@ -34,8 +34,8 @@ const ResumeBtn = styled(Button)(({ theme }) => ({
 }))
 
 const ContactBtn = styled(Button)(({ theme }) => ({
-  backgroundColor: themeData.theme.primary,
-  color: themeData.theme.secondary,
+  backgroundColor: customTheme.primary,
+  color: customTheme.secondary,
   borderRadius: '30px',
   textTransform: 'inherit',
   textDecoration: 'none',
@@ -44,12 +44,12 @@ const ContactBtn = styled(Button)(({ theme }) => ({
   fontSize: '1rem',
   fontWeight: '500',
   fontFamily: 'var(--primaryFont)',
-  border: `3px solid ${themeData.theme.primary}`,
+  border: `3px solid ${customTheme.primary}`,
   transition: '100ms ease-out',
   '&:hover': {
-    backgroundColor: themeData.theme.secondary,
-    color: themeData.theme.tertiary,
-    border: `3px solid ${themeData.theme.tertiary}`,
+    backgroundColor: customTheme.secondary,
+    color: customTheme.tertiary,
+    border: `3px solid ${customTheme.tertiary}`,
   },
   [theme.breakpoints.down('sm')]: {
     display: 'none',
@@ -57,21 +57,21 @@ const ContactBtn = styled(Button)(({ theme }) => ({
 }))
 
 export const Landing = () => {
-  const { theme, drawerOpen } = useContext(ThemeContext)
+  const { drawerOpen } = useContext(CustomContext)
 
   return (
     <div className="landing">
       <div className="landing--container">
         <div
           className="landing--container-left"
-          style={{ backgroundColor: theme.primary }}
+          style={{ backgroundColor: customTheme.primary }}
         >
           <div className="lcl--content">
             {socialsData.linkedIn && (
               <a href={socialsData.linkedIn} target="_blank" rel="noreferrer">
                 <FaLinkedin
                   className="landing--social"
-                  style={{ color: theme.secondary }}
+                  style={{ color: customTheme.secondary }}
                   aria-label="LinkedIn"
                 />
               </a>
@@ -80,7 +80,7 @@ export const Landing = () => {
               <a href={socialsData.github} target="_blank" rel="noreferrer">
                 <FaGithub
                   className="landing--social"
-                  style={{ color: theme.secondary }}
+                  style={{ color: customTheme.secondary }}
                   aria-label="GitHub"
                 />
               </a>
@@ -93,7 +93,7 @@ export const Landing = () => {
               >
                 <FaStackOverflow
                   className="landing--social"
-                  style={{ color: theme.secondary }}
+                  style={{ color: customTheme.secondary }}
                   aria-label="StackOverflow"
                 />
               </a>
@@ -102,7 +102,7 @@ export const Landing = () => {
               <a href={socialsData.scholar} target="_blank" rel="noreferrer">
                 <IoMdSchool
                   className="landing--social"
-                  style={{ color: theme.secondary }}
+                  style={{ color: customTheme.secondary }}
                   aria-label="GoogleScholar"
                 />
               </a>
@@ -115,14 +115,14 @@ export const Landing = () => {
           className="landing--img"
           style={{
             opacity: `${drawerOpen ? '0' : '1'}`,
-            borderColor: theme.secondary,
+            borderColor: customTheme.secondary,
           }}
         />
         <div
           className="landing--container-right"
-          style={{ backgroundColor: theme.secondary }}
+          style={{ backgroundColor: customTheme.secondary }}
         >
-          <div className="lcr--content" style={{ color: theme.tertiary }}>
+          <div className="lcr--content" style={{ color: customTheme.tertiary }}>
             <h1>{headerData.name}</h1>
             <h2>{headerData.title}</h2>
             <p style={{ display: 'flex', justifyContent: 'center' }}>

@@ -1,25 +1,21 @@
 import { ServiceType } from 'data/servicesData'
-import React, { useContext } from 'react'
+import React from 'react'
 import { Fade } from 'react-awesome-reveal'
-
-import { ThemeContext } from '../../../contexts/ThemeContext'
+import { customTheme } from 'style/theme'
 
 import './SingleService.css'
 
-export const SingleService = ({ id, title, icon }: ServiceType) => {
-  const { theme } = useContext(ThemeContext)
-  return (
-    <Fade direction="up" triggerOnce>
-      <div
-        key={id}
-        className="single-service"
-        style={{ backgroundColor: theme.primary80 }}
-      >
-        <div className="service-content" style={{ color: theme.tertiary }}>
-          <i className="service-icon">{icon}</i>
-          <h4 style={{ color: theme.tertiary }}>{title}</h4>
-        </div>
+export const SingleService = ({ id, title, icon }: ServiceType) => (
+  <Fade direction="up" triggerOnce>
+    <div
+      key={id}
+      className="single-service"
+      style={{ backgroundColor: customTheme.primary80 }}
+    >
+      <div className="service-content" style={{ color: customTheme.tertiary }}>
+        <i className="service-icon">{icon}</i>
+        <h4 style={{ color: customTheme.tertiary }}>{title}</h4>
       </div>
-    </Fade>
-  )
-}
+    </div>
+  </Fade>
+)
