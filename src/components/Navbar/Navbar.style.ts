@@ -3,17 +3,15 @@ import { styled } from '@mui/material/styles'
 import { AiOutlineClose } from 'react-icons/ai'
 import { IoHomeSharp, IoMenuSharp } from 'react-icons/io5'
 
-import { themeData } from 'data/themeData'
+import { customTheme } from 'style/theme'
 import { FaFolderOpen, FaUser } from 'react-icons/fa'
 import { HiDocumentText } from 'react-icons/hi'
 import { BsFillGearFill } from 'react-icons/bs'
 import { MdPhone } from 'react-icons/md'
 
-const { theme } = themeData
-
 export const NavMenu = styled(IoMenuSharp)(() => ({
   fontSize: '2.5rem',
-  color: theme.tertiary,
+  color: customTheme.tertiary,
   cursor: 'pointer',
   transform: 'translateY(-10px)',
   transition: 'color 0.3s',
@@ -21,7 +19,7 @@ export const NavMenu = styled(IoMenuSharp)(() => ({
   top: '30px',
   right: '30px',
   '&:hover': {
-    color: theme.primary,
+    color: customTheme.primary,
   },
 }))
 
@@ -33,7 +31,7 @@ export const MuiDrawer = styled(Drawer)(({ theme: t }) => ({
     fontStyle: ' normal',
     fontWeight: ' normal',
     fontSize: ' 24px',
-    background: theme.secondary,
+    background: customTheme.secondary,
     overflow: 'hidden',
     borderTopRightRadius: '40px',
     borderBottomRightRadius: '40px',
@@ -47,13 +45,13 @@ export const ClosebtnIcon = styled(AiOutlineClose)(({ theme: t }) => ({
   fontSize: '2rem',
   fontWeight: 'bold',
   cursor: 'pointer',
-  color: theme.primary,
+  color: customTheme.primary,
   position: 'absolute',
   right: 40,
   top: 40,
   transition: 'color 0.2s',
   '&:hover': {
-    color: theme.tertiary,
+    color: customTheme.tertiary,
   },
   [t.breakpoints.down('sm')]: {
     right: 20,
@@ -64,8 +62,8 @@ export const ClosebtnIcon = styled(AiOutlineClose)(({ theme: t }) => ({
 export const DrawerItem = styled('div')(({ theme: t }) => ({
   margin: '2rem auto',
   borderRadius: '78.8418px',
-  background: theme.secondary,
-  color: theme.primary,
+  background: customTheme.secondary,
+  color: customTheme.primary,
   width: '85%',
   height: '60px',
   display: 'flex',
@@ -74,11 +72,11 @@ export const DrawerItem = styled('div')(({ theme: t }) => ({
   padding: '0 30px',
   boxSizing: 'border-box',
   border: '2px solid',
-  borderColor: theme.primary,
+  borderColor: customTheme.primary,
   transition: 'background-color 0.2s, color 0.2s',
   '&:hover': {
-    background: theme.primary,
-    color: theme.secondary,
+    background: customTheme.primary,
+    color: customTheme.secondary,
   },
   [t.breakpoints.down('sm')]: {
     width: '100%',

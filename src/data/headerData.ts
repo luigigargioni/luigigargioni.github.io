@@ -1,5 +1,5 @@
-import resume from '../assets/pdf/CV_LUIGI_GARGIONI.pdf'
-import profile from '../assets/jpg/profile.jpg'
+import resume from 'assets/pdf/CV_LUIGI_GARGIONI.pdf'
+import profile from 'assets/jpg/profile.jpg'
 
 type HeaderType = {
   name: string

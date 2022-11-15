@@ -8,8 +8,9 @@ import { IoSchoolOutline } from 'react-icons/io5'
 import { AiOutlinePhone } from 'react-icons/ai'
 
 import './Navbar.css'
-import { headerData } from '../../data/headerData'
-import { ThemeContext } from '../../contexts/ThemeContext'
+import { customTheme } from 'style/theme'
+import { headerData } from 'data/headerData'
+import { CustomContext } from 'context'
 import {
   ClosebtnIcon,
   DrawerItem,
@@ -19,7 +20,7 @@ import {
 } from './Navbar.style'
 
 export const Navbar = () => {
-  const { theme, setDrawerOpen, drawerOpen } = useContext(ThemeContext)
+  const { setDrawerOpen, drawerOpen } = useContext(CustomContext)
   const [open, setOpen] = useState(false)
 
   const handleDrawerOpen = (value: boolean) => {
@@ -30,7 +31,7 @@ export const Navbar = () => {
   return (
     <div className="navbar">
       <div className="navbar--container">
-        <h1 style={{ color: theme.secondary }}>{headerData.name}</h1>
+        <h1 style={{ color: customTheme.secondary }}>{headerData.name}</h1>
         <NavMenu
           onClick={() => handleDrawerOpen(true)}
           aria-label="Menu"

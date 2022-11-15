@@ -1,28 +1,26 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Marquee from 'react-fast-marquee'
 
 import './Skills.css'
 
-import { ThemeContext } from '../../contexts/ThemeContext'
-import { skillsData, skillsData2 } from '../../data/skillsData'
-import { skillsImage } from '../../utils/skillsImage'
+import { customTheme } from 'style/theme'
+import { skillsData, skillsData2 } from 'data/skillsData'
+import { skillsImage } from 'components/Skills/skillsImage'
 
 export const Skills = () => {
-  const { theme } = useContext(ThemeContext)
-
   const skillBoxStyle = {
-    backgroundColor: theme.secondary,
-    boxShadow: `0px 0px 30px ${theme.primary30}`,
+    backgroundColor: customTheme.secondary,
+    boxShadow: `0px 0px 30px ${customTheme.primary30}`,
   }
 
   return (
     <div
       id="skills"
       className="skills"
-      style={{ backgroundColor: theme.secondary }}
+      style={{ backgroundColor: customTheme.secondary }}
     >
       <div className="skillsHeader">
-        <h2 style={{ color: theme.primary }}>Skills</h2>
+        <h2 style={{ color: customTheme.primary }}>Skills</h2>
       </div>
       <div className="skillsContainer">
         <div className="skill--scroll">
@@ -38,7 +36,7 @@ export const Skills = () => {
             {skillsData.map((skill) => (
               <div className="skill--box" key={skill} style={skillBoxStyle}>
                 <img src={skillsImage(skill)} alt={skill} />
-                <h3 style={{ color: theme.tertiary }}>{skill}</h3>
+                <h3 style={{ color: customTheme.tertiary }}>{skill}</h3>
               </div>
             ))}
           </Marquee>
@@ -54,7 +52,7 @@ export const Skills = () => {
             {skillsData2.map((skill) => (
               <div className="skill--box" key={skill} style={skillBoxStyle}>
                 <img src={skillsImage(skill)} alt={skill} />
-                <h3 style={{ color: theme.tertiary }}>{skill}</h3>
+                <h3 style={{ color: customTheme.tertiary }}>{skill}</h3>
               </div>
             ))}
           </Marquee>

@@ -1,18 +1,29 @@
 import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-import { Main } from './pages'
-import { BackToTop } from './components'
+import {
+  Navbar,
+  Footer,
+  Landing,
+  About,
+  Skills,
+  Education,
+  Experience,
+  Contacts,
+  Services,
+} from 'components'
 
-export const App = () => {
+export const Main = () => {
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Main />} />
-        </Routes>
-      </BrowserRouter>
-      <BackToTop />
+      <Navbar />
+      <Landing />
+      <About />
+      <Skills />
+      <Experience />
+      <Education />
+      <Services />
+      <Contacts />
+      <Footer />
     </>
   )
 }
