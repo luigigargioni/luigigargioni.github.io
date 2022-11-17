@@ -56,7 +56,7 @@ export const educationData: EducationType[] = [
     id: 4,
     institution: 'University of Brescia',
     institutionUrl: 'https://www.unibs.it/it',
-    course: 'PhD Candidate Technology for Health',
+    course: 'PhD Student, Technology for Health',
     courseUrl: 'https://tech4health.unibs.it/',
     startYear: '',
     endYear: 'Present',
