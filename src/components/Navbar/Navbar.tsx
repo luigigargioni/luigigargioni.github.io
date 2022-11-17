@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { HashLink } from 'react-router-hash-link'
 import { Fade } from 'react-awesome-reveal'
 import { BiUser } from 'react-icons/bi'
@@ -27,6 +27,11 @@ export const Navbar = () => {
     setOpen(value)
     setDrawerOpen(!drawerOpen)
   }
+
+  useEffect(() => {
+    if (open && drawerOpen) document.body.style.overflowY = 'hidden'
+    if (!open && !drawerOpen) document.body.style.removeProperty('overflow-y')
+  }, [open, drawerOpen])
 
   return (
     <div className="navbar">
