@@ -32,7 +32,8 @@ export const MuiDrawer = styled(Drawer)(({ theme: t }) => ({
     fontWeight: ' normal',
     fontSize: ' 24px',
     background: customTheme.secondary,
-    overflow: 'hidden',
+    // overflow: 'hidden',
+    overflowY: 'auto',
     borderTopRightRadius: '40px',
     borderBottomRightRadius: '40px',
     [t.breakpoints.down('sm')]: {
@@ -60,7 +61,7 @@ export const ClosebtnIcon = styled(AiOutlineClose)(({ theme: t }) => ({
 }))
 
 export const DrawerItem = styled('div')(({ theme: t }) => ({
-  margin: '2rem auto',
+  margin: '1.5rem auto',
   borderRadius: '78.8418px',
   background: customTheme.secondary,
   color: customTheme.primary,
