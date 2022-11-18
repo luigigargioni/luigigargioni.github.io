@@ -100,6 +100,19 @@
   font-family: "var(--primaryFont)", sans-serif;
 }
 
+.language-container {
+  display: flex;
+  margin-top: 1rem;
+  justify-content: flex-start;
+}
+
+.language-flag {
+  border-radius: 50%;
+  width: 2rem;
+  border: 2px solid #eaeaea;
+  cursor: pointer;
+}
+
 @media (max-width: 1100px) {
   .landing--img {
     --img-size: 350px;
@@ -224,6 +237,9 @@
   }
   .lcr-buttonContainer button {
     margin-top: -20%;
+  }
+  .language-container{
+    justify-content: center;
   }
 }
 

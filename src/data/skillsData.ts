@@ -1,5 +1,8 @@
 import { SkillsEnum } from 'components/Skills/skillsImage'
 
+export const skillsTitleEN = 'Skills'
+export const skillsTitleIT = 'Competenze'
+
 export const skillsData: SkillsEnum[] = [
   SkillsEnum.HTML,
   SkillsEnum.CSS,

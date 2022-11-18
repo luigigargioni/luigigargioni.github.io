@@ -1,26 +1,40 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { customTheme } from 'style/theme'
 
-import { servicesData } from 'data/servicesData'
+import {
+  servicesDataEN,
+  servicesDataIT,
+  servicesDescriptionEN,
+  servicesDescriptionIT,
+  servicesTitleEN,
+  servicesTitleIT,
+} from 'data/servicesData'
 
 import './Services.css'
+import { CustomContext } from 'context'
+import { LanguageEnum } from 'utils/language'
 import { SingleService } from './SingleService/SingleService'
 
-export const Services = () =>
-  servicesData.length > 0 ? (
+export const Services = () => {
+  const { lang } = useContext(CustomContext)
+  const servicesTitle =
+    lang === LanguageEnum.EN ? servicesTitleEN : servicesTitleIT
+  const servicesDescription =
+    lang === LanguageEnum.EN ? servicesDescriptionEN : servicesDescriptionIT
+  const servicesData =
+    lang === LanguageEnum.EN ? servicesDataEN : servicesDataIT
+
+  return servicesData.length > 0 ? (
     <div
       className="services"
       id="services"
       style={{ backgroundColor: customTheme.secondary }}
     >
       <div className="services-header">
-        <h1 style={{ color: customTheme.primary }}>Services</h1>
+        <h1 style={{ color: customTheme.primary }}>{servicesTitle}</h1>
       </div>
       <div className="services-body">
-        <p style={{ color: customTheme.tertiary80 }}>
-          These are some of the services I offer. Reach out to me if I can help
-          you with any!
-        </p>
+        <p style={{ color: customTheme.tertiary80 }}>{servicesDescription}</p>
         <div className="services-bodycontainer">
           {servicesData.map((services) => (
             <SingleService
@@ -34,3 +48,4 @@ export const Services = () =>
       </div>
     </div>
   ) : null
+}
