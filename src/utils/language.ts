@@ -5,9 +5,11 @@ export enum LanguageEnum {
   IT = 'it',
 }
 
+const validLanguage = Object.values(LanguageEnum).includes(
+  getFromLocalStorage(LocalStorageKey.LANG) as LanguageEnum
+)
 export const defaultLang =
-  getFromLocalStorage(LocalStorageKey.LANG) &&
-  getFromLocalStorage(LocalStorageKey.LANG) in LanguageEnum
+  getFromLocalStorage(LocalStorageKey.LANG) && validLanguage
     ? getFromLocalStorage(LocalStorageKey.LANG)
     : LanguageEnum.EN
 
