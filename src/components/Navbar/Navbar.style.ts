@@ -88,7 +88,7 @@ export const DrawerItem = styled('div')(({ theme: t }) => ({
 
 export const DrawerLinks = styled('span')(({ theme: t }) => ({
   fontFamily: 'var(--primaryFont)',
-  width: '50%',
+  width: '100%',
   fontSize: '1.3rem',
   fontWeight: 600,
   marginLeft: '1rem',

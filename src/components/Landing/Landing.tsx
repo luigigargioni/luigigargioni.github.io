@@ -8,8 +8,14 @@ import { FaLinkedin, FaGithub, FaStackOverflow } from 'react-icons/fa'
 import './Landing.css'
 import { customTheme } from 'style/theme'
 import { CustomContext } from 'context'
-import { headerData } from 'data/headerData'
+import { headerDataEN, headerDataIT } from 'data/headerData'
 import { socialsData } from 'data/socialsData'
+import ITflag from 'assets/svg/it.svg'
+import ENflag from 'assets/svg/gb.svg'
+import { AiOutlineDownload } from 'react-icons/ai'
+import { FiSend } from 'react-icons/fi'
+import { LocalStorageKey, setToLocalStorage } from 'utils/localStorageUtils'
+import { documentTitleEN, documentTitleIT, LanguageEnum } from 'utils/language'
 
 const ResumeBtn = styled(Button)(({ theme }) => ({
   color: customTheme.primary,
@@ -57,7 +63,8 @@ const ContactBtn = styled(Button)(({ theme }) => ({
 }))
 
 export const Landing = () => {
-  const { drawerOpen } = useContext(CustomContext)
+  const { drawerOpen, setLang, lang } = useContext(CustomContext)
+  const headerData = lang === LanguageEnum.EN ? headerDataEN : headerDataIT
 
   return (
     <div className="landing">
@@ -128,7 +135,43 @@ export const Landing = () => {
             <p style={{ display: 'flex', justifyContent: 'center' }}>
               <i>{headerData.description}</i>
             </p>
-
+            <div className="language-container">
+              <img
+                src={ENflag}
+                alt="EN-flag"
+                className="language-flag"
+                style={{
+                  marginRight: '1rem',
+                  borderColor:
+                    lang === LanguageEnum.EN
+                      ? customTheme.primary
+                      : customTheme.tertiary,
+                }}
+                onClick={() => {
+                  setLang(LanguageEnum.EN)
+                  setToLocalStorage(LocalStorageKey.LANG, LanguageEnum.EN)
+                  document.title = documentTitleEN
+                }}
+                aria-hidden="true"
+              />
+              <img
+                src={ITflag}
+                alt="IT-flag"
+                className="language-flag"
+                style={{
+                  borderColor:
+                    lang === LanguageEnum.IT
+                      ? customTheme.primary
+                      : customTheme.tertiary,
+                }}
+                onClick={() => {
+                  setLang(LanguageEnum.IT)
+                  setToLocalStorage(LocalStorageKey.LANG, LanguageEnum.IT)
+                  document.title = documentTitleIT
+                }}
+                aria-hidden="true"
+              />
+            </div>
             <div className="lcr-buttonContainer">
               {headerData.resumePdf && (
                 <a
@@ -137,11 +180,15 @@ export const Landing = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <ResumeBtn>Download CV</ResumeBtn>
+                  <ResumeBtn startIcon={<AiOutlineDownload />}>
+                    {headerData.resumeBtn}
+                  </ResumeBtn>
                 </a>
               )}
               <HashLink to="/#contacts" smooth>
-                <ContactBtn>Contact</ContactBtn>
+                <ContactBtn startIcon={<FiSend />}>
+                  {headerData.contactBtn}
+                </ContactBtn>
               </HashLink>
             </div>
           </div>
