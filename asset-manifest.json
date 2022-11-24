@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.3f0ce642.css",
-    "main.js": "/static/js/main.8fa8039b.js",
+    "main.js": "/static/js/main.504f20ef.js",
     "static/media/CV_LUIGI_GARGIONI_EN.pdf": "/static/media/CV_LUIGI_GARGIONI_EN.49301152ed671c38648a.pdf",
     "static/media/CV_LUIGI_GARGIONI_IT.pdf": "/static/media/CV_LUIGI_GARGIONI_IT.04739c929ad4e5fac529.pdf",
     "static/media/expGreen.svg": "/static/media/expGreen.dffa1cc66a55ae11be49b61753f4c221.svg",
@@ -21,6 +21,7 @@
     "static/media/electron.svg": "/static/media/electron.d384e8b4d71f97419cb801e78811b97b.svg",
     "static/media/python.svg": "/static/media/python.cf32ad96e2819085c41578fb9989a766.svg",
     "static/media/typescript.svg": "/static/media/typescript.31f8fee8ebb12b8547b26c234bcd839f.svg",
+    "static/media/gitlab.svg": "/static/media/gitlab.83df9efbb924c0491e38a75c2a39ca1b.svg",
     "static/media/webpack.svg": "/static/media/webpack.b460dec8736fcf92a8c77006b62f825a.svg",
     "static/media/opencv.svg": "/static/media/opencv.0f128460059cd1ecc2bb285567fb9ba5.svg",
     "static/media/bootstrap.svg": "/static/media/bootstrap.19a2d2ff74985cbf49a1aed7fb4d5401.svg",
@@ -41,6 +42,6 @@
   },
   "entrypoints": [
     "static/css/main.3f0ce642.css",
-    "static/js/main.8fa8039b.js"
+    "static/js/main.504f20ef.js"
   ]
 }
