@@ -17,7 +17,7 @@ export const skillsData: SkillsEnum[] = [
   SkillsEnum.CYPRESS,
   SkillsEnum.ANTDESIGN,
   SkillsEnum.MATERIALUI,
-  SkillsEnum.BOOTSTRAP,
+  // SkillsEnum.BOOTSTRAP,
 ]
 
 export const skillsData2: SkillsEnum[] = [
@@ -27,14 +27,15 @@ export const skillsData2: SkillsEnum[] = [
   SkillsEnum.SWAGGER,
   SkillsEnum.PYTHON,
   SkillsEnum.DJANGO,
-  SkillsEnum.NUMPY,
+  // SkillsEnum.NUMPY,
   SkillsEnum.OPENCV,
   SkillsEnum.DOCKER,
   SkillsEnum.GIT,
-  SkillsEnum.MYSQL,
-  SkillsEnum.MARIADB,
-  SkillsEnum.ORACLE,
-  SkillsEnum.SQLLITE,
-  SkillsEnum.SQLSERVER,
+  SkillsEnum.GITLAB,
+  // SkillsEnum.MYSQL,
+  // SkillsEnum.MARIADB,
+  // SkillsEnum.ORACLE,
+  // SkillsEnum.SQLLITE,
+  // SkillsEnum.SQLSERVER,
   SkillsEnum.VISUALBASIC,
 ]

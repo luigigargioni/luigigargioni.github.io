@@ -9,6 +9,7 @@ import mysql from 'assets/skills/mysql.png'
 import python from 'assets/skills/python.svg'
 import django from 'assets/skills/django.svg'
 import git from 'assets/skills/git.svg'
+import gitlab from 'assets/skills/gitlab.svg'
 import materialui from 'assets/skills/materialui.svg'
 import numpy from 'assets/skills/numpy.svg'
 import opencv from 'assets/skills/opencv.svg'
@@ -52,6 +53,7 @@ export enum SkillsEnum {
   OPENCV = 'OpenCV',
   DOCKER = 'Docker',
   GIT = 'Git',
+  GITLAB = 'GitLab',
   MYSQL = 'MySQL',
   ORACLE = 'Oracle DB',
   SQLLITE = 'SQL Lite',
@@ -124,6 +126,8 @@ export const skillsImage = (skill: SkillsEnum) => {
       return materialui
     case SkillsEnum.GIT:
       return git
+    case SkillsEnum.GITLAB:
+      return gitlab
     default:
       return undefined
   }
