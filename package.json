@@ -12,8 +12,7 @@
     "build-maps": "set \"GENERATE_SOURCEMAP=true\" && npm run build",
     "analyze": "npm run build-maps && source-map-explorer 'build/static/js/*.js'",
     "predeploy": "npm run build",
-    "deploy": "rm -rf node_modules/.cache/gh-pages & gh-pages -b gh-pages -d build",
-    "auto-deploy": "npm run build & gh-pages -b gh-pages -d build"
+    "deploy": "rm -rf node_modules/.cache/gh-pages & gh-pages -b gh-pages -d build"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
