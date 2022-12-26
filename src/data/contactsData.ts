@@ -7,14 +7,17 @@ type ContactsType = {
   address: string
 }
 
+export const contactsDataEmail = 'luigi.gargioni@gmail.com'
+export const contactsDataPhone = '+39 3343404482'
+
 export const contactsDataEN: ContactsType = {
-  email: 'luigi.gargioni@gmail.com',
-  phone: '+39 3343404482',
+  email: contactsDataEmail,
+  phone: contactsDataPhone,
   address: 'Gottolengo, Brescia, Italy',
 }
 
 export const contactsDataIT: ContactsType = {
-  email: 'luigi.gargioni@gmail.com',
-  phone: '+39 3343404482',
+  email: contactsDataEmail,
+  phone: contactsDataPhone,
   address: 'Gottolengo, Brescia, Italia',
 }
