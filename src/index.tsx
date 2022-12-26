@@ -2,7 +2,7 @@ import React from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-import { Main } from 'App'
+import { App } from 'App'
 import { BackToTop } from 'components'
 import { CustomContextProvider } from 'context'
 
@@ -14,7 +14,7 @@ root.render(
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route path="/" element={<App />} />
         </Routes>
       </BrowserRouter>
       <BackToTop />

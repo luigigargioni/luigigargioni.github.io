@@ -12,7 +12,7 @@ import {
   Services,
 } from 'components'
 
-export const Main = () => {
+export const App = () => {
   return (
     <>
       <Navbar />
