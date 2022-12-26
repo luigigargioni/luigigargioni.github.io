@@ -14,7 +14,7 @@ describe('App tests', () => {
         <App />
       </Router>
     )
-    expect(screen.getByText('piero')).toBeInTheDocument()
+    expect(screen.getByText(contactsDataEmail)).toBeInTheDocument()
     expect(screen.getByText(contactsDataPhone)).toBeInTheDocument()
   })
 })
