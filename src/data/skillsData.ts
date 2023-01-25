@@ -25,6 +25,7 @@ export const skillsData2: SkillsEnum[] = [
   SkillsEnum.EXPRESS,
   SkillsEnum.SEQUELIZE,
   SkillsEnum.SWAGGER,
+  // SkillsEnum.GO,
   SkillsEnum.PYTHON,
   SkillsEnum.DJANGO,
   // SkillsEnum.NUMPY,
