@@ -29,6 +29,7 @@ import visualbasic from 'assets/skills/visualbasic.svg'
 import electron from 'assets/skills/electron.svg'
 import mariadb from 'assets/skills/mariadb.svg'
 import swagger from 'assets/skills/swagger.svg'
+import go from 'assets/skills/go.svg'
 
 export enum SkillsEnum {
   HTML = 'HTML',
@@ -62,6 +63,7 @@ export enum SkillsEnum {
   ELECTRON = 'Electron',
   MARIADB = 'MariaDB',
   SWAGGER = 'Swagger',
+  GO = 'Go',
 }
 
 export const skillsImage = (skill: SkillsEnum) => {
@@ -128,6 +130,8 @@ export const skillsImage = (skill: SkillsEnum) => {
       return git
     case SkillsEnum.GITLAB:
       return gitlab
+    case SkillsEnum.GO:
+      return go
     default:
       return undefined
   }
