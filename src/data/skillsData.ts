@@ -9,6 +9,7 @@ export const skillsData: SkillsEnum[] = [
   SkillsEnum.JAVASCRIPT,
   SkillsEnum.TYPESCRIPT,
   SkillsEnum.REACT,
+  // SkillsEnum.VUE,
   SkillsEnum.WEBPACK,
   SkillsEnum.REDUX,
   SkillsEnum.ELECTRON,
@@ -23,6 +24,7 @@ export const skillsData: SkillsEnum[] = [
 export const skillsData2: SkillsEnum[] = [
   SkillsEnum.NODEJS,
   SkillsEnum.EXPRESS,
+  // SkillsEnum.MONGODB,
   SkillsEnum.SEQUELIZE,
   SkillsEnum.SWAGGER,
   // SkillsEnum.GO,
