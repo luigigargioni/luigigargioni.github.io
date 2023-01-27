@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.3f0ce642.css",
-    "main.js": "/static/js/main.0035845c.js",
+    "main.js": "/static/js/main.a8ba5b62.js",
     "static/media/CV_LUIGI_GARGIONI_IT.pdf": "/static/media/CV_LUIGI_GARGIONI_IT.82b481117d8204a01eff.pdf",
     "static/media/CV_LUIGI_GARGIONI_EN.pdf": "/static/media/CV_LUIGI_GARGIONI_EN.4ef593c07f48d9867fb3.pdf",
     "static/media/expGreen.svg": "/static/media/expGreen.dffa1cc66a55ae11be49b61753f4c221.svg",
@@ -30,6 +30,7 @@
     "static/media/git.svg": "/static/media/git.a0b8447eefa4cd939642f1017ee1c962.svg",
     "static/media/numpy.svg": "/static/media/numpy.5bdfa40b32496733d9705274ccad0224.svg",
     "static/media/eduImgWhite.svg": "/static/media/eduImgWhite.ae822784fcd9cd22724d630b4218b292.svg",
+    "static/media/mongodb.svg": "/static/media/mongodb.1aca075d5cce0819fea7ea0902d94ce4.svg",
     "static/media/javascript.svg": "/static/media/javascript.e9360603cdd412c8f9acb925313bc3f3.svg",
     "static/media/expImgWhite.svg": "/static/media/expImgWhite.0b896d9c7a26ec4ee16cf4e131c9902e.svg",
     "static/media/css.svg": "/static/media/css.43b6f4bdbc0f36b9f2dd15c6ebbcea15.svg",
@@ -38,11 +39,12 @@
     "static/media/gb.svg": "/static/media/gb.ad3aa4f8661cd353439d28fecaefc345.svg",
     "static/media/materialui.svg": "/static/media/materialui.518da2c04cdbcf8b4ca3e2ac554c38e9.svg",
     "static/media/visualbasic.svg": "/static/media/visualbasic.bf694f6526d78023011f1906cc8387cc.svg",
+    "static/media/vue.svg": "/static/media/vue.f1fd23be1db9361fbcd81511fe862b08.svg",
     "static/media/it.svg": "/static/media/it.febcc1b18059405d2a1b169a335888f5.svg",
     "static/media/oracle.svg": "/static/media/oracle.9e0f17cdcef2c1137d6d0b0ae8a5f6a9.svg"
   },
   "entrypoints": [
     "static/css/main.3f0ce642.css",
-    "static/js/main.0035845c.js"
+    "static/js/main.a8ba5b62.js"
   ]
 }
