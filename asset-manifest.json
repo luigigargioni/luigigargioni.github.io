@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.3f0ce642.css",
-    "main.js": "/static/js/main.8591bff4.js",
+    "main.js": "/static/js/main.6a84f7b8.js",
     "static/media/CV_LUIGI_GARGIONI_IT.pdf": "/static/media/CV_LUIGI_GARGIONI_IT.76982d2faae1a014d13b.pdf",
     "static/media/CV_LUIGI_GARGIONI_EN.pdf": "/static/media/CV_LUIGI_GARGIONI_EN.cbef82feedb062d9ac11.pdf",
     "static/media/expGreen.svg": "/static/media/expGreen.dffa1cc66a55ae11be49b61753f4c221.svg",
@@ -45,6 +45,6 @@
   },
   "entrypoints": [
     "static/css/main.3f0ce642.css",
-    "static/js/main.8591bff4.js"
+    "static/js/main.6a84f7b8.js"
   ]
 }
