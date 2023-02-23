@@ -32,6 +32,7 @@ import swagger from 'assets/skills/swagger.svg'
 import go from 'assets/skills/go.svg'
 import vue from 'assets/skills/vue.svg'
 import mongodb from 'assets/skills/mongodb.svg'
+import php from 'assets/skills/php.svg'
 
 export enum SkillsEnum {
   HTML = 'HTML',
@@ -68,6 +69,7 @@ export enum SkillsEnum {
   GO = 'Go',
   VUE = 'Vue.js',
   MONGODB = 'MongoDB',
+  PHP = 'PHP',
 }
 
 export const skillsImage = (skill: SkillsEnum) => {
@@ -140,6 +142,8 @@ export const skillsImage = (skill: SkillsEnum) => {
       return vue
     case SkillsEnum.MONGODB:
       return mongodb
+    case SkillsEnum.PHP:
+      return php
     default:
       return undefined
   }
