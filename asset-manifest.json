@@ -1,13 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.3f0ce642.css",
-    "main.js": "/static/js/main.6a84f7b8.js",
+    "main.js": "/static/js/main.616a9b5d.js",
     "static/media/CV_LUIGI_GARGIONI_IT.pdf": "/static/media/CV_LUIGI_GARGIONI_IT.76982d2faae1a014d13b.pdf",
     "static/media/CV_LUIGI_GARGIONI_EN.pdf": "/static/media/CV_LUIGI_GARGIONI_EN.cbef82feedb062d9ac11.pdf",
     "static/media/expGreen.svg": "/static/media/expGreen.dffa1cc66a55ae11be49b61753f4c221.svg",
     "static/media/contactsGreen.svg": "/static/media/contactsGreen.808a7bb5da2c3cc90faa6cc86e5e2a44.svg",
     "static/media/profile.jpg": "/static/media/profile.fc30da4599d44c584d73.jpg",
     "static/media/greenTheme-boy.svg": "/static/media/greenTheme-boy.de76babb32ab41ec97d50398eddafff8.svg",
+    "static/media/php.svg": "/static/media/php.8e88e9c5b8a1550ee278e91f3b5958ef.svg",
     "static/media/eduGreen.svg": "/static/media/eduGreen.7d2ee27248c9c15b20216aa2368078d8.svg",
     "static/media/swagger.svg": "/static/media/swagger.136a841e6bb4ee300fae18334c39aebf.svg",
     "static/media/mariadb.svg": "/static/media/mariadb.8752fb8d6b733a04886666adb8f2156e.svg",
@@ -45,6 +46,6 @@
   },
   "entrypoints": [
     "static/css/main.3f0ce642.css",
-    "static/js/main.6a84f7b8.js"
+    "static/js/main.616a9b5d.js"
   ]
 }
