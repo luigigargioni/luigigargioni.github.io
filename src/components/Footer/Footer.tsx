@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import './Footer.css'
 import { customTheme } from 'style/theme'
 import { headerDataEN, headerDataIT } from 'data/headerData'
-import { AiOutlineCopyrightCircle } from 'react-icons/ai'
+import { AiOutlineCopyrightCircle, AiOutlineHighlight } from 'react-icons/ai'
 import { CustomContext } from 'context'
 import { LanguageEnum } from 'utils/language'
 
@@ -21,6 +21,14 @@ export const Footer = () => {
       >
         <AiOutlineCopyrightCircle style={{ marginRight: '0.5rem' }} />{' '}
         {headerData.name} {new Date().getFullYear()}
+        <a
+          href="https://reactjsexample.com/developer-portfolio-built-with-the-help-of-a-react-template/"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Template"
+        >
+          <AiOutlineHighlight style={{ marginLeft: '0.5rem' }} />
+        </a>
       </p>
     </div>
   )
