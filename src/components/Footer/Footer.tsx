@@ -21,6 +21,7 @@ export const Footer = () => {
       >
         <AiOutlineCopyrightCircle style={{ marginRight: '0.5rem' }} />{' '}
         {headerData.name} {new Date().getFullYear()}
+        {' - '}
         <a
           href="https://reactjsexample.com/developer-portfolio-built-with-the-help-of-a-react-template/"
           target="_blank"
@@ -28,6 +29,7 @@ export const Footer = () => {
           title="Template"
         >
           <AiOutlineHighlight style={{ marginLeft: '0.5rem' }} />
+          {' Template'}
         </a>
       </p>
     </div>
