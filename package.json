@@ -9,17 +9,12 @@
     "serve": "vite preview",
     "lint": "eslint . --ext .ts,.tsx",
     "lintfix": "eslint . --ext .ts,.tsx --fix",
-    "pretty": "prettier --write **/*.{ts,tsx}",
-    "build-maps": "set \"GENERATE_SOURCEMAP=true\" && npm run build",
-    "analyze": "npm run build-maps && source-map-explorer 'build/static/js/*.js'"
+    "pretty": "prettier --write **/*.{ts,tsx}"
   },
   "dependencies": {
     "@emotion/react": "^11.10.8",
     "@emotion/styled": "^11.10.8",
     "@mui/material": "^5.12.2",
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^14.0.0",
-    "intersection-observer": "^0.12.2",
     "react": "^18.2.0",
     "react-awesome-reveal": "^4.2.3",
     "react-dom": "^18.2.0",
@@ -30,7 +25,6 @@
     "typescript": "^5.0.4"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.1",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.1",
     "@types/react-router-hash-link": "^2.4.6",
@@ -46,7 +40,6 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "prettier": "^2.8.8",
-    "source-map-explorer": "^2.5.3",
     "vite": "^4.3.3",
     "vite-plugin-eslint": "^1.8.1",
     "vite-tsconfig-paths": "^4.2.0"
