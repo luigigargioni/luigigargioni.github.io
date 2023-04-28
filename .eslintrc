@@ -44,6 +44,7 @@
     "no-shadow": "off",
     "@typescript-eslint/no-shadow": "error",
     "no-restricted-globals": "off",
+    "import/no-extraneous-dependencies": "off",
     "import/extensions": [
       "off",
       "ignorePackages",
