@@ -27,6 +27,7 @@ export const skillsData2: SkillsEnum[] = [
   SkillsEnum.EXPRESS,
   // SkillsEnum.MONGODB,
   SkillsEnum.SEQUELIZE,
+  SkillsEnum.POSTMAN,
   SkillsEnum.SWAGGER,
   // SkillsEnum.GO,
   SkillsEnum.PYTHON,
