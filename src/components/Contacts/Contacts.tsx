@@ -1,5 +1,10 @@
 import React, { useContext } from 'react'
-import { FaLinkedinIn, FaGithub, FaStackOverflow } from 'react-icons/fa'
+import {
+  FaLinkedinIn,
+  FaGithub,
+  FaStackOverflow,
+  FaMoneyCheck,
+} from 'react-icons/fa'
 import { FiPhone, FiAtSign } from 'react-icons/fi'
 import { HiOutlineLocationMarker } from 'react-icons/hi'
 
@@ -68,6 +73,17 @@ export const Contacts = () => {
               <p style={{ color: customTheme.tertiary }}>
                 {contactsData.address}
               </p>
+            </a>
+            <a
+              href="https://telematici.agenziaentrate.gov.it/VerificaPIVA/Scegli.do?parameter=verificaPiva"
+              target="_blank"
+              className="personal-details"
+              rel="noreferrer"
+            >
+              <DetailsIcon>
+                <FaMoneyCheck />
+              </DetailsIcon>
+              <p style={{ color: customTheme.tertiary }}>{contactsData.iva}</p>
             </a>
 
             <div className="socialmedia-icons">

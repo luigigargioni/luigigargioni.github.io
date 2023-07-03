@@ -33,6 +33,8 @@ import go from 'assets/skills/go.svg'
 import vue from 'assets/skills/vue.svg'
 import mongodb from 'assets/skills/mongodb.svg'
 import php from 'assets/skills/php.svg'
+import vitejs from 'assets/skills/vitejs.svg'
+import poetry from 'assets/skills/poetry.svg'
 
 export enum SkillsEnum {
   HTML = 'HTML',
@@ -70,6 +72,8 @@ export enum SkillsEnum {
   VUE = 'Vue.js',
   MONGODB = 'MongoDB',
   PHP = 'PHP',
+  VITEJS = 'Vite.js',
+  POETRY = 'Poetry',
 }
 
 export const skillsImage = (skill: SkillsEnum) => {
@@ -144,6 +148,10 @@ export const skillsImage = (skill: SkillsEnum) => {
       return mongodb
     case SkillsEnum.PHP:
       return php
+    case SkillsEnum.VITEJS:
+      return vitejs
+    case SkillsEnum.POETRY:
+      return poetry
     default:
       return undefined
   }
