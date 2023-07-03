@@ -44,7 +44,7 @@ export enum SkillsEnum {
   REACT = 'React',
   WEBPACK = 'Webpack',
   REDUX = 'Redux',
-  NODEJS = 'Node.js',
+  NODEJS = 'Node',
   EXPRESS = 'Express',
   STYLEDCOMPONENTS = 'CSS-in-JS',
   CYPRESS = 'Cypress',
@@ -69,10 +69,10 @@ export enum SkillsEnum {
   MARIADB = 'MariaDB',
   SWAGGER = 'Swagger',
   GO = 'Go',
-  VUE = 'Vue.js',
+  VUE = 'Vue',
   MONGODB = 'MongoDB',
   PHP = 'PHP',
-  VITEJS = 'Vite.js',
+  VITEJS = 'Vite',
   POETRY = 'Poetry',
 }
 
