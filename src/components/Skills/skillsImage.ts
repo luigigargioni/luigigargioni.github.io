@@ -36,6 +36,7 @@ import php from 'assets/skills/php.svg'
 import vitejs from 'assets/skills/vitejs.svg'
 import poetry from 'assets/skills/poetry.svg'
 import postman from 'assets/skills/postman.svg'
+import strapi from 'assets/skills/strapi.svg'
 
 export enum SkillsEnum {
   HTML = 'HTML',
@@ -76,6 +77,7 @@ export enum SkillsEnum {
   VITEJS = 'Vite',
   POETRY = 'Poetry',
   POSTMAN = 'Postman',
+  STRAPI = 'Strapi',
 }
 
 export const skillsImage = (skill: SkillsEnum) => {
@@ -156,6 +158,8 @@ export const skillsImage = (skill: SkillsEnum) => {
       return poetry
     case SkillsEnum.POSTMAN:
       return postman
+    case SkillsEnum.STRAPI:
+      return strapi
     default:
       return undefined
   }

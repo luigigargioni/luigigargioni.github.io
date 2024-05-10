@@ -14,13 +14,13 @@ export const contactsDataPhone = '***REMOVED***'
 export const contactsDataEN: ContactsType = {
   email: contactsDataEmail,
   phone: contactsDataPhone,
-  address: 'Gottolengo, Brescia, Italy',
+  address: 'Brescia, Italy',
   iva: 'VAT number: ***REMOVED***',
 }
 
 export const contactsDataIT: ContactsType = {
   email: contactsDataEmail,
   phone: contactsDataPhone,
-  address: 'Gottolengo, Brescia, Italia',
+  address: 'Brescia, Italia',
   iva: 'Partita IVA: ***REMOVED***',
 }

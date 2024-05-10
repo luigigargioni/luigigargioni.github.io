@@ -3,9 +3,9 @@ import {
   FaLinkedinIn,
   FaGithub,
   FaStackOverflow,
-  FaMoneyCheck,
+  /* FaMoneyCheck, */
 } from 'react-icons/fa'
-import { FiPhone, FiAtSign } from 'react-icons/fi'
+import { /* FiPhone, */ FiAtSign } from 'react-icons/fi'
 import { HiOutlineLocationMarker } from 'react-icons/hi'
 
 import { IoMdSchool } from 'react-icons/io'
@@ -53,16 +53,16 @@ export const Contacts = () => {
                 {contactsData.email}
               </p>
             </a>
-            <a href={`tel:${contactsData.phone}`} className="personal-details">
+            {/* <a href={`tel:${contactsData.phone}`} className="personal-details">
               <DetailsIcon>
                 <FiPhone />
               </DetailsIcon>
               <p style={{ color: customTheme.tertiary }}>
                 {contactsData.phone}
               </p>
-            </a>
+  </a> */}
             <a
-              href="https://goo.gl/maps/zeqVc8fyGjZi5yUMA"
+              href="https://maps.app.goo.gl/BgjmGpkdn1vyqh6x7"
               target="_blank"
               className="personal-details"
               rel="noreferrer"
@@ -74,7 +74,7 @@ export const Contacts = () => {
                 {contactsData.address}
               </p>
             </a>
-            <a
+            {/* <a
               href="https://telematici.agenziaentrate.gov.it/VerificaPIVA/Scegli.do?parameter=verificaPiva"
               target="_blank"
               className="personal-details"
@@ -84,7 +84,7 @@ export const Contacts = () => {
                 <FaMoneyCheck />
               </DetailsIcon>
               <p style={{ color: customTheme.tertiary }}>{contactsData.iva}</p>
-            </a>
+  </a> */}
 
             <div className="socialmedia-icons">
               {socialsData.github && (
