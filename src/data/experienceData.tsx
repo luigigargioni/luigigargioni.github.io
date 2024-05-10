@@ -65,6 +65,21 @@ export const experienceDataEN: ExperienceType[] = [
     endYear: 'Present',
     description: <p>Telemedicine and Digitization of Health Services</p>,
   },
+  {
+    id: 4,
+    company: 'Freelance',
+    companyUrl: '',
+    jobtitle: 'Web Developer & IT Solutions',
+    startYear: '07/2023',
+    endYear: 'Present',
+    description: (
+      <p>
+        Digital solutions tailored to customers&apos; needs, with expertise in
+        the design, development and maintenance of web applications and
+        information systems
+      </p>
+    ),
+  },
 ]
 
 export const experienceDataIT: ExperienceType[] = [
@@ -116,5 +131,20 @@ export const experienceDataIT: ExperienceType[] = [
     startYear: '12/2022',
     endYear: 'Attuale',
     description: <p>Telemedicina e Digitalizzazione dei Servizi Sanitari</p>,
+  },
+  {
+    id: 4,
+    company: 'Libero Professionista',
+    companyUrl: '',
+    jobtitle: 'Sviluppo Web & Soluzioni IT',
+    startYear: '07/2023',
+    endYear: 'Attuale',
+    description: (
+      <p>
+        Soluzioni digitali su misura per le esigenze dei clienti, con esperienza
+        nella progettazione, sviluppo e manutenzione di applicazioni web e
+        sistemi informatici
+      </p>
+    ),
   },
 ]

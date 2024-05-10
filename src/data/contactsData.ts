@@ -14,13 +14,13 @@ export const contactsDataPhone = '+39 3343404482'
 export const contactsDataEN: ContactsType = {
   email: contactsDataEmail,
   phone: contactsDataPhone,
-  address: 'Gottolengo, Brescia, Italy',
+  address: 'Brescia, Italy',
   iva: 'VAT number: 04492100989',
 }
 
 export const contactsDataIT: ContactsType = {
   email: contactsDataEmail,
   phone: contactsDataPhone,
-  address: 'Gottolengo, Brescia, Italia',
+  address: 'Brescia, Italia',
   iva: 'Partita IVA: 04492100989',
 }
