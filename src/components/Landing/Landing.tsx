@@ -3,7 +3,12 @@ import { Button } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import { HashLink } from 'react-router-hash-link'
 import { IoMdSchool } from 'react-icons/io'
-import { FaLinkedin, FaGithub, FaStackOverflow } from 'react-icons/fa'
+import {
+  FaLinkedin,
+  FaGithub,
+  FaStackOverflow,
+  FaResearchgate,
+} from 'react-icons/fa'
 
 import './Landing.css'
 import { customTheme } from 'style/theme'
@@ -83,6 +88,28 @@ export const Landing = () => {
                 />
               </a>
             )}
+            {socialsData.scholar && (
+              <a href={socialsData.scholar} target="_blank" rel="noreferrer">
+                <IoMdSchool
+                  className="landing--social"
+                  style={{ color: customTheme.secondary }}
+                  aria-label="GoogleScholar"
+                />
+              </a>
+            )}
+            {socialsData.researchGate && (
+              <a
+                href={socialsData.researchGate}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaResearchgate
+                  className="landing--social"
+                  style={{ color: customTheme.secondary }}
+                  aria-label="ResearchGate"
+                />
+              </a>
+            )}
             {socialsData.github && (
               <a href={socialsData.github} target="_blank" rel="noreferrer">
                 <FaGithub
@@ -102,15 +129,6 @@ export const Landing = () => {
                   className="landing--social"
                   style={{ color: customTheme.secondary }}
                   aria-label="StackOverflow"
-                />
-              </a>
-            )}
-            {socialsData.scholar && (
-              <a href={socialsData.scholar} target="_blank" rel="noreferrer">
-                <IoMdSchool
-                  className="landing--social"
-                  style={{ color: customTheme.secondary }}
-                  aria-label="GoogleScholar"
                 />
               </a>
             )}

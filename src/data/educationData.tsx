@@ -1,4 +1,5 @@
 import React from 'react'
+import { socialsData } from './socialsData'
 
 export const educationTitleEN = 'Education'
 export const educationTitleIT = 'Formazione'
@@ -63,7 +64,30 @@ export const educationDataEN: EducationType[] = [
     courseUrl: 'https://tech4health.unibs.it/',
     startYear: '',
     endYear: 'Present',
-    description: null,
+    description: (
+      <p>
+        Human-Robot Interaction and Artificial Intelligence. Find out more about
+        my research on my{' '}
+        <a href={socialsData.scholar} target="_blank" rel="noreferrer">
+          <i>
+            <u>Google Scholar</u>
+          </i>
+        </a>{' '}
+        profile
+      </p>
+    ),
+  },
+  {
+    id: 5,
+    institution: 'LAAS-CNRS',
+    institutionUrl: 'https://www.laas.fr/en/',
+    course: 'Visiting PhD Student, Robotics and Interaction',
+    courseUrl: 'https://www.laas.fr/en/teams/ris/',
+    startYear: '',
+    endYear: 'Present',
+    description: (
+      <p>Theory of Mind and Large Language Models in Human-Robot Interaction</p>
+    ),
   },
 ]
 
@@ -116,6 +140,30 @@ export const educationDataIT: EducationType[] = [
     courseUrl: 'https://tech4health.unibs.it/',
     startYear: '',
     endYear: 'Attuale',
-    description: null,
+    description: (
+      <p>
+        Interazione Uomo-Robot ed Intelligenza Artificiale. Scopri di più sulla
+        mia ricerca sul mio profilo{' '}
+        <a href={socialsData.scholar} target="_blank" rel="noreferrer">
+          <i>
+            <u>Google Scholar</u>
+          </i>
+        </a>
+      </p>
+    ),
+  },
+  {
+    id: 5,
+    institution: 'LAAS-CNRS',
+    institutionUrl: 'https://www.laas.fr/en/',
+    course: 'Dottorando in visita, Robotics and Interaction',
+    courseUrl: 'https://www.laas.fr/en/teams/ris/',
+    startYear: '',
+    endYear: 'Attuale',
+    description: (
+      <p>
+        Teoria della Mente e Large Language Models in Interazione Uomo-Robot
+      </p>
+    ),
   },
 ]

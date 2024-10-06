@@ -4,6 +4,7 @@ import {
   FaGithub,
   FaStackOverflow,
   /* FaMoneyCheck, */
+  FaResearchgate,
 } from 'react-icons/fa'
 import { /* FiPhone, */ FiAtSign } from 'react-icons/fi'
 import { HiOutlineLocationMarker } from 'react-icons/hi'
@@ -87,15 +88,6 @@ export const Contacts = () => {
   </a> */}
 
             <div className="socialmedia-icons">
-              {socialsData.github && (
-                <SocialIcon
-                  href={socialsData.github}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <FaGithub aria-label="GitHub" />
-                </SocialIcon>
-              )}
               {socialsData.linkedIn && (
                 <SocialIcon
                   href={socialsData.linkedIn}
@@ -105,6 +97,33 @@ export const Contacts = () => {
                   <FaLinkedinIn aria-label="LinkedIn" />
                 </SocialIcon>
               )}
+              {socialsData.scholar && (
+                <SocialIcon
+                  href={socialsData.scholar}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <IoMdSchool aria-label="Google Scholar" />
+                </SocialIcon>
+              )}
+              {socialsData.researchGate && (
+                <SocialIcon
+                  href={socialsData.researchGate}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FaResearchgate aria-label="Research Gate" />
+                </SocialIcon>
+              )}
+              {socialsData.github && (
+                <SocialIcon
+                  href={socialsData.github}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <FaGithub aria-label="GitHub" />
+                </SocialIcon>
+              )}
               {socialsData.stackOverflow && (
                 <SocialIcon
                   href={socialsData.stackOverflow}
@@ -112,15 +131,6 @@ export const Contacts = () => {
                   rel="noreferrer"
                 >
                   <FaStackOverflow aria-label="Stack Overflow" />
-                </SocialIcon>
-              )}
-              {socialsData.scholar && (
-                <SocialIcon
-                  href={socialsData.scholar}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <IoMdSchool aria-label="Stack Overflow" />
                 </SocialIcon>
               )}
             </div>

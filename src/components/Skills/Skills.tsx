@@ -10,7 +10,7 @@ import {
   skillsTitleEN,
   skillsTitleIT,
 } from 'data/skillsData'
-import { skillsImage } from 'components/Skills/skillsImage'
+import { SkillsEnum, skillsImage } from 'components/Skills/skillsImage'
 import { CustomContext } from 'context'
 import { LanguageEnum } from 'utils/language'
 
@@ -18,10 +18,13 @@ export const Skills = () => {
   const { lang } = useContext(CustomContext)
   const skillsTitle = lang === LanguageEnum.EN ? skillsTitleEN : skillsTitleIT
 
-  const skillBoxStyle = {
+  const skillBoxStyle = () => ({
     backgroundColor: customTheme.secondary,
     boxShadow: `0px 0px 30px ${customTheme.primary30}`,
-  }
+  })
+
+  const getImageClass = (skill: SkillsEnum) =>
+    skill === SkillsEnum.ROS ? 'ros-img' : ''
 
   return (
     <div
@@ -44,8 +47,12 @@ export const Skills = () => {
             direction="left"
           >
             {skillsData.map((skill) => (
-              <div className="skill--box" key={skill} style={skillBoxStyle}>
-                <img src={skillsImage(skill)} alt={skill} />
+              <div className="skill--box" key={skill} style={skillBoxStyle()}>
+                <img
+                  src={skillsImage(skill)}
+                  alt={skill}
+                  className={getImageClass(skill)}
+                />
                 <h3 style={{ color: customTheme.tertiary }}>{skill}</h3>
               </div>
             ))}
@@ -60,8 +67,12 @@ export const Skills = () => {
             direction="right"
           >
             {skillsData2.map((skill) => (
-              <div className="skill--box" key={skill} style={skillBoxStyle}>
-                <img src={skillsImage(skill)} alt={skill} />
+              <div className="skill--box" key={skill} style={skillBoxStyle()}>
+                <img
+                  src={skillsImage(skill)}
+                  alt={skill}
+                  className={getImageClass(skill)}
+                />
                 <h3 style={{ color: customTheme.tertiary }}>{skill}</h3>
               </div>
             ))}

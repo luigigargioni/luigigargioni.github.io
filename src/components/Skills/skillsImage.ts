@@ -37,6 +37,12 @@ import vitejs from 'assets/skills/vitejs.svg'
 import poetry from 'assets/skills/poetry.svg'
 import postman from 'assets/skills/postman.svg'
 import strapi from 'assets/skills/strapi.svg'
+import ros from 'assets/skills/ros.png'
+import gazebo from 'assets/skills/gazebo.svg'
+import rviz from 'assets/skills/rviz.png'
+import ollama from 'assets/skills/ollama.png'
+import langchain from 'assets/skills/langchain.png'
+import openai from 'assets/skills/openai.svg'
 
 export enum SkillsEnum {
   HTML = 'HTML',
@@ -78,6 +84,12 @@ export enum SkillsEnum {
   POETRY = 'Poetry',
   POSTMAN = 'Postman',
   STRAPI = 'Strapi',
+  ROS = 'ROS 2',
+  GAZEBO = 'Gazebo',
+  RVIZ = 'RViz',
+  OLLAMA = 'Ollama',
+  LANGCHAIN = 'LangChain',
+  OPENAI = 'OpenAI',
 }
 
 export const skillsImage = (skill: SkillsEnum) => {
@@ -160,6 +172,18 @@ export const skillsImage = (skill: SkillsEnum) => {
       return postman
     case SkillsEnum.STRAPI:
       return strapi
+    case SkillsEnum.ROS:
+      return ros
+    case SkillsEnum.GAZEBO:
+      return gazebo
+    case SkillsEnum.RVIZ:
+      return rviz
+    case SkillsEnum.OLLAMA:
+      return ollama
+    case SkillsEnum.LANGCHAIN:
+      return langchain
+    case SkillsEnum.OPENAI:
+      return openai
     default:
       return undefined
   }
