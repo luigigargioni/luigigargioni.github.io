@@ -22,17 +22,11 @@ export const experienceDataEN: ExperienceType[] = [
     startYear: '12/2016',
     endYear: '06/2017',
     description: (
-      <>
-        <p>
-          Internship outside the university carried out during the period of
-          study. Occasional project work in 2020/2021.
-        </p>
-        <ul>
-          <li>
-            Software development and debugging in Microsoft and Web environment
-          </li>
-        </ul>
-      </>
+      <p>
+        Internship outside the university carried out during the period of
+        study. Occasional project work in 2020/2021. Software development and
+        debugging in Microsoft and Web environment.
+      </p>
     ),
   },
   {
@@ -43,17 +37,12 @@ export const experienceDataEN: ExperienceType[] = [
     startYear: '11/2019',
     endYear: '11/2022',
     description: (
-      <>
-        <p>
-          Kline develops and manufactures integrated software platforms,
-          technological solutions and services for financial intermediaries.
-        </p>
-        <ul>
-          <li>Reengineering existing application</li>
-          <li>Product Owner of two outsourced projects</li>
-          <li>Recruitment</li>
-        </ul>
-      </>
+      <p>
+        Kline develops and manufactures integrated software platforms,
+        technological solutions and services for financial intermediaries.
+        Reengineering existing application, Product Owner of two outsourced
+        projects and Recruitment.
+      </p>
     ),
   },
   {
@@ -91,15 +80,11 @@ export const experienceDataIT: ExperienceType[] = [
     startYear: '12/2016',
     endYear: '06/2017',
     description: (
-      <>
-        <p>
-          Tirocinio extra-universitario svolto durante il periodo di studio.
-          Lavoro occasionale a progetto nel 2020/2021.
-        </p>
-        <ul>
-          <li>Sviluppo software e debugging in ambiente Microsoft e Web</li>
-        </ul>
-      </>
+      <p>
+        Tirocinio extra-universitario svolto durante il periodo di studio.
+        Lavoro occasionale a progetto nel 2020/2021. Sviluppo software e
+        debugging in ambiente Microsoft e Web.
+      </p>
     ),
   },
   {
@@ -110,17 +95,12 @@ export const experienceDataIT: ExperienceType[] = [
     startYear: '11/2019',
     endYear: '11/2022',
     description: (
-      <>
-        <p>
-          Kline sviluppa piattaforme software integrate, soluzioni tecnologiche
-          e servizi per gli intermediari finanziari.
-        </p>
-        <ul>
-          <li>Reingegnerizzazione dell&apos;applicazione esistente</li>
-          <li>Product Owner di due progetti in outsourcing</li>
-          <li>Selezione del personale</li>
-        </ul>
-      </>
+      <p>
+        Kline sviluppa piattaforme software integrate, soluzioni tecnologiche e
+        servizi per gli intermediari finanziari. Reingegnerizzazione
+        dell&apos;applicazione esistente, Product Owner di due progetti in
+        outsourcing e Selezione del personale.
+      </p>
     ),
   },
   {

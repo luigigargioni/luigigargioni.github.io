@@ -4,6 +4,19 @@ export const skillsTitleEN = 'Skills'
 export const skillsTitleIT = 'Competenze'
 
 export const skillsData: SkillsEnum[] = [
+  SkillsEnum.ROS,
+  SkillsEnum.GAZEBO,
+  SkillsEnum.RVIZ,
+  SkillsEnum.OLLAMA,
+  SkillsEnum.LANGCHAIN,
+  SkillsEnum.OPENAI,
+  SkillsEnum.PYTHON,
+  SkillsEnum.DOCKER,
+  // SkillsEnum.GIT,
+  SkillsEnum.GITLAB,
+]
+
+export const skillsData2: SkillsEnum[] = [
   // SkillsEnum.HTML,
   // SkillsEnum.CSS,
   SkillsEnum.JAVASCRIPT,
@@ -13,31 +26,24 @@ export const skillsData: SkillsEnum[] = [
   SkillsEnum.WEBPACK,
   SkillsEnum.VITEJS,
   SkillsEnum.REDUX,
-  SkillsEnum.ELECTRON,
-  SkillsEnum.STYLEDCOMPONENTS,
-  SkillsEnum.JEST,
+  // SkillsEnum.ELECTRON,
+  // SkillsEnum.STYLEDCOMPONENTS,
+  // SkillsEnum.JEST,
   // SkillsEnum.CYPRESS,
-  SkillsEnum.ANTDESIGN,
-  SkillsEnum.MATERIALUI,
+  // SkillsEnum.ANTDESIGN,
+  // SkillsEnum.MATERIALUI,
   // SkillsEnum.BOOTSTRAP,
-]
-
-export const skillsData2: SkillsEnum[] = [
   SkillsEnum.NODEJS,
   SkillsEnum.EXPRESS,
   // SkillsEnum.MONGODB,
-  SkillsEnum.SEQUELIZE,
-  SkillsEnum.POSTMAN,
-  SkillsEnum.SWAGGER,
+  // SkillsEnum.SEQUELIZE,
+  // SkillsEnum.POSTMAN,
+  // SkillsEnum.SWAGGER,
   // SkillsEnum.GO,
-  SkillsEnum.PYTHON,
-  SkillsEnum.DJANGO,
-  SkillsEnum.POETRY,
+  // SkillsEnum.DJANGO,
+  // SkillsEnum.POETRY,
   // SkillsEnum.NUMPY,
   // SkillsEnum.OPENCV,
-  SkillsEnum.DOCKER,
-  // SkillsEnum.GIT,
-  SkillsEnum.GITLAB,
   // SkillsEnum.MYSQL,
   // SkillsEnum.MARIADB,
   // SkillsEnum.ORACLE,
@@ -45,5 +51,5 @@ export const skillsData2: SkillsEnum[] = [
   // SkillsEnum.SQLSERVER,
   // SkillsEnum.VISUALBASIC,
   // SkillsEnum.PHP,
-  SkillsEnum.STRAPI,
+  // SkillsEnum.STRAPI,
 ]

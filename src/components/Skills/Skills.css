@@ -60,6 +60,11 @@
     pointer-events: none;
 }
 
+.ros-img {
+    padding: 11px;
+  }
+  
+
 
 .skill--box h3 {
     font-family: var(--primaryFont);

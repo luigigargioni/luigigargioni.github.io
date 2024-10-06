@@ -19,8 +19,8 @@ export const App = () => {
       <Landing />
       <About />
       <Skills />
-      <Experience />
       <Education />
+      <Experience />
       <Services />
       <Contacts />
       <Footer />
