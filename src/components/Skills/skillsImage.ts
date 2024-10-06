@@ -43,6 +43,7 @@ import rviz from 'assets/skills/rviz.png'
 import ollama from 'assets/skills/ollama.png'
 import langchain from 'assets/skills/langchain.png'
 import openai from 'assets/skills/openai.svg'
+import huggingface from 'assets/skills/huggingface.svg'
 
 export enum SkillsEnum {
   HTML = 'HTML',
@@ -90,6 +91,7 @@ export enum SkillsEnum {
   OLLAMA = 'Ollama',
   LANGCHAIN = 'LangChain',
   OPENAI = 'OpenAI',
+  HUGGINGFACE = 'HuggingFace',
 }
 
 export const skillsImage = (skill: SkillsEnum) => {
@@ -184,6 +186,8 @@ export const skillsImage = (skill: SkillsEnum) => {
       return langchain
     case SkillsEnum.OPENAI:
       return openai
+    case SkillsEnum.HUGGINGFACE:
+      return huggingface
     default:
       return undefined
   }
