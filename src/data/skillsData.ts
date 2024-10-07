@@ -51,6 +51,6 @@ export const skillsData2: SkillsEnum[] = [
   // SkillsEnum.SQLLITE,
   // SkillsEnum.SQLSERVER,
   // SkillsEnum.VISUALBASIC,
-  // SkillsEnum.PHP,
+  SkillsEnum.PHP,
   // SkillsEnum.STRAPI,
 ]
