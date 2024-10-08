@@ -149,7 +149,7 @@ export const Landing = () => {
         >
           <div className="lcr--content" style={{ color: customTheme.tertiary }}>
             <h1>{headerData.name}</h1>
-            <h2>{headerData.title}</h2>
+            <h2 style={{ textAlign: 'center' }}>{headerData.title}</h2>
             <p style={{ display: 'flex', justifyContent: 'center' }}>
               <i>{headerData.description}</i>
             </p>
