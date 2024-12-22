@@ -42,8 +42,10 @@ import gazebo from 'assets/skills/gazebo.svg'
 import rviz from 'assets/skills/rviz.png'
 import ollama from 'assets/skills/ollama.png'
 import langchain from 'assets/skills/langchain.png'
+import langgraph from 'assets/skills/langgraph.png'
 import openai from 'assets/skills/openai.svg'
 import huggingface from 'assets/skills/huggingface.svg'
+import sentry from 'assets/skills/sentry.png'
 
 export enum SkillsEnum {
   HTML = 'HTML',
@@ -90,8 +92,10 @@ export enum SkillsEnum {
   RVIZ = 'RViz',
   OLLAMA = 'Ollama',
   LANGCHAIN = 'LangChain',
+  LANGGRAPH = 'LangGraph',
   OPENAI = 'OpenAI',
   HUGGINGFACE = 'HuggingFace',
+  SENTRY = 'Sentry',
 }
 
 export const skillsImage = (skill: SkillsEnum) => {
@@ -184,10 +188,14 @@ export const skillsImage = (skill: SkillsEnum) => {
       return ollama
     case SkillsEnum.LANGCHAIN:
       return langchain
+    case SkillsEnum.LANGGRAPH:
+      return langgraph
     case SkillsEnum.OPENAI:
       return openai
     case SkillsEnum.HUGGINGFACE:
       return huggingface
+    case SkillsEnum.SENTRY:
+      return sentry
     default:
       return undefined
   }
