@@ -58,11 +58,23 @@ export const educationDataEN: EducationType[] = [
   },
   {
     id: 4,
+    institution: 'LAAS-CNRS',
+    institutionUrl: 'https://www.laas.fr/en/',
+    course: 'Visiting PhD Student, Robotics and Interaction',
+    courseUrl: 'https://www.laas.fr/en/teams/ris/',
+    startYear: '09/2024',
+    endYear: '03/2025',
+    description: (
+      <p>Theory of Mind and Large Language Models in Human-Robot Interaction</p>
+    ),
+  },
+  {
+    id: 5,
     institution: 'University of Brescia',
     institutionUrl: 'https://www.unibs.it/en',
     course: 'PhD Student, Technology for Health',
     courseUrl: 'https://tech4health.unibs.it/',
-    startYear: '',
+    startYear: '12/2022',
     endYear: 'Present',
     description: (
       <p>
@@ -75,18 +87,6 @@ export const educationDataEN: EducationType[] = [
         </a>{' '}
         profile
       </p>
-    ),
-  },
-  {
-    id: 5,
-    institution: 'LAAS-CNRS',
-    institutionUrl: 'https://www.laas.fr/en/',
-    course: 'Visiting PhD Student, Robotics and Interaction',
-    courseUrl: 'https://www.laas.fr/en/teams/ris/',
-    startYear: '',
-    endYear: 'Present',
-    description: (
-      <p>Theory of Mind and Large Language Models in Human-Robot Interaction</p>
     ),
   },
 ]
