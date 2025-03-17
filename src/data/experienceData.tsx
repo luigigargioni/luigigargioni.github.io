@@ -45,7 +45,7 @@ export const experienceDataEN: ExperienceType[] = [
       </p>
     ),
   },
-  {
+  /*   {
     id: 3,
     company: 'Antares Vision',
     companyUrl: 'https://it.antaresvision.com/',
@@ -53,7 +53,7 @@ export const experienceDataEN: ExperienceType[] = [
     startYear: '12/2022',
     endYear: 'Present',
     description: <p>Telemedicine and Digitization of Health Services</p>,
-  },
+  }, */
   {
     id: 4,
     company: 'Freelance',
@@ -103,7 +103,7 @@ export const experienceDataIT: ExperienceType[] = [
       </p>
     ),
   },
-  {
+  /*   {
     id: 3,
     company: 'Antares Vision',
     companyUrl: 'https://it.antaresvision.com/',
@@ -111,7 +111,7 @@ export const experienceDataIT: ExperienceType[] = [
     startYear: '12/2022',
     endYear: 'Attuale',
     description: <p>Telemedicina e Digitalizzazione dei Servizi Sanitari</p>,
-  },
+  }, */
   {
     id: 4,
     company: 'Libero Professionista',
