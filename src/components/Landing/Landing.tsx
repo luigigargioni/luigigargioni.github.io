@@ -191,6 +191,7 @@ export const Landing = () => {
               />
             </div>
             <div className="lcr-buttonContainer">
+              {/*
               {headerData.resumePdf && (
                 <a
                   href={headerData.resumePdf}
@@ -203,6 +204,7 @@ export const Landing = () => {
                   </ResumeBtn>
                 </a>
               )}
+                */}
               <HashLink to="/#contacts" smooth>
                 <ContactBtn startIcon={<FiSend />}>
                   {headerData.contactBtn}
