@@ -45,28 +45,48 @@ export const experienceDataEN: ExperienceType[] = [
       </p>
     ),
   },
-  /*   {
-    id: 3,
-    company: 'Antares Vision',
-    companyUrl: 'https://it.antaresvision.com/',
-    jobtitle: 'PhD Student',
-    startYear: '12/2022',
-    endYear: 'Present',
-    description: <p>Telemedicine and Digitization of Health Services</p>,
-  }, */
   {
-    id: 4,
+    id: 3,
     company: 'Freelance',
     companyUrl: '',
     jobtitle: 'Web Developer & IT Solutions',
     startYear: '07/2023',
-    endYear: 'Present',
+    endYear: 'Actual',
     description: (
       <p>
         Digital solutions tailored to customers&apos; needs, with expertise in
         the design, development and maintenance of web applications and
         information systems
       </p>
+    ),
+  },
+  {
+    id: 4,
+    company: 'University of Brescia',
+    companyUrl: 'https://www.unibs.it/en',
+    jobtitle: 'Teaaching Support',
+    startYear: '01/2024',
+    endYear: 'Actual',
+    description: (
+      <p>
+        <ul>
+          <li>Robotics 2023/2024</li>
+          <li>Robotics 2024/2025</li>
+          <li>Coding for Data Science and Analytics 2025/2026</li>
+          <li>Robotics 2025/2026</li>
+        </ul>
+      </p>
+    ),
+  },
+  {
+    id: 5,
+    company: 'University of Brescia',
+    companyUrl: 'https://www.unibs.it/en',
+    jobtitle: 'Research Fellow',
+    startYear: '12/2025',
+    endYear: 'Actual',
+    description: (
+      <p>Human-Robot Interaction and Human-Centred Artificial Intelligence</p>
     ),
   },
 ]
@@ -103,17 +123,8 @@ export const experienceDataIT: ExperienceType[] = [
       </p>
     ),
   },
-  /*   {
-    id: 3,
-    company: 'Antares Vision',
-    companyUrl: 'https://it.antaresvision.com/',
-    jobtitle: 'Dottorato di Ricerca',
-    startYear: '12/2022',
-    endYear: 'Attuale',
-    description: <p>Telemedicina e Digitalizzazione dei Servizi Sanitari</p>,
-  }, */
   {
-    id: 4,
+    id: 3,
     company: 'Libero Professionista',
     companyUrl: '',
     jobtitle: 'Sviluppo Web & Soluzioni IT',
@@ -124,6 +135,38 @@ export const experienceDataIT: ExperienceType[] = [
         Soluzioni digitali su misura per le esigenze dei clienti, con esperienza
         nella progettazione, sviluppo e manutenzione di applicazioni web e
         sistemi informatici
+      </p>
+    ),
+  },
+  {
+    id: 4,
+    company: 'Università degli Studi di Brescia',
+    companyUrl: 'https://www.unibs.it/it',
+    jobtitle: 'Supporto alla Didattica',
+    startYear: '01/2024',
+    endYear: 'Attuale',
+    description: (
+      <p>
+        <ul>
+          <li>Robotica 2023/2024</li>
+          <li>Robotica 2024/2025</li>
+          <li>Coding for Data Science and Analytics 2025/2026</li>
+          <li>Robotica 2025/2026</li>
+        </ul>
+      </p>
+    ),
+  },
+  {
+    id: 5,
+    company: 'Università degli Studi di Brescia',
+    companyUrl: 'https://www.unibs.it',
+    jobtitle: 'Borsista di Ricerca',
+    startYear: '12/2025',
+    endYear: 'Attuale',
+    description: (
+      <p>
+        Interazione Uomo-Robot e Intelligenza Artificiale Centrata
+        sull&apos;Uomo
       </p>
     ),
   },

@@ -75,18 +75,9 @@ export const educationDataEN: EducationType[] = [
     course: 'PhD Student, Technology for Health',
     courseUrl: 'https://tech4health.unibs.it/',
     startYear: '12/2022',
-    endYear: 'Present',
+    endYear: '01/2026',
     description: (
-      <p>
-        Human-Robot Interaction and Artificial Intelligence. Find out more about
-        my research on my{' '}
-        <a href={socialsData.scholar} target="_blank" rel="noreferrer">
-          <i>
-            <u>Google Scholar</u>
-          </i>
-        </a>{' '}
-        profile
-      </p>
+      <p>Human-Robot Interaction and Human-Centred Artificial Intelligence</p>
     ),
   },
 ]
@@ -134,35 +125,30 @@ export const educationDataIT: EducationType[] = [
   },
   {
     id: 4,
-    institution: 'Università degli Studi di Brescia',
-    institutionUrl: 'https://www.unibs.it/it',
-    course: 'Dottorato di Ricerca, Technology for Health',
-    courseUrl: 'https://tech4health.unibs.it/',
-    startYear: '',
-    endYear: 'Attuale',
+    institution: 'LAAS-CNRS',
+    institutionUrl: 'https://www.laas.fr/en/',
+    course: 'Dottorando in visita, Robotics and Interaction',
+    courseUrl: 'https://www.laas.fr/en/teams/ris/',
+    startYear: '09/2024',
+    endYear: '03/2025',
     description: (
       <p>
-        Interazione Uomo-Robot ed Intelligenza Artificiale. Scopri di più sulla
-        mia ricerca sul mio profilo{' '}
-        <a href={socialsData.scholar} target="_blank" rel="noreferrer">
-          <i>
-            <u>Google Scholar</u>
-          </i>
-        </a>
+        Teoria della Mente e Large Language Models in Interazione Uomo-Robot
       </p>
     ),
   },
   {
     id: 5,
-    institution: 'LAAS-CNRS',
-    institutionUrl: 'https://www.laas.fr/en/',
-    course: 'Dottorando in visita, Robotics and Interaction',
-    courseUrl: 'https://www.laas.fr/en/teams/ris/',
-    startYear: '',
-    endYear: 'Attuale',
+    institution: 'Università degli Studi di Brescia',
+    institutionUrl: 'https://www.unibs.it/it',
+    course: 'Dottorato di Ricerca, Technology for Health',
+    courseUrl: 'https://tech4health.unibs.it/',
+    startYear: '12/2022',
+    endYear: '01/2026',
     description: (
       <p>
-        Teoria della Mente e Large Language Models in Interazione Uomo-Robot
+        Interazione Uomo-Robot ed Intelligenza Artificiale Centrata
+        sull&apos;Uomo
       </p>
     ),
   },
