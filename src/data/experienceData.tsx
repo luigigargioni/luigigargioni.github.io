@@ -51,7 +51,7 @@ export const experienceDataEN: ExperienceType[] = [
     companyUrl: '',
     jobtitle: 'Web Developer & IT Solutions',
     startYear: '07/2023',
-    endYear: 'Actual',
+    endYear: 'Present',
     description: (
       <p>
         Digital solutions tailored to customers&apos; needs, with expertise in
@@ -66,7 +66,7 @@ export const experienceDataEN: ExperienceType[] = [
     companyUrl: 'https://www.unibs.it/en',
     jobtitle: 'Teaaching Support',
     startYear: '01/2024',
-    endYear: 'Actual',
+    endYear: 'Present',
     description: (
       <p>
         <ul>
@@ -84,7 +84,7 @@ export const experienceDataEN: ExperienceType[] = [
     companyUrl: 'https://www.unibs.it/en',
     jobtitle: 'Research Fellow',
     startYear: '12/2025',
-    endYear: 'Actual',
+    endYear: 'Present',
     description: (
       <p>Human-Robot Interaction and Human-Centred Artificial Intelligence</p>
     ),
