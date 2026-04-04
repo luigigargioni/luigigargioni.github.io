@@ -1,3 +1,37 @@
-# https://www.robotstxt.org/robotstxt.html
+# robots.txt for luigigargioni.github.io
+# Portfolio website - Luigi Gargioni
+
+# Allow all search engines to crawl the entire site
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /404/
+Disallow: /404.html
+
+# Sitemap location
+Sitemap: https://luigigargioni.github.io/sitemap.xml
+
+# Crawl-delay for polite crawling (optional, in seconds)
+Crawl-delay: 1
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+Disallow: /404/
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+Disallow: /404/
+
+User-agent: Slurp
+Allow: /
+Disallow: /404/
+
+# Block bad bots (optional - uncomment if needed)
+# User-agent: AhrefsBot
+# Disallow: /
+# 
+# User-agent: SemrushBot
+# Disallow: /
