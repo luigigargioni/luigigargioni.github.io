@@ -1,29 +1,16 @@
-import React, { useContext } from 'react'
+import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { useCustomTheme } from 'style/themeProvider'
 
-import {
-  servicesDataEN,
-  servicesDataIT,
-  servicesDescriptionEN,
-  servicesDescriptionIT,
-  servicesTitleEN,
-  servicesTitleIT,
-} from 'data/servicesData'
+import { servicesDataEN, servicesDataIT } from 'data/servicesData'
 
 import './Services.css'
-import { CustomContext } from 'context'
-import { LanguageEnum } from 'utils/language'
 import { SingleService } from './SingleService/SingleService'
 
 export const Services = () => {
-  const { lang } = useContext(CustomContext)
+  const { t, i18n } = useTranslation()
   const customTheme = useCustomTheme()
-  const servicesTitle =
-    lang === LanguageEnum.EN ? servicesTitleEN : servicesTitleIT
-  const servicesDescription =
-    lang === LanguageEnum.EN ? servicesDescriptionEN : servicesDescriptionIT
-  const servicesData =
-    lang === LanguageEnum.EN ? servicesDataEN : servicesDataIT
+  const servicesData = i18n.language === 'en' ? servicesDataEN : servicesDataIT
 
   return servicesData.length > 0 ? (
     <div
@@ -32,10 +19,12 @@ export const Services = () => {
       style={{ backgroundColor: customTheme.secondary }}
     >
       <div className="services-header">
-        <h2 style={{ color: customTheme.primary }}>{servicesTitle}</h2>
+        <h2 style={{ color: customTheme.primary }}>{t('services.title')}</h2>
       </div>
       <div className="services-body">
-        <p style={{ color: customTheme.tertiary80 }}>{servicesDescription}</p>
+        <p style={{ color: customTheme.tertiary80 }}>
+          {t('services.description')}
+        </p>
         <div className="services-bodycontainer">
           {servicesData.map((services) => (
             <SingleService

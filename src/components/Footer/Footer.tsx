@@ -1,15 +1,12 @@
-import React, { useContext } from 'react'
+import React from 'react'
+import { useTranslation } from 'react-i18next'
 import './Footer.css'
 import { useCustomTheme } from 'style/themeProvider'
-import { headerDataEN, headerDataIT } from 'data/headerData'
 import { AiOutlineCopyrightCircle, AiOutlineHighlight } from 'react-icons/ai'
-import { CustomContext } from 'context'
-import { LanguageEnum } from 'utils/language'
 
 export const Footer = () => {
-  const { lang } = useContext(CustomContext)
+  const { t } = useTranslation()
   const customTheme = useCustomTheme()
-  const headerData = lang === LanguageEnum.EN ? headerDataEN : headerDataIT
 
   return (
     <div className="footer" style={{ backgroundColor: customTheme.secondary }}>
@@ -21,7 +18,7 @@ export const Footer = () => {
         }}
       >
         <AiOutlineCopyrightCircle style={{ marginRight: '0.5rem' }} />{' '}
-        {headerData.name} {new Date().getFullYear()}
+        {t('header.name')} {new Date().getFullYear()}
         {' - '}
         <a
           href="https://reactjsexample.com/developer-portfolio-built-with-the-help-of-a-react-template/"

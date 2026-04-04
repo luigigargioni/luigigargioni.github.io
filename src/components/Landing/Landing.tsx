@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Button } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import { HashLink } from 'react-router-hash-link'
@@ -10,18 +10,17 @@ import {
   FaResearchgate,
   FaOrcid,
 } from 'react-icons/fa'
+import { useTranslation } from 'react-i18next'
 
 import './Landing.css'
 import { customTheme } from 'style/theme'
 import { CustomContext } from 'context'
-import { headerDataEN, headerDataIT } from 'data/headerData'
 import { socialsData } from 'data/socialsData'
 import ITflag from 'assets/svg/it.svg'
 import ENflag from 'assets/svg/gb.svg'
 import { AiOutlineDownload } from 'react-icons/ai'
 import { FiSend } from 'react-icons/fi'
-import { LocalStorageKey, setToLocalStorage } from 'utils/localStorageUtils'
-import { documentTitleEN, documentTitleIT, LanguageEnum } from 'utils/language'
+import profile from 'assets/jpg/profile.jpg'
 
 const ResumeBtn = styled(Button)(({ theme }) => ({
   color: 'var(--primary)',
@@ -69,8 +68,12 @@ const ContactBtn = styled(Button)(({ theme }) => ({
 }))
 
 export const Landing = () => {
-  const { drawerOpen, setLang, lang } = useContext(CustomContext)
-  const headerData = lang === LanguageEnum.EN ? headerDataEN : headerDataIT
+  const { drawerOpen } = useContext(CustomContext)
+  const { t, i18n } = useTranslation()
+
+  useEffect(() => {
+    document.title = t('documentTitle')
+  }, [i18n.language, t])
 
   return (
     <div className="landing">
@@ -161,7 +164,7 @@ export const Landing = () => {
           </div>
         </div>
         <img
-          src={headerData.image}
+          src={profile}
           alt=""
           className="landing--img"
           fetchPriority="high"
@@ -175,10 +178,10 @@ export const Landing = () => {
           style={{ backgroundColor: customTheme.secondary }}
         >
           <div className="lcr--content" style={{ color: customTheme.tertiary }}>
-            <h1>{headerData.name}</h1>
-            <h2 /* style={{ textAlign: 'center' }} */>{headerData.title}</h2>
+            <h1>{t('header.name')}</h1>
+            <h2 /* style={{ textAlign: 'center' }} */>{t('header.title')}</h2>
             <p style={{ display: 'flex', justifyContent: 'center' }}>
-              <i>{headerData.description}</i>
+              <i>{t('header.description')}</i>
             </p>
             <div className="language-container">
               <img
@@ -190,14 +193,13 @@ export const Landing = () => {
                 style={{
                   marginRight: '1rem',
                   borderColor:
-                    lang === LanguageEnum.EN
+                    i18n.language === 'en'
                       ? customTheme.primary
                       : customTheme.tertiary,
                 }}
                 onClick={() => {
-                  setLang(LanguageEnum.EN)
-                  setToLocalStorage(LocalStorageKey.LANG, LanguageEnum.EN)
-                  document.title = documentTitleEN
+                  i18n.changeLanguage('en')
+                  document.title = t('documentTitle', { lng: 'en' })
                 }}
                 aria-hidden="true"
               />
@@ -209,14 +211,13 @@ export const Landing = () => {
                 height="30"
                 style={{
                   borderColor:
-                    lang === LanguageEnum.IT
+                    i18n.language === 'it'
                       ? customTheme.primary
                       : customTheme.tertiary,
                 }}
                 onClick={() => {
-                  setLang(LanguageEnum.IT)
-                  setToLocalStorage(LocalStorageKey.LANG, LanguageEnum.IT)
-                  document.title = documentTitleIT
+                  i18n.changeLanguage('it')
+                  document.title = t('documentTitle', { lng: 'it' })
                 }}
                 aria-hidden="true"
               />
@@ -239,10 +240,10 @@ export const Landing = () => {
               <HashLink
                 to="/#contacts"
                 smooth
-                aria-label={headerData.contactBtn}
+                aria-label={t('header.contactBtn')}
               >
                 <ContactBtn startIcon={<FiSend />}>
-                  {headerData.contactBtn}
+                  {t('header.contactBtn')}
                 </ContactBtn>
               </HashLink>
             </div>

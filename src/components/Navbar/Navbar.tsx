@@ -9,15 +9,8 @@ import { AiOutlinePhone } from 'react-icons/ai'
 
 import './Navbar.css'
 import { useCustomTheme } from 'style/themeProvider'
-import { headerDataEN, headerDataIT } from 'data/headerData'
 import { CustomContext } from 'context'
-import { aboutDataEN, aboutDataIT } from 'data/aboutData'
-import { skillsTitleEN, skillsTitleIT } from 'data/skillsData'
-import { experienceTitleEN, experienceTitleIT } from 'data/experienceData'
-import { educationTitleEN, educationTitleIT } from 'data/educationData'
-import { servicesTitleEN, servicesTitleIT } from 'data/servicesData'
-import { contactsTitleEN, contactsTitleIT } from 'data/contactsData'
-import { LanguageEnum } from 'utils/language'
+import { useTranslation } from 'react-i18next'
 import {
   ClosebtnIcon,
   DrawerItem,
@@ -27,21 +20,10 @@ import {
 } from './Navbar.style'
 
 export const Navbar = () => {
-  const { setDrawerOpen, drawerOpen, lang } = useContext(CustomContext)
+  const { setDrawerOpen, drawerOpen } = useContext(CustomContext)
+  const { t } = useTranslation()
   const customTheme = useCustomTheme()
   const [open, setOpen] = useState(false)
-  const headerData = lang === LanguageEnum.EN ? headerDataEN : headerDataIT
-  const aboutTitle =
-    lang === LanguageEnum.EN ? aboutDataEN.title : aboutDataIT.title
-  const skillsTitle = lang === LanguageEnum.EN ? skillsTitleEN : skillsTitleIT
-  const experienceTitle =
-    lang === LanguageEnum.EN ? experienceTitleEN : experienceTitleIT
-  const educationTitle =
-    lang === LanguageEnum.EN ? educationTitleEN : educationTitleIT
-  const servicesTitle =
-    lang === LanguageEnum.EN ? servicesTitleEN : servicesTitleIT
-  const contactsTitle =
-    lang === LanguageEnum.EN ? contactsTitleEN : contactsTitleIT
 
   const handleDrawerOpen = (value: boolean) => {
     setOpen(value)
@@ -56,7 +38,7 @@ export const Navbar = () => {
   return (
     <div className="navbar">
       <div className="navbar--container">
-        <h1 style={{ color: customTheme.secondary }}>{headerData.name}</h1>
+        <h1 style={{ color: customTheme.secondary }}>{t('header.name')}</h1>
         <NavMenu
           onClick={() => handleDrawerOpen(true)}
           aria-label="Menu"
@@ -99,7 +81,7 @@ export const Navbar = () => {
             >
               <DrawerItem>
                 <BiUser />
-                <DrawerLinks>{aboutTitle}</DrawerLinks>
+                <DrawerLinks>{t('about.title')}</DrawerLinks>
               </DrawerItem>
             </HashLink>
           </Fade>
@@ -112,7 +94,7 @@ export const Navbar = () => {
             >
               <DrawerItem>
                 <BsCodeSlash />
-                <DrawerLinks>{skillsTitle}</DrawerLinks>
+                <DrawerLinks>{t('skills.title')}</DrawerLinks>
               </DrawerItem>
             </HashLink>
           </Fade>
@@ -125,7 +107,7 @@ export const Navbar = () => {
             >
               <DrawerItem>
                 <MdWorkOutline />
-                <DrawerLinks>{experienceTitle}</DrawerLinks>
+                <DrawerLinks>{t('experience.title')}</DrawerLinks>
               </DrawerItem>
             </HashLink>
           </Fade>
@@ -138,7 +120,7 @@ export const Navbar = () => {
             >
               <DrawerItem>
                 <IoSchoolOutline />
-                <DrawerLinks>{educationTitle}</DrawerLinks>
+                <DrawerLinks>{t('education.title')}</DrawerLinks>
               </DrawerItem>
             </HashLink>
           </Fade>
@@ -151,7 +133,7 @@ export const Navbar = () => {
             >
               <DrawerItem>
                 <BsGear />
-                <DrawerLinks>{servicesTitle}</DrawerLinks>
+                <DrawerLinks>{t('services.title')}</DrawerLinks>
               </DrawerItem>
             </HashLink>
           </Fade>
@@ -164,7 +146,7 @@ export const Navbar = () => {
             >
               <DrawerItem>
                 <AiOutlinePhone />
-                <DrawerLinks>{contactsTitle}</DrawerLinks>
+                <DrawerLinks>{t('contacts.title')}</DrawerLinks>
               </DrawerItem>
             </HashLink>
           </Fade>

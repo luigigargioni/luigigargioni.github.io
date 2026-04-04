@@ -1,24 +1,16 @@
-import React, { useContext } from 'react'
+import React from 'react'
+import { useTranslation } from 'react-i18next'
 
 import './Education.css'
 import { useCustomTheme } from 'style/themeProvider'
-import {
-  educationDataEN,
-  educationDataIT,
-  educationTitleEN,
-  educationTitleIT,
-} from 'data/educationData'
-import { CustomContext } from 'context'
-import { LanguageEnum } from 'utils/language'
+import { educationDataEN, educationDataIT } from 'data/educationData'
 import { EducationCard } from './EducationCard'
 
 export const Education = () => {
-  const { lang } = useContext(CustomContext)
+  const { t, i18n } = useTranslation()
   const customTheme = useCustomTheme()
   const educationData =
-    lang === LanguageEnum.EN ? educationDataEN : educationDataIT
-  const educationTitle =
-    lang === LanguageEnum.EN ? educationTitleEN : educationTitleIT
+    i18n.language === 'en' ? educationDataEN : educationDataIT
 
   return (
     <div
@@ -28,7 +20,7 @@ export const Education = () => {
     >
       <div className="education-body">
         <div className="education-description">
-          <h2 style={{ color: customTheme.primary }}>{educationTitle}</h2>
+          <h2 style={{ color: customTheme.primary }}>{t('education.title')}</h2>
           {educationData
             .sort((a, b) => b.id - a.id)
             .map((edu) => (

@@ -17,7 +17,7 @@ export interface SEOProps {
 }
 
 export const SEO: React.FC<SEOProps> = ({
-  title = 'Luigi Gargioni | Computer Engineer',
+  title = 'Luigi Gargioni | Researcher & Computer Engineer',
   description = 'Luigi Gargioni - Computer Engineer specializing in software development, robotics, and AI. Portfolio showcasing projects, experience, and technical skills.',
   keywords = 'Luigi Gargioni, Computer Engineer, Software Developer, Robotics, AI, Machine Learning, Web Development, Portfolio',
   author = 'Luigi Gargioni',

@@ -6,12 +6,12 @@ export enum LanguageEnum {
 }
 
 const validLanguage = Object.values(LanguageEnum).includes(
-  getFromLocalStorage(LocalStorageKey.LANG) as LanguageEnum
+  getFromLocalStorage(LocalStorageKey.LANG) as LanguageEnum,
 )
 export const defaultLang =
   getFromLocalStorage(LocalStorageKey.LANG) && validLanguage
     ? getFromLocalStorage(LocalStorageKey.LANG)
     : LanguageEnum.EN
 
-export const documentTitleEN = 'Luigi Gargioni | Computer Engineer'
+export const documentTitleEN = 'Luigi Gargioni | Researcher & Computer Engineer'
 export const documentTitleIT = 'Luigi Gargioni | Ingegnere Informatico'

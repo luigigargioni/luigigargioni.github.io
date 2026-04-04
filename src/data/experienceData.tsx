@@ -72,10 +72,8 @@ export const experienceDataEN: ExperienceType[] = [
     endYear: 'Present',
     description: (
       <ul>
-        <li>Robotics 2023/2024</li>
-        <li>Robotics 2024/2025</li>
-        <li>Coding for Data Science and Analytics 2025/2026</li>
-        <li>Robotics 2025/2026</li>
+        <li>Robotics: 2023/2024 - 2024/2025 - 2025/2026</li>
+        <li>Coding for Data Science and Analytics: 2025/2026</li>
       </ul>
     ),
   },
@@ -151,10 +149,8 @@ export const experienceDataIT: ExperienceType[] = [
     endYear: 'Attuale',
     description: (
       <ul>
-        <li>Robotica 2023/2024</li>
-        <li>Robotica 2024/2025</li>
-        <li>Coding for Data Science and Analytics 2025/2026</li>
-        <li>Robotica 2025/2026</li>
+        <li>Robotica: 2023/2024 - 2024/2025 - 2025/2026</li>
+        <li>Coding for Data Science and Analytics: 2025/2026</li>
       </ul>
     ),
   },

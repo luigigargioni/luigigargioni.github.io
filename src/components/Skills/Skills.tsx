@@ -1,23 +1,16 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Marquee from 'react-fast-marquee'
+import { useTranslation } from 'react-i18next'
 
 import './Skills.css'
 
 import { useCustomTheme } from 'style/themeProvider'
-import {
-  skillsData,
-  skillsData2,
-  skillsTitleEN,
-  skillsTitleIT,
-} from 'data/skillsData'
+import { skillsData, skillsData2 } from 'data/skillsData'
 import { SkillsEnum, skillsImage } from 'components/Skills/skillsImage'
-import { CustomContext } from 'context'
-import { LanguageEnum } from 'utils/language'
 
 export const Skills = () => {
-  const { lang } = useContext(CustomContext)
+  const { t } = useTranslation()
   const customTheme = useCustomTheme()
-  const skillsTitle = lang === LanguageEnum.EN ? skillsTitleEN : skillsTitleIT
 
   const skillBoxStyle = () => ({
     backgroundColor: customTheme.secondary,
@@ -34,7 +27,7 @@ export const Skills = () => {
       style={{ backgroundColor: customTheme.secondary }}
     >
       <div className="skillsHeader">
-        <h2 style={{ color: customTheme.primary }}>{skillsTitle}</h2>
+        <h2 style={{ color: customTheme.primary }}>{t('skills.title')}</h2>
       </div>
       <div className="skillsContainer">
         <div className="skill--scroll">

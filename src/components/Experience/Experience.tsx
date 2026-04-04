@@ -1,25 +1,17 @@
-import React, { useContext } from 'react'
+import React from 'react'
+import { useTranslation } from 'react-i18next'
 
 import './Experience.css'
 
 import { useCustomTheme } from 'style/themeProvider'
-import {
-  experienceDataEN,
-  experienceDataIT,
-  experienceTitleEN,
-  experienceTitleIT,
-} from 'data/experienceData'
-import { CustomContext } from 'context'
-import { LanguageEnum } from 'utils/language'
+import { experienceDataEN, experienceDataIT } from 'data/experienceData'
 import { ExperienceCard } from './ExperienceCard'
 
 export const Experience = () => {
-  const { lang } = useContext(CustomContext)
+  const { t, i18n } = useTranslation()
   const customTheme = useCustomTheme()
-  const experienceTitle =
-    lang === LanguageEnum.EN ? experienceTitleEN : experienceTitleIT
   const experienceData =
-    lang === LanguageEnum.EN ? experienceDataEN : experienceDataIT
+    i18n.language === 'en' ? experienceDataEN : experienceDataIT
 
   return (
     <div
@@ -32,7 +24,9 @@ export const Experience = () => {
           <img src={customTheme.expimg} alt="" width="400" height="400" />
         </div>
         <div className="experience-description">
-          <h2 style={{ color: customTheme.primary }}>{experienceTitle}</h2>
+          <h2 style={{ color: customTheme.primary }}>
+            {t('experience.title')}
+          </h2>
           {experienceData
             .sort((a, b) => b.id - a.id)
             .map((exp) => (
