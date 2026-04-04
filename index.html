@@ -54,7 +54,10 @@
     content="Luigi Gargioni - Computer Engineer specializing in software development, robotics, and AI." />
   <meta itemprop="image" content="https://luigigargioni.github.io/og-image.jpg" />
 
-  <link rel="stylesheet" href="/global.css">
+  <link rel="preload" href="/global.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="/global.css">
+  </noscript>
 
   <title>Luigi Gargioni | Computer Engineer</title>
 </head>

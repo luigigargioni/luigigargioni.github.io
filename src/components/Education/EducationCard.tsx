@@ -26,12 +26,12 @@ export const EducationCard = ({
           className="educard-img"
           style={{ backgroundColor: customTheme.primary }}
         >
-          <img src={eduImgWhite} alt="" />
+          <img src={eduImgWhite} alt="" width="80" height="80" />
         </div>
         <div className="education-details">
-          <h6 style={{ color: customTheme.primary }}>
+          <h3 style={{ color: customTheme.primary }}>
             {startYear ? `${startYear}-${endYear}` : endYear}
-          </h6>
+          </h3>
           <h4 style={{ color: customTheme.tertiary }}>
             <a href={courseUrl} target="_blank" rel="noreferrer">
               {course}
@@ -42,9 +42,9 @@ export const EducationCard = ({
               {institution}
             </a>
           </h5>
-          <h6 style={{ color: customTheme.tertiary80, textAlign: 'justify' }}>
+          <div style={{ color: customTheme.tertiary80, textAlign: 'justify' }}>
             {description}
-          </h6>
+          </div>
         </div>
       </div>
     </Fade>

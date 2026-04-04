@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { JSX } from 'react'
 import { socialsData } from './socialsData'
 
 export const educationTitleEN = 'Education'
@@ -16,7 +16,7 @@ export type EducationType = {
 }
 
 export const educationDataEN: EducationType[] = [
-  {
+  /*   {
     id: 1,
     institution: 'University of Brescia',
     institutionUrl: 'https://www.unibs.it/en',
@@ -30,7 +30,7 @@ export const educationDataEN: EducationType[] = [
         analysis of the OpenVAS tool&quot;
       </p>
     ),
-  },
+  }, */
   {
     id: 2,
     institution: 'University of Brescia',
@@ -41,8 +41,8 @@ export const educationDataEN: EducationType[] = [
     endYear: '10/2019',
     description: (
       <p>
-        Thesis: &quot;A domain-independent environment for user-oriented
-        programming of collaborative robots&quot;
+        Thesis: &quot;A Domain-Independent Environment for User-Oriented
+        Programming of Collaborative Robots&quot;
       </p>
     ),
   },
@@ -58,7 +58,7 @@ export const educationDataEN: EducationType[] = [
   },
   {
     id: 4,
-    institution: 'LAAS-CNRS',
+    institution: 'LAAS-CNRS (Toulouse, France)',
     institutionUrl: 'https://www.laas.fr/en/',
     course: 'Visiting PhD Student, Robotics and Interaction',
     courseUrl: 'https://www.laas.fr/en/teams/ris/',
@@ -83,7 +83,7 @@ export const educationDataEN: EducationType[] = [
 ]
 
 export const educationDataIT: EducationType[] = [
-  {
+  /*   {
     id: 1,
     institution: 'Università degli Studi di Brescia',
     institutionUrl: 'https://www.unibs.it/it',
@@ -97,7 +97,7 @@ export const educationDataIT: EducationType[] = [
         analisi dello strumento OpenVAS&quot;
       </p>
     ),
-  },
+  }, */
   {
     id: 2,
     institution: 'Università degli Studi di Brescia',
@@ -125,7 +125,7 @@ export const educationDataIT: EducationType[] = [
   },
   {
     id: 4,
-    institution: 'LAAS-CNRS',
+    institution: 'LAAS-CNRS (Tolosa, Francia)',
     institutionUrl: 'https://www.laas.fr/en/',
     course: 'Dottorando in visita, Robotics and Interaction',
     courseUrl: 'https://www.laas.fr/en/teams/ris/',

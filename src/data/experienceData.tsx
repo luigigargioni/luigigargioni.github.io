@@ -22,49 +22,52 @@ export const experienceDataEN: ExperienceType[] = [
     startYear: '12/2016',
     endYear: '06/2017',
     description: (
-      <p>
+      <></>
+      /*       <p>
         Internship outside the university carried out during the period of
         study. Occasional project work in 2020/2021. Software development and
         debugging in Microsoft and Web environment.
-      </p>
+      </p> */
     ),
   },
   {
     id: 2,
     company: 'Kline',
     companyUrl: 'https://www.kline.it/',
-    jobtitle: 'Web Developer',
+    jobtitle: 'Research & Development Engineer',
     startYear: '11/2019',
     endYear: '11/2022',
     description: (
-      <p>
+      <></>
+      /*       <p>
         Kline develops and manufactures integrated software platforms,
         technological solutions and services for financial intermediaries.
         Reengineering existing application, Product Owner of two outsourced
         projects and Recruitment.
-      </p>
+      </p> */
     ),
   },
   {
     id: 3,
     company: 'Freelance',
     companyUrl: '',
-    jobtitle: 'Web Developer & IT Solutions',
+    jobtitle: 'Full Stack Developer',
     startYear: '07/2023',
     endYear: 'Present',
     description: (
-      <p>
+      <></>
+      /*       <p>
         Digital solutions tailored to customers&apos; needs, with expertise in
         the design, development and maintenance of web applications and
         information systems
-      </p>
+      </p> */
     ),
   },
   {
     id: 4,
     company: 'University of Brescia',
     companyUrl: 'https://www.unibs.it/en',
-    jobtitle: 'Teaaching Support',
+    jobtitle: 'Teaching Support',
     startYear: '01/2024',
     endYear: 'Present',
     description: (
@@ -98,42 +101,45 @@ export const experienceDataIT: ExperienceType[] = [
     startYear: '12/2016',
     endYear: '06/2017',
     description: (
-      <p>
+      <></>
+      /*       <p>
         Tirocinio extra-universitario svolto durante il periodo di studio.
         Lavoro occasionale a progetto nel 2020/2021. Sviluppo software e
         debugging in ambiente Microsoft e Web.
-      </p>
+      </p> */
     ),
   },
   {
     id: 2,
     company: 'Kline',
     companyUrl: 'https://www.kline.it/',
-    jobtitle: 'Sviluppatore Web',
+    jobtitle: 'Ingegnere Ricerca & Sviluppo',
     startYear: '11/2019',
     endYear: '11/2022',
     description: (
-      <p>
+      <></>
+      /*       <p>
         Kline sviluppa piattaforme software integrate, soluzioni tecnologiche e
         servizi per gli intermediari finanziari. Reingegnerizzazione
         dell&apos;applicazione esistente, Product Owner di due progetti in
         outsourcing e Selezione del personale.
-      </p>
+      </p> */
     ),
   },
   {
     id: 3,
     company: 'Libero Professionista',
     companyUrl: '',
-    jobtitle: 'Sviluppo Web & Soluzioni IT',
+    jobtitle: 'Sviluppatore Full Stack',
     startYear: '07/2023',
     endYear: 'Attuale',
     description: (
-      <p>
+      <></>
+      /*       <p>
         Soluzioni digitali su misura per le esigenze dei clienti, con esperienza
         nella progettazione, sviluppo e manutenzione di applicazioni web e
         sistemi informatici
-      </p>
+      </p> */
     ),
   },
   {

@@ -27,7 +27,7 @@ export const Footer = () => {
           href="https://reactjsexample.com/developer-portfolio-built-with-the-help-of-a-react-template/"
           target="_blank"
           rel="noopener noreferrer"
-          title="Template"
+          aria-label="React Portfolio Template"
         >
           <AiOutlineHighlight style={{ marginLeft: '0.5rem' }} />
           {' Template'}

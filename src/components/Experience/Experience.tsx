@@ -29,10 +29,10 @@ export const Experience = () => {
     >
       <div className="experience-body">
         <div className="experience-image">
-          <img src={customTheme.expimg} alt="" />
+          <img src={customTheme.expimg} alt="" width="400" height="400" />
         </div>
         <div className="experience-description">
-          <h1 style={{ color: customTheme.primary }}>{experienceTitle}</h1>
+          <h2 style={{ color: customTheme.primary }}>{experienceTitle}</h2>
           {experienceData
             .sort((a, b) => b.id - a.id)
             .map((exp) => (

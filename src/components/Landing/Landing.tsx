@@ -8,6 +8,7 @@ import {
   FaGithub,
   FaStackOverflow,
   FaResearchgate,
+  FaOrcid,
 } from 'react-icons/fa'
 
 import './Landing.css'
@@ -80,20 +81,28 @@ export const Landing = () => {
         >
           <div className="lcl--content">
             {socialsData.linkedIn && (
-              <a href={socialsData.linkedIn} target="_blank" rel="noreferrer">
+              <a
+                href={socialsData.linkedIn}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn"
+              >
                 <FaLinkedin
                   className="landing--social"
                   style={{ color: customTheme.secondary }}
-                  aria-label="GoogleScholar"
                 />
               </a>
             )}
             {socialsData.scholar && (
-              <a href={socialsData.scholar} target="_blank" rel="noreferrer">
+              <a
+                href={socialsData.scholar}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Google Scholar"
+              >
                 <IoMdSchool
                   className="landing--social"
                   style={{ color: customTheme.secondary }}
-                  aria-label="GoogleScholar"
                 />
               </a>
             )}
@@ -102,20 +111,37 @@ export const Landing = () => {
                 href={socialsData.researchGate}
                 target="_blank"
                 rel="noreferrer"
+                aria-label="ResearchGate"
               >
                 <FaResearchgate
                   className="landing--social"
                   style={{ color: customTheme.secondary }}
-                  aria-label="ResearchGate"
+                />
+              </a>
+            )}
+            {socialsData.orcId && (
+              <a
+                href={socialsData.orcId}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="ORCID"
+              >
+                <FaOrcid
+                  className="landing--social"
+                  style={{ color: customTheme.secondary }}
                 />
               </a>
             )}
             {socialsData.github && (
-              <a href={socialsData.github} target="_blank" rel="noreferrer">
+              <a
+                href={socialsData.github}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="GitHub"
+              >
                 <FaGithub
                   className="landing--social"
                   style={{ color: customTheme.secondary }}
-                  aria-label="GitHub"
                 />
               </a>
             )}
@@ -124,11 +150,11 @@ export const Landing = () => {
                 href={socialsData.stackOverflow}
                 target="_blank"
                 rel="noreferrer"
+                aria-label="Stack Overflow"
               >
                 <FaStackOverflow
                   className="landing--social"
                   style={{ color: customTheme.secondary }}
-                  aria-label="StackOverflow"
                 />
               </a>
             )}
@@ -138,6 +164,7 @@ export const Landing = () => {
           src={headerData.image}
           alt=""
           className="landing--img"
+          fetchPriority="high"
           style={{
             opacity: `${drawerOpen ? '0' : '1'}`,
             borderColor: customTheme.secondary,
@@ -158,6 +185,8 @@ export const Landing = () => {
                 src={ENflag}
                 alt="EN-flag"
                 className="language-flag"
+                width="40"
+                height="30"
                 style={{
                   marginRight: '1rem',
                   borderColor:
@@ -176,6 +205,8 @@ export const Landing = () => {
                 src={ITflag}
                 alt="IT-flag"
                 className="language-flag"
+                width="40"
+                height="30"
                 style={{
                   borderColor:
                     lang === LanguageEnum.IT
@@ -205,7 +236,11 @@ export const Landing = () => {
                 </a>
               )}
                 */}
-              <HashLink to="/#contacts" smooth>
+              <HashLink
+                to="/#contacts"
+                smooth
+                aria-label={headerData.contactBtn}
+              >
                 <ContactBtn startIcon={<FiSend />}>
                   {headerData.contactBtn}
                 </ContactBtn>
