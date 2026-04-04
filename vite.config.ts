@@ -1,7 +1,5 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import viteTsconfigPaths from 'vite-tsconfig-paths'
-import eslint from 'vite-plugin-eslint'
 
 export default defineConfig(() => {
   return {
@@ -14,12 +12,10 @@ export default defineConfig(() => {
     plugins: [
       react({
         jsxImportSource: '@emotion/react',
-        babel: {
-          plugins: ['@emotion/babel-plugin'],
-        },
       }),
-      viteTsconfigPaths(),
-      eslint(),
     ],
+    resolve: {
+      tsconfigPaths: true,
+    },
   }
 })
