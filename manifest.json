@@ -1,15 +1,22 @@
 {
-  "short_name": "Luigi Gargioni | Computer Engineer",
-  "name": "Luigi Gargioni | Computer Engineer",
+  "short_name": "Luigi Gargioni",
+  "name": "Luigi Gargioni | Computer Engineer Portfolio",
+  "description": "Luigi Gargioni - Computer Engineer specializing in software development, robotics, and AI",
   "icons": [
     {
       "src": "favicon.svg",
-      "sizes": "512x512 64x64 32x32 24x24 16x16",
-      "type": "image/svg"
+      "sizes": "512x512 192x192 64x64 32x32 24x24 16x16",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "orientation": "portrait-primary",
+  "theme_color": "#3fc337",
+  "background_color": "#0a0a0a",
+  "categories": ["portfolio", "technology", "engineering"],
+  "lang": "en-US",
+  "dir": "ltr"
 }
