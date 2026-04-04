@@ -218,8 +218,7 @@
     justify-content: center;
   }
   .lcr--content h2 {
-    display: flex;
-    justify-content: center;
+    text-align: center;
   }
   .lcr--content p {
     font-size: 0.95rem;
