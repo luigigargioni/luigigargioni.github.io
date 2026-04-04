@@ -1,15 +1,12 @@
-import React, { useContext } from 'react'
+import React from 'react'
+import { useTranslation } from 'react-i18next'
 
 import './About.css'
 import { useCustomTheme } from 'style/themeProvider'
-import { aboutDataEN, aboutDataIT } from 'data/aboutData'
-import { CustomContext } from 'context'
-import { LanguageEnum } from 'utils/language'
 
 export const About = () => {
-  const { lang } = useContext(CustomContext)
+  const { t } = useTranslation()
   const customTheme = useCustomTheme()
-  const aboutData = lang === LanguageEnum.EN ? aboutDataEN : aboutDataIT
 
   return (
     <div
@@ -33,15 +30,23 @@ export const About = () => {
       </div>
       <div className="about-body">
         <div className="about-description">
-          <h2 style={{ color: customTheme.primary }}>{aboutData.title}</h2>
+          <h2 style={{ color: customTheme.primary }}>{t('about.title')}</h2>
           <p style={{ color: customTheme.tertiary80 }}>
-            {aboutData.description.map((paragraph) => (
-              <span key={paragraph}>
-                {paragraph}
-                <br />
-                <br />
-              </span>
-            ))}
+            <span>
+              {t('about.description1')}
+              <br />
+              <br />
+            </span>
+            <span>
+              {t('about.description2')}
+              <br />
+              <br />
+            </span>
+            <span>
+              {t('about.description3')}
+              <br />
+              <br />
+            </span>
           </p>
         </div>
         <div className="about-img">

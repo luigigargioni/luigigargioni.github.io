@@ -32,11 +32,11 @@ export const servicesDataEN: ServiceType[] = [
     title: 'Consulting',
     icon: <FaPeopleCarry />,
   },
-  {
+  /*   {
     id: 4,
     title: 'Technical Support',
     icon: <BsGear />,
-  },
+  }, */
   {
     id: 5,
     title: 'Tutoring',
@@ -60,11 +60,11 @@ export const servicesDataIT: ServiceType[] = [
     title: 'Consulenza',
     icon: <FaPeopleCarry />,
   },
-  {
+  /*   {
     id: 4,
     title: 'Supporto Tecnico',
     icon: <BsGear />,
-  },
+  }, */
   {
     id: 5,
     title: 'Tutoraggio',

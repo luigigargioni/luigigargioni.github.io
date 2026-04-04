@@ -1,4 +1,5 @@
-import React, { useContext } from 'react'
+import React from 'react'
+import { useTranslation } from 'react-i18next'
 import {
   FaLinkedinIn,
   FaGithub,
@@ -14,24 +15,14 @@ import { IoMdSchool } from 'react-icons/io'
 
 import { useCustomTheme } from 'style/themeProvider'
 import { socialsData } from 'data/socialsData'
-import {
-  contactsDataEN,
-  contactsDataIT,
-  contactsTitleEN,
-  contactsTitleIT,
-} from 'data/contactsData'
+import { contactsDataEN, contactsDataIT } from 'data/contactsData'
 import './Contacts.css'
-import { CustomContext } from 'context'
-import { LanguageEnum } from 'utils/language'
 import { DetailsIcon, SocialIcon } from './Contacts.style'
 
 export const Contacts = () => {
-  const { lang } = useContext(CustomContext)
+  const { t, i18n } = useTranslation()
   const customTheme = useCustomTheme()
-  const contactsData =
-    lang === LanguageEnum.EN ? contactsDataEN : contactsDataIT
-  const contactsTitle =
-    lang === LanguageEnum.EN ? contactsTitleEN : contactsTitleIT
+  const contactsData = i18n.language === 'en' ? contactsDataEN : contactsDataIT
 
   return (
     <div
@@ -40,7 +31,7 @@ export const Contacts = () => {
       style={{ backgroundColor: customTheme.secondary }}
     >
       <div className="contacts--container">
-        <h2 style={{ color: customTheme.primary }}>{contactsTitle}</h2>
+        <h2 style={{ color: customTheme.primary }}>{t('contacts.title')}</h2>
         <div className="contacts-body">
           <div className="contacts-details">
             <a

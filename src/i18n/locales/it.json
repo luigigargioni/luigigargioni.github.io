@@ -1,0 +1,79 @@
+{
+  "documentTitle": "Luigi Gargioni | Ingegnere Informatico",
+  "header": {
+    "name": "Luigi Gargioni",
+    "title": "Ricercatore & Ingegnere Informatico",
+    "description": "\"There is beauty when something works and works intuitively\"",
+    "resumeBtn": "Curriculum",
+    "contactBtn": "Contatti"
+  },
+  "about": {
+    "title": "Mi presento",
+    "description1": "Ciao! Mi chiamo Luigi Gargioni. Sono un ricercatore e ingegnere informatico residente in Italia.",
+    "description2": "La mia ricerca si concentra sull'interazione uomo-robot e sull'intelligenza artificiale, con l'obiettivo di sviluppare soluzioni innovative che migliorino l'integrazione tra esseri umani e tecnologie avanzate.",
+    "description3": "Combino competenze tecniche e teoriche per affrontare le sfide della ricerca, con un particolare interesse per l'usabilità della tecnologia, che ritengo debba essere un ponte e non un ostacolo nel raggiungimento degli obiettivi."
+  },
+  "skills": {
+    "title": "Competenze"
+  },
+  "experience": {
+    "title": "Esperienze",
+    "present": "Attuale",
+    "jobs": {
+      "cb": {
+        "title": "Sviluppatore Software"
+      },
+      "kline": {
+        "title": "Ingegnere Ricerca & Sviluppo"
+      },
+      "freelance": {
+        "title": "Sviluppatore Full Stack",
+        "company": "Libero Professionista"
+      },
+      "teaching": {
+        "title": "Supporto alla Didattica"
+      },
+      "postdoc": {
+        "title": "Ricercatore Post-Dottorato",
+        "description": "Interazione Uomo-Robot e Intelligenza Artificiale Centrata sull'Uomo"
+      }
+    }
+  },
+  "education": {
+    "title": "Formazione",
+    "present": "Attuale",
+    "degrees": {
+      "master": {
+        "course": "Laurea Magistrale, Ingegneria Informatica",
+        "thesis": "Tesi: \"Un ambiente generalizzato per la programmazione di robot collaborativi da parte degli utenti finali\""
+      },
+      "exam": {
+        "course": "Esame di abilitazione professionale"
+      },
+      "visiting": {
+        "course": "Dottorando in visita, Robotics and Interaction",
+        "description": "Teoria della Mente e Large Language Models in Interazione Uomo-Robot"
+      },
+      "phd": {
+        "course": "Dottorato di Ricerca, Technology for Health",
+        "description": "Interazione Uomo-Robot ed Intelligenza Artificiale Centrata sull'Uomo"
+      }
+    }
+  },
+  "services": {
+    "title": "Servizi",
+    "description": "Questi sono alcuni dei servizi che offro. Contattami se posso aiutarti in qualche modo!",
+    "items": {
+      "webApp": "Applicazioni Web",
+      "backend": "Sviluppo BackEnd",
+      "consulting": "Consulenza",
+      "support": "Supporto Tecnico",
+      "tutoring": "Tutoraggio"
+    }
+  },
+  "contacts": {
+    "title": "Contatti",
+    "address": "Brescia, Italia",
+    "vat": "Partita IVA: 04492100989"
+  }
+}

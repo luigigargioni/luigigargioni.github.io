@@ -15,7 +15,7 @@ type HeaderType = {
 
 export const headerDataEN: HeaderType = {
   name: 'Luigi Gargioni',
-  title: 'Researcher and Computer Engineer',
+  title: 'Researcher & Computer Engineer',
   description: '"There is beauty when something works and works intuitively"',
   image: profile,
   resumePdf: '',
@@ -25,7 +25,7 @@ export const headerDataEN: HeaderType = {
 
 export const headerDataIT: HeaderType = {
   name: 'Luigi Gargioni',
-  title: 'Ricercatore e Ingegnere Informatico',
+  title: 'Ricercatore & Ingegnere Informatico',
   description: '"There is beauty when something works and works intuitively"',
   image: profile,
   resumePdf: '',
