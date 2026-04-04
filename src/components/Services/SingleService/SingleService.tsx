@@ -20,7 +20,7 @@ export const SingleService = ({ id, title, icon }: ServiceType) => {
           style={{ color: customTheme.tertiary }}
         >
           <i className="service-icon">{icon}</i>
-          <h4 style={{ color: customTheme.tertiary }}>{title}</h4>
+          <h3 style={{ color: customTheme.tertiary }}>{title}</h3>
         </div>
       </div>
     </Fade>

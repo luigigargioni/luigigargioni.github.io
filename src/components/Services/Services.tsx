@@ -32,7 +32,7 @@ export const Services = () => {
       style={{ backgroundColor: customTheme.secondary }}
     >
       <div className="services-header">
-        <h1 style={{ color: customTheme.primary }}>{servicesTitle}</h1>
+        <h2 style={{ color: customTheme.primary }}>{servicesTitle}</h2>
       </div>
       <div className="services-body">
         <p style={{ color: customTheme.tertiary80 }}>{servicesDescription}</p>

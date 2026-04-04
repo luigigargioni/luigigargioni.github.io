@@ -56,12 +56,15 @@
 
 
 .skill--box > img {
-    height: 50px;
+    max-height: 50px;
+    width: auto;
+    height: auto;
+    max-width: 100%;
     pointer-events: none;
 }
 
 .ros-img {
-    padding: 11px;
+    max-height: 30px;
   }
   
 
@@ -112,7 +115,10 @@
     }
 
     .skill--box > img {
-        height: 45px;
+        max-height: 45px;
+        width: auto;
+        height: auto;
+        max-width: 100%;
     }
 
 
@@ -149,7 +155,7 @@
     }
 
     .skill--box > img {
-        height: 40px;
+        max-height: 40px;
     }
 
     .skillsHeader h2 {

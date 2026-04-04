@@ -45,7 +45,7 @@ export const About = () => {
           </p>
         </div>
         <div className="about-img">
-          <img src={customTheme.aboutimg1} alt="" />
+          <img src={customTheme.aboutimg1} alt="" width="400" height="400" />
         </div>
       </div>
     </div>

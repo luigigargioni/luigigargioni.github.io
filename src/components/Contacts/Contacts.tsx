@@ -5,6 +5,7 @@ import {
   FaStackOverflow,
   /* FaMoneyCheck, */
   FaResearchgate,
+  FaOrcid,
 } from 'react-icons/fa'
 import { /* FiPhone, */ FiAtSign } from 'react-icons/fi'
 import { HiOutlineLocationMarker } from 'react-icons/hi'
@@ -39,7 +40,7 @@ export const Contacts = () => {
       style={{ backgroundColor: customTheme.secondary }}
     >
       <div className="contacts--container">
-        <h1 style={{ color: customTheme.primary }}>{contactsTitle}</h1>
+        <h2 style={{ color: customTheme.primary }}>{contactsTitle}</h2>
         <div className="contacts-body">
           <div className="contacts-details">
             <a
@@ -94,8 +95,9 @@ export const Contacts = () => {
                   href={socialsData.linkedIn}
                   target="_blank"
                   rel="noreferrer"
+                  aria-label="LinkedIn"
                 >
-                  <FaLinkedinIn aria-label="LinkedIn" />
+                  <FaLinkedinIn />
                 </SocialIcon>
               )}
               {socialsData.scholar && (
@@ -103,8 +105,9 @@ export const Contacts = () => {
                   href={socialsData.scholar}
                   target="_blank"
                   rel="noreferrer"
+                  aria-label="Google Scholar"
                 >
-                  <IoMdSchool aria-label="Google Scholar" />
+                  <IoMdSchool />
                 </SocialIcon>
               )}
               {socialsData.researchGate && (
@@ -112,8 +115,19 @@ export const Contacts = () => {
                   href={socialsData.researchGate}
                   target="_blank"
                   rel="noreferrer"
+                  aria-label="ResearchGate"
                 >
-                  <FaResearchgate aria-label="Research Gate" />
+                  <FaResearchgate />
+                </SocialIcon>
+              )}
+              {socialsData.orcId && (
+                <SocialIcon
+                  href={socialsData.orcId}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="ORCID"
+                >
+                  <FaOrcid />
                 </SocialIcon>
               )}
               {socialsData.github && (
@@ -121,8 +135,9 @@ export const Contacts = () => {
                   href={socialsData.github}
                   target="_blank"
                   rel="noreferrer"
+                  aria-label="GitHub"
                 >
-                  <FaGithub aria-label="GitHub" />
+                  <FaGithub />
                 </SocialIcon>
               )}
               {socialsData.stackOverflow && (
@@ -130,8 +145,9 @@ export const Contacts = () => {
                   href={socialsData.stackOverflow}
                   target="_blank"
                   rel="noreferrer"
+                  aria-label="Stack Overflow"
                 >
-                  <FaStackOverflow aria-label="Stack Overflow" />
+                  <FaStackOverflow />
                 </SocialIcon>
               )}
             </div>
@@ -142,6 +158,8 @@ export const Contacts = () => {
         src={customTheme.contactsimg}
         alt="contacts"
         className="contacts--img"
+        width="350"
+        height="350"
       />
     </div>
   )

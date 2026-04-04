@@ -34,6 +34,7 @@
 
 @font-face {
   font-family: 'BestermindRegular';
+  font-display: swap;
   src: url('./fonts/Bestermind/BestermindRegular.ttf'); 
   src: url('./fonts/Bestermind/BestermindRegular.ttf') format('embedded-opentype'), 
        url('./fonts/Bestermind/BestermindRegular.ttf')  format('truetype'), 

@@ -1,20 +1,30 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, lazy, Suspense } from 'react'
 import { ThemeProvider } from 'style/themeProvider'
 
-import {
-  Navbar,
-  Footer,
-  Landing,
-  About,
-  Skills,
-  Education,
-  Experience,
-  Contacts,
-  Services,
-  ThreeBackground,
-  ThemeToggle,
-  ScrollProgress,
-} from 'components'
+import { Navbar, Footer, Landing, ScrollProgress } from 'components'
+
+const About = lazy(() =>
+  import('components/About/About').then((m) => ({ default: m.About })),
+)
+const Skills = lazy(() =>
+  import('components/Skills/Skills').then((m) => ({ default: m.Skills })),
+)
+const Education = lazy(() =>
+  import('components/Education/Education').then((m) => ({
+    default: m.Education,
+  })),
+)
+const Experience = lazy(() =>
+  import('components/Experience/Experience').then((m) => ({
+    default: m.Experience,
+  })),
+)
+const Services = lazy(() =>
+  import('components/Services/Services').then((m) => ({ default: m.Services })),
+)
+const Contacts = lazy(() =>
+  import('components/Contacts/Contacts').then((m) => ({ default: m.Contacts })),
+)
 
 export const App = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -152,13 +162,17 @@ export const App = () => {
       <ScrollProgress />
       {/* <ThemeToggle /> */}
       <Navbar />
-      <Landing />
-      <About />
-      <Skills />
-      <Education />
-      <Experience />
-      <Services />
-      <Contacts />
+      <main>
+        <Landing />
+        <Suspense fallback={<div style={{ minHeight: '100vh' }} />}>
+          <About />
+          <Skills />
+          <Education />
+          <Experience />
+          <Services />
+          <Contacts />
+        </Suspense>
+      </main>
       <Footer />
     </ThemeProvider>
   )

@@ -28,7 +28,7 @@ export const Education = () => {
     >
       <div className="education-body">
         <div className="education-description">
-          <h1 style={{ color: customTheme.primary }}>{educationTitle}</h1>
+          <h2 style={{ color: customTheme.primary }}>{educationTitle}</h2>
           {educationData
             .sort((a, b) => b.id - a.id)
             .map((edu) => (
@@ -46,7 +46,7 @@ export const Education = () => {
             ))}
         </div>
         <div className="education-image">
-          <img src={customTheme.eduimg} alt="" />
+          <img src={customTheme.eduimg} alt="" width="400" height="400" />
         </div>
       </div>
     </div>

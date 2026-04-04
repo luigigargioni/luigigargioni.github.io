@@ -25,21 +25,21 @@ export const ExperienceCard = ({
           className="expcard-img"
           style={{ backgroundColor: customTheme.primary }}
         >
-          <img src={expImgWhite} alt="" />
+          <img src={expImgWhite} alt="" width="80" height="80" />
         </div>
         <div className="experience-details">
-          <h6 style={{ color: customTheme.primary }}>
+          <h3 style={{ color: customTheme.primary }}>
             {startYear ? `${startYear}-${endYear}` : endYear}
-          </h6>
+          </h3>
           <h4 style={{ color: customTheme.tertiary }}>{jobtitle}</h4>
           <h5 style={{ color: customTheme.primary }}>
             <a href={companyUrl} target="_blank" rel="noreferrer">
               {company}
             </a>
           </h5>
-          <h6 style={{ color: customTheme.tertiary80, textAlign: 'justify' }}>
+          <div style={{ color: customTheme.tertiary80, textAlign: 'justify' }}>
             {description}
-          </h6>
+          </div>
         </div>
       </div>
     </Fade>

@@ -1,5 +1,5 @@
-import resumeEN from 'assets/pdf/CV_LUIGI_GARGIONI_EN.pdf'
-import resumeIT from 'assets/pdf/CV_LUIGI_GARGIONI_IT.pdf'
+// import resumeEN from 'assets/pdf/CV_LUIGI_GARGIONI_EN.pdf'
+// import resumeIT from 'assets/pdf/CV_LUIGI_GARGIONI_IT.pdf'
 import profile from 'assets/jpg/profile.jpg'
 import { contactsTitleEN, contactsTitleIT } from './contactsData'
 
@@ -18,7 +18,7 @@ export const headerDataEN: HeaderType = {
   title: 'Researcher and Computer Engineer',
   description: '"There is beauty when something works and works intuitively"',
   image: profile,
-  resumePdf: resumeEN,
+  resumePdf: '',
   resumeBtn: 'Resume',
   contactBtn: contactsTitleEN,
 }
@@ -28,7 +28,7 @@ export const headerDataIT: HeaderType = {
   title: 'Ricercatore e Ingegnere Informatico',
   description: '"There is beauty when something works and works intuitively"',
   image: profile,
-  resumePdf: resumeIT,
+  resumePdf: '',
   resumeBtn: 'Curriculum',
   contactBtn: contactsTitleIT,
 }
