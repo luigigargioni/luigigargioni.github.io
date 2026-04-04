@@ -55,7 +55,7 @@ npm install
 This will install all required dependencies including:
 - Three.js for 3D animations
 - React Three Fiber for React integration
-- Framer Motion for advanced animations
+- Material-UI for components
 - And more...
 
 ### 2. Start Development Server
@@ -104,16 +104,15 @@ npm run pretty     # Format code with Prettier
 * **Custom CSS Variables** - Theming system
 
 ### 3D & Animations
-* **Three.js 0.160.0** - 3D graphics library
-* **React Three Fiber 8.15.0** - React renderer for Three.js
-* **React Three Drei 9.92.0** - Three.js helpers
-* **Framer Motion 10.16.0** - Advanced animations
+* **Three.js 0.183.2** - 3D graphics library
+* **React Three Fiber 9.5.0** - React renderer for Three.js
 * **React Awesome Reveal** - Scroll animations
+* **React Fast Marquee** - Smooth marquee animations
 
 ### SEO & Performance
 * **React Helmet Async** - Meta tag management
-* **React Intersection Observer** - Lazy loading
-* **Vite Plugins** - Compression and PWA support
+* **Code Splitting** - Lazy loading with React.lazy
+* **Vite Build Optimization** - Manual chunks and compression
 
 ---
 
@@ -144,8 +143,7 @@ luigigargioni.github.io/
 │   │   ├── Contacts/           # Contact form
 │   │   └── Footer/             # Footer
 │   ├── hooks/
-│   │   ├── useTheme.ts         # Theme management
-│   │   └── useIntersectionObserver.ts  # Scroll detection
+│   │   └── useTheme.ts         # Theme management
 │   ├── styles/
 │   │   ├── variables.css       # CSS custom properties
 │   │   └── animations.css      # Reusable animations
