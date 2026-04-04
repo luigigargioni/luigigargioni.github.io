@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 
 import './Experience.css'
 
-import { customTheme } from 'style/theme'
+import { useCustomTheme } from 'style/themeProvider'
 import {
   experienceDataEN,
   experienceDataIT,
@@ -15,6 +15,7 @@ import { ExperienceCard } from './ExperienceCard'
 
 export const Experience = () => {
   const { lang } = useContext(CustomContext)
+  const customTheme = useCustomTheme()
   const experienceTitle =
     lang === LanguageEnum.EN ? experienceTitleEN : experienceTitleIT
   const experienceData =

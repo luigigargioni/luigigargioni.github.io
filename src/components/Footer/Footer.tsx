@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import './Footer.css'
-import { customTheme } from 'style/theme'
+import { useCustomTheme } from 'style/themeProvider'
 import { headerDataEN, headerDataIT } from 'data/headerData'
 import { AiOutlineCopyrightCircle, AiOutlineHighlight } from 'react-icons/ai'
 import { CustomContext } from 'context'
@@ -8,6 +8,7 @@ import { LanguageEnum } from 'utils/language'
 
 export const Footer = () => {
   const { lang } = useContext(CustomContext)
+  const customTheme = useCustomTheme()
   const headerData = lang === LanguageEnum.EN ? headerDataEN : headerDataIT
 
   return (

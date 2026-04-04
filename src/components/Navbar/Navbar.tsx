@@ -8,7 +8,7 @@ import { IoSchoolOutline } from 'react-icons/io5'
 import { AiOutlinePhone } from 'react-icons/ai'
 
 import './Navbar.css'
-import { customTheme } from 'style/theme'
+import { useCustomTheme } from 'style/themeProvider'
 import { headerDataEN, headerDataIT } from 'data/headerData'
 import { CustomContext } from 'context'
 import { aboutDataEN, aboutDataIT } from 'data/aboutData'
@@ -28,6 +28,7 @@ import {
 
 export const Navbar = () => {
   const { setDrawerOpen, drawerOpen, lang } = useContext(CustomContext)
+  const customTheme = useCustomTheme()
   const [open, setOpen] = useState(false)
   const headerData = lang === LanguageEnum.EN ? headerDataEN : headerDataIT
   const aboutTitle =

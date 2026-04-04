@@ -23,7 +23,7 @@ import { LocalStorageKey, setToLocalStorage } from 'utils/localStorageUtils'
 import { documentTitleEN, documentTitleIT, LanguageEnum } from 'utils/language'
 
 const ResumeBtn = styled(Button)(({ theme }) => ({
-  color: customTheme.primary,
+  color: 'var(--primary)',
   borderRadius: '30px',
   textTransform: 'inherit',
   textDecoration: 'none',
@@ -32,12 +32,12 @@ const ResumeBtn = styled(Button)(({ theme }) => ({
   fontWeight: '500',
   height: '50px',
   fontFamily: 'var(--primaryFont)',
-  border: `3px solid ${customTheme.primary}`,
+  border: '3px solid var(--primary)',
   transition: '100ms ease-out',
   '&:hover': {
-    backgroundColor: customTheme.tertiary,
-    color: customTheme.secondary,
-    border: `3px solid ${customTheme.tertiary}`,
+    backgroundColor: 'var(--tertiary)',
+    color: 'var(--secondary)',
+    border: '3px solid var(--tertiary)',
   },
   [theme.breakpoints.down('sm')]: {
     width: '180px',
@@ -45,8 +45,8 @@ const ResumeBtn = styled(Button)(({ theme }) => ({
 }))
 
 const ContactBtn = styled(Button)(({ theme }) => ({
-  backgroundColor: customTheme.primary,
-  color: customTheme.secondary,
+  backgroundColor: 'var(--primary)',
+  color: 'var(--secondary)',
   borderRadius: '30px',
   textTransform: 'inherit',
   textDecoration: 'none',
@@ -55,12 +55,12 @@ const ContactBtn = styled(Button)(({ theme }) => ({
   fontSize: '1rem',
   fontWeight: '500',
   fontFamily: 'var(--primaryFont)',
-  border: `3px solid ${customTheme.primary}`,
+  border: '3px solid var(--primary)',
   transition: '100ms ease-out',
   '&:hover': {
-    backgroundColor: customTheme.secondary,
-    color: customTheme.tertiary,
-    border: `3px solid ${customTheme.tertiary}`,
+    backgroundColor: 'var(--secondary)',
+    color: 'var(--tertiary)',
+    border: '3px solid var(--tertiary)',
   },
   [theme.breakpoints.down('sm')]: {
     display: 'none',
@@ -84,7 +84,7 @@ export const Landing = () => {
                 <FaLinkedin
                   className="landing--social"
                   style={{ color: customTheme.secondary }}
-                  aria-label="LinkedIn"
+                  aria-label="GoogleScholar"
                 />
               </a>
             )}

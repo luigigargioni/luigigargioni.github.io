@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 
 import './Education.css'
-import { customTheme } from 'style/theme'
+import { useCustomTheme } from 'style/themeProvider'
 import {
   educationDataEN,
   educationDataIT,
@@ -14,6 +14,7 @@ import { EducationCard } from './EducationCard'
 
 export const Education = () => {
   const { lang } = useContext(CustomContext)
+  const customTheme = useCustomTheme()
   const educationData =
     lang === LanguageEnum.EN ? educationDataEN : educationDataIT
   const educationTitle =

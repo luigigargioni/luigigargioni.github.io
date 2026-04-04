@@ -3,7 +3,7 @@ import Marquee from 'react-fast-marquee'
 
 import './Skills.css'
 
-import { customTheme } from 'style/theme'
+import { useCustomTheme } from 'style/themeProvider'
 import {
   skillsData,
   skillsData2,
@@ -16,6 +16,7 @@ import { LanguageEnum } from 'utils/language'
 
 export const Skills = () => {
   const { lang } = useContext(CustomContext)
+  const customTheme = useCustomTheme()
   const skillsTitle = lang === LanguageEnum.EN ? skillsTitleEN : skillsTitleIT
 
   const skillBoxStyle = () => ({

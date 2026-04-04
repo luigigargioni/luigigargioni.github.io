@@ -1,13 +1,14 @@
 import React, { useContext } from 'react'
 
 import './About.css'
-import { customTheme } from 'style/theme'
+import { useCustomTheme } from 'style/themeProvider'
 import { aboutDataEN, aboutDataIT } from 'data/aboutData'
 import { CustomContext } from 'context'
 import { LanguageEnum } from 'utils/language'
 
 export const About = () => {
   const { lang } = useContext(CustomContext)
+  const customTheme = useCustomTheme()
   const aboutData = lang === LanguageEnum.EN ? aboutDataEN : aboutDataIT
 
   return (

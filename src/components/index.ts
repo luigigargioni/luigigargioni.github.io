@@ -8,5 +8,7 @@ export { Experience } from './Experience/Experience'
 export { Contacts } from './Contacts/Contacts'
 export { Services } from './Services/Services'
 export { SingleService } from './Services/SingleService/SingleService'
-
 export { BackToTop } from './BackToTop/BackToTop'
+export { ThreeBackground } from './ThreeBackground'
+export { ThemeToggle } from './ThemeToggle'
+export { ScrollProgress } from './ScrollProgress'
