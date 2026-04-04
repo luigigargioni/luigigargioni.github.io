@@ -1,6 +1,6 @@
 {
   "name": "luigigargioni.github.io",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "homepage": "https://luigigargioni.github.io",
   "private": true,
   "scripts": {
@@ -15,23 +15,32 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@mui/material": "^7.3.9",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.0.0",
+    "framer-motion": "^12.38.0",
     "react": "^19.2.4",
     "react-awesome-reveal": "^4.3.1",
     "react-dom": "^19.2.4",
     "react-fast-marquee": "^1.6.0",
+    "react-helmet-async": "^3.0.0",
     "react-icons": "^5.6.0",
+    "react-intersection-observer": "^10.0.3",
     "react-router-dom": "^7.14.0",
-    "react-router-hash-link": "^2.4.3"
+    "react-router-hash-link": "^2.4.3",
+    "three": "^0.183.2"
   },
   "devDependencies": {
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@types/react-router-hash-link": "^2.4.6",
+    "@types/three": "^0.183.1",
     "@vitejs/plugin-react": "^6.0.1",
     "eslint": "^10.2.0",
     "prettier": "^3.8.1",
     "typescript": "^6.0.2",
-    "vite": "^8.0.3"
+    "vite": "^8.0.3",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-pwa": "^1.2.0"
   },
   "browserslist": {
     "production": [

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { customTheme } from 'style/theme'
+import { useCustomTheme } from 'style/themeProvider'
 
 import {
   servicesDataEN,
@@ -17,6 +17,7 @@ import { SingleService } from './SingleService/SingleService'
 
 export const Services = () => {
   const { lang } = useContext(CustomContext)
+  const customTheme = useCustomTheme()
   const servicesTitle =
     lang === LanguageEnum.EN ? servicesTitleEN : servicesTitleIT
   const servicesDescription =

@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles'
-import { customTheme } from 'style/theme'
+// Theme colors will be passed as props
 
 export const SocialIcon = styled('a')(() => ({
   width: '45px',
@@ -9,19 +9,19 @@ export const SocialIcon = styled('a')(() => ({
   alignItems: 'center',
   justifyContent: 'center',
   fontSize: '21px',
-  backgroundColor: customTheme.primary,
-  color: customTheme.secondary,
+  backgroundColor: 'var(--primary)',
+  color: 'var(--secondary)',
   transition: '250ms ease-in-out',
   '&:hover': {
     transform: 'scale(1.1)',
-    color: customTheme.secondary,
-    backgroundColor: customTheme.tertiary,
+    color: 'var(--secondary)',
+    backgroundColor: 'var(--tertiary)',
   },
 }))
 
 export const DetailsIcon = styled('div')(() => ({
-  backgroundColor: customTheme.primary,
-  color: customTheme.secondary,
+  backgroundColor: 'var(--primary)',
+  color: 'var(--secondary)',
   borderRadius: '50%',
   width: '45px',
   height: '45px',
@@ -33,7 +33,7 @@ export const DetailsIcon = styled('div')(() => ({
   flexShrink: 0,
   '&:hover': {
     transform: 'scale(1.1)',
-    color: customTheme.secondary,
-    backgroundColor: customTheme.tertiary,
+    color: 'var(--secondary)',
+    backgroundColor: 'var(--tertiary)',
   },
 }))

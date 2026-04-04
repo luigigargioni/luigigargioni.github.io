@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { JSX } from 'react'
 
 export const experienceTitleEN = 'Experience'
 export const experienceTitleIT = 'Esperienze'
@@ -68,21 +68,19 @@ export const experienceDataEN: ExperienceType[] = [
     startYear: '01/2024',
     endYear: 'Present',
     description: (
-      <p>
-        <ul>
-          <li>Robotics 2023/2024</li>
-          <li>Robotics 2024/2025</li>
-          <li>Coding for Data Science and Analytics 2025/2026</li>
-          <li>Robotics 2025/2026</li>
-        </ul>
-      </p>
+      <ul>
+        <li>Robotics 2023/2024</li>
+        <li>Robotics 2024/2025</li>
+        <li>Coding for Data Science and Analytics 2025/2026</li>
+        <li>Robotics 2025/2026</li>
+      </ul>
     ),
   },
   {
     id: 5,
     company: 'University of Brescia',
     companyUrl: 'https://www.unibs.it/en',
-    jobtitle: 'Research Fellow',
+    jobtitle: 'Postdoctoral Researcher',
     startYear: '12/2025',
     endYear: 'Present',
     description: (
@@ -146,21 +144,19 @@ export const experienceDataIT: ExperienceType[] = [
     startYear: '01/2024',
     endYear: 'Attuale',
     description: (
-      <p>
-        <ul>
-          <li>Robotica 2023/2024</li>
-          <li>Robotica 2024/2025</li>
-          <li>Coding for Data Science and Analytics 2025/2026</li>
-          <li>Robotica 2025/2026</li>
-        </ul>
-      </p>
+      <ul>
+        <li>Robotica 2023/2024</li>
+        <li>Robotica 2024/2025</li>
+        <li>Coding for Data Science and Analytics 2025/2026</li>
+        <li>Robotica 2025/2026</li>
+      </ul>
     ),
   },
   {
     id: 5,
     company: 'Università degli Studi di Brescia',
     companyUrl: 'https://www.unibs.it',
-    jobtitle: 'Borsista di Ricerca',
+    jobtitle: 'Ricercatore Post-Dottorato',
     startYear: '12/2025',
     endYear: 'Attuale',
     description: (

@@ -11,7 +11,7 @@ import { HiOutlineLocationMarker } from 'react-icons/hi'
 
 import { IoMdSchool } from 'react-icons/io'
 
-import { customTheme } from 'style/theme'
+import { useCustomTheme } from 'style/themeProvider'
 import { socialsData } from 'data/socialsData'
 import {
   contactsDataEN,
@@ -26,6 +26,7 @@ import { DetailsIcon, SocialIcon } from './Contacts.style'
 
 export const Contacts = () => {
   const { lang } = useContext(CustomContext)
+  const customTheme = useCustomTheme()
   const contactsData =
     lang === LanguageEnum.EN ? contactsDataEN : contactsDataIT
   const contactsTitle =

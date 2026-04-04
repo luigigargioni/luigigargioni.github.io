@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles'
 import { AiOutlineClose } from 'react-icons/ai'
 import { IoHomeSharp, IoMenuSharp } from 'react-icons/io5'
 
-import { customTheme } from 'style/theme'
+// Theme colors will be passed as props
 import { FaFolderOpen, FaUser } from 'react-icons/fa'
 import { HiDocumentText } from 'react-icons/hi'
 import { BsFillGearFill } from 'react-icons/bs'
@@ -11,7 +11,7 @@ import { MdPhone } from 'react-icons/md'
 
 export const NavMenu = styled(IoMenuSharp)(() => ({
   fontSize: '2.5rem',
-  color: customTheme.tertiary,
+  color: 'var(--tertiary)',
   cursor: 'pointer',
   transform: 'translateY(-10px)',
   transition: 'color 0.3s',
@@ -19,7 +19,7 @@ export const NavMenu = styled(IoMenuSharp)(() => ({
   top: '30px',
   right: '30px',
   '&:hover': {
-    color: customTheme.primary,
+    color: 'var(--primary)',
   },
 }))
 
@@ -31,7 +31,7 @@ export const MuiDrawer = styled(Drawer)(({ theme: t }) => ({
     fontStyle: ' normal',
     fontWeight: ' normal',
     fontSize: ' 24px',
-    background: customTheme.secondary,
+    background: 'var(--secondary)',
     // overflow: 'hidden',
     overflowY: 'auto',
     borderTopRightRadius: '40px',
@@ -46,13 +46,13 @@ export const ClosebtnIcon = styled(AiOutlineClose)(({ theme: t }) => ({
   fontSize: '2rem',
   fontWeight: 'bold',
   cursor: 'pointer',
-  color: customTheme.primary,
+  color: 'var(--primary)',
   position: 'absolute',
   right: 40,
   top: 40,
   transition: 'color 0.2s',
   '&:hover': {
-    color: customTheme.tertiary,
+    color: 'var(--tertiary)',
   },
   [t.breakpoints.down('sm')]: {
     right: 20,
@@ -63,8 +63,8 @@ export const ClosebtnIcon = styled(AiOutlineClose)(({ theme: t }) => ({
 export const DrawerItem = styled('div')(({ theme: t }) => ({
   margin: '1.5rem auto',
   borderRadius: '78.8418px',
-  background: customTheme.secondary,
-  color: customTheme.primary,
+  background: 'var(--secondary)',
+  color: 'var(--primary)',
   width: '85%',
   height: '60px',
   display: 'flex',
@@ -73,11 +73,11 @@ export const DrawerItem = styled('div')(({ theme: t }) => ({
   padding: '0 30px',
   boxSizing: 'border-box',
   border: '2px solid',
-  borderColor: customTheme.primary,
+  borderColor: 'var(--primary)',
   transition: 'background-color 0.2s, color 0.2s',
   '&:hover': {
-    background: customTheme.primary,
-    color: customTheme.secondary,
+    background: 'var(--primary)',
+    color: 'var(--secondary)',
   },
   [t.breakpoints.down('sm')]: {
     width: '100%',
@@ -117,7 +117,7 @@ export const DrawerIconHiDocumentText = styled(HiDocumentText)(
     [t.breakpoints.down('sm')]: {
       fontSize: '1.385rem',
     },
-  })
+  }),
 )
 
 export const DrawerIconBsFillGearFill = styled(BsFillGearFill)(
@@ -126,7 +126,7 @@ export const DrawerIconBsFillGearFill = styled(BsFillGearFill)(
     [t.breakpoints.down('sm')]: {
       fontSize: '1.385rem',
     },
-  })
+  }),
 )
 
 export const DrawerIconFaFolderOpen = styled(FaFolderOpen)(({ theme: t }) => ({
