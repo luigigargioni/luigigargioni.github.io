@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<geo xmlns="http://www.w3.org/2003/01/geo/wgs84_pos#">
+  <Point>
+    <lat>45.54168</lat>
+    <long>10.20977</long>
+  </Point>
+  <placename>Brescia, Italy</placename>
+  <region>Lombardy</region>
+  <country>Italy</country>
+</geo>

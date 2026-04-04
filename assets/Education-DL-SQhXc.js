@@ -1,0 +1,1 @@
+import{i as e}from"./index-CWiMNlfZ.js";export{e as Education};
