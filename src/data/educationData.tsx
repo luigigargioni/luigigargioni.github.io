@@ -1,5 +1,4 @@
 import React, { JSX } from 'react'
-import { socialsData } from './socialsData'
 
 export const educationTitleEN = 'Education'
 export const educationTitleIT = 'Formazione'

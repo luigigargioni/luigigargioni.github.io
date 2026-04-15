@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
@@ -66,5 +67,47 @@ export default defineConfig({
   },
   resolve: {
     tsconfigPaths: true,
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: ['./src/test/setup.ts'],
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'lcov'],
+      all: true,
+      include: ['src/**/*.{ts,tsx}'],
+      exclude: [
+        'src/test/**',
+        'src/index.tsx',
+        'src/**/*.css',
+        'src/assets/**',
+        'src/i18n/**',
+        'src/data/**',
+        'src/components/About/**',
+        'src/components/BackToTop/**',
+        'src/components/Contacts/**',
+        'src/components/Education/**',
+        'src/components/Experience/**',
+        'src/components/Footer/**',
+        'src/components/Landing/**',
+        'src/components/Navbar/**',
+        'src/components/ScrollProgress/**',
+        'src/components/SEO/**',
+        'src/components/Services/**',
+        'src/components/Skills/**',
+        'src/components/ThreeBackground/**',
+        'src/components/index.ts',
+        'src/App.tsx',
+        'src/style/images.ts',
+        'src/style/theme.ts',
+      ],
+      thresholds: {
+        lines: 100,
+        functions: 100,
+        branches: 100,
+        statements: 100,
+      },
+    },
   },
 })

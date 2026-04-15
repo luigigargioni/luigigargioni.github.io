@@ -18,10 +18,11 @@ import { CustomContext } from 'context'
 import { socialsData } from 'data/socialsData'
 import ITflag from 'assets/svg/it.svg'
 import ENflag from 'assets/svg/gb.svg'
-import { AiOutlineDownload } from 'react-icons/ai'
+// import { AiOutlineDownload } from 'react-icons/ai'
 import { FiSend } from 'react-icons/fi'
 import profile from 'assets/jpg/profile.jpg'
 
+/*
 const ResumeBtn = styled(Button)(({ theme }) => ({
   color: 'var(--primary)',
   borderRadius: '30px',
@@ -43,6 +44,7 @@ const ResumeBtn = styled(Button)(({ theme }) => ({
     width: '180px',
   },
 }))
+  */
 
 const ContactBtn = styled(Button)(({ theme }) => ({
   backgroundColor: 'var(--primary)',

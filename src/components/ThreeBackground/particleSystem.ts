@@ -117,7 +117,7 @@ export class ParticleSystem {
       if (positions[i + 2] < -25) positions[i + 2] = 25
     }
 
-    positions.needsUpdate = true
+    this.particles.geometry.attributes.position.needsUpdate = true
 
     let lineIndex = 0
     const connectionDistance = this.config.connectionDistance

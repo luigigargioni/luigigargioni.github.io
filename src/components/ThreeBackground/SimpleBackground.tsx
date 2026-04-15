@@ -74,15 +74,15 @@ export const ThreeBackground: React.FC = () => {
         ctx.fill()
 
         for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[j].x - particle.x
-          const dy = particles[j].y - particle.y
-          const distance = Math.sqrt(dx * dx + dy * dy)
+          const _dx = particles[j].x - particle.x
+          const _dy = particles[j].y - particle.y
+          const _distance = Math.sqrt(_dx * _dx + _dy * _dy)
 
-          if (distance < connectionDistance) {
+          if (_distance < connectionDistance) {
             ctx.beginPath()
             ctx.moveTo(particle.x, particle.y)
             ctx.lineTo(particles[j].x, particles[j].y)
-            ctx.strokeStyle = `rgba(63, 195, 55, ${1 - distance / connectionDistance})`
+            ctx.strokeStyle = `rgba(63, 195, 55, ${1 - _distance / connectionDistance})`
             ctx.lineWidth = 0.5
             ctx.stroke()
           }
