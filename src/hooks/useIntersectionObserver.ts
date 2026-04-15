@@ -8,8 +8,8 @@ interface UseIntersectionObserverOptions {
 }
 
 export const useIntersectionObserver = (
-  options: UseIntersectionObserverOptions = {}
-): [React.RefObject<HTMLDivElement>, boolean] => {
+  options: UseIntersectionObserverOptions = {},
+): [React.RefObject<HTMLDivElement | null>, boolean] => {
   const {
     threshold = 0.1,
     root = null,
@@ -30,12 +30,13 @@ export const useIntersectionObserver = (
       ([entry]) => {
         setIsVisible(entry.isIntersecting)
       },
-      { threshold, root, rootMargin }
+      { threshold, root, rootMargin },
     )
 
     observer.observe(element)
 
     return () => {
+      /* v8 ignore next */
       if (element) {
         observer.unobserve(element)
       }

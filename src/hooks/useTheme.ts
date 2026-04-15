@@ -10,11 +10,14 @@ export const useTheme = () => {
     if (savedTheme) {
       return savedTheme
     }
-    
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+
+    if (
+      window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: light)').matches
+    ) {
       return 'light'
     }
-    
+
     return 'dark'
   })
 

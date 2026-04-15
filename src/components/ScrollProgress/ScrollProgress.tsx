@@ -6,7 +6,9 @@ export const ScrollProgress: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight
+      const totalHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight
       const progress = (window.scrollY / totalHeight) * 100
       setScrollProgress(progress)
     }
@@ -17,8 +19,8 @@ export const ScrollProgress: React.FC = () => {
 
   return (
     <div className="scroll-progress-container">
-      <div 
-        className="scroll-progress-bar" 
+      <div
+        className="scroll-progress-bar"
         style={{ width: `${scrollProgress}%` }}
       />
     </div>

@@ -49,7 +49,9 @@ const ThemeContext = createContext<ThemeType>(darkTheme)
 
 export const useCustomTheme = () => useContext(ThemeContext)
 
-export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+export const ThemeProvider: React.FC<{ children: ReactNode }> = ({
+  children,
+}) => {
   const { theme } = useTheme()
   const currentTheme = theme === 'light' ? lightTheme : darkTheme
 

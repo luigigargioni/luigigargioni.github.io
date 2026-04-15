@@ -1,6 +1,6 @@
 import React from 'react'
 import { BiWorld } from 'react-icons/bi'
-import { BsCodeSlash, BsGear } from 'react-icons/bs'
+import { BsCodeSlash } from 'react-icons/bs'
 import { FaChalkboardTeacher, FaPeopleCarry } from 'react-icons/fa'
 
 export const servicesTitleEN = 'Services'
