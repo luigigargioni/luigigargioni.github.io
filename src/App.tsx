@@ -167,8 +167,8 @@ export const App = () => {
         <Suspense fallback={<div style={{ minHeight: '100vh' }} />}>
           <About />
           <Skills />
-          <Education />
           <Experience />
+          <Education />
           <Services />
           <Contacts />
         </Suspense>

@@ -1,5 +1,5 @@
 import React from 'react'
-import Marquee from 'react-fast-marquee'
+import MarqueeModule from 'react-fast-marquee'
 import { useTranslation } from 'react-i18next'
 
 import './Skills.css'
@@ -7,6 +7,8 @@ import './Skills.css'
 import { useCustomTheme } from 'style/themeProvider'
 import { skillsData, skillsData2 } from 'data/skillsData'
 import { SkillsEnum, skillsImage } from 'components/Skills/skillsImage'
+
+const Marquee = (MarqueeModule as any).default || MarqueeModule
 
 export const Skills = () => {
   const { t } = useTranslation()

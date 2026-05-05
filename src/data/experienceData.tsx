@@ -83,9 +83,23 @@ export const experienceDataEN: ExperienceType[] = [
     companyUrl: 'https://www.unibs.it/en',
     jobtitle: 'Postdoctoral Researcher',
     startYear: '12/2025',
-    endYear: 'Present',
+    endYear: '03/2026',
     description: (
       <p>Human-Robot Interaction and Human-Centred Artificial Intelligence</p>
+    ),
+  },
+  {
+    id: 6,
+    company: 'University of Milano-Bicocca',
+    companyUrl: 'https://www.unimib.it/',
+    jobtitle: 'Postdoctoral Researcher',
+    startYear: '04/2026',
+    endYear: 'Present',
+    description: (
+      <p>
+        Developing conversational interfaces using Generative AI and Machine
+        Learning for screening and training systems
+      </p>
     ),
   },
 ]
@@ -160,11 +174,25 @@ export const experienceDataIT: ExperienceType[] = [
     companyUrl: 'https://www.unibs.it',
     jobtitle: 'Ricercatore Post-Dottorato',
     startYear: '12/2025',
-    endYear: 'Attuale',
+    endYear: '03/2026',
     description: (
       <p>
         Interazione Uomo-Robot e Intelligenza Artificiale Centrata
         sull&apos;Uomo
+      </p>
+    ),
+  },
+  {
+    id: 6,
+    company: 'Università degli Studi di Milano-Bicocca',
+    companyUrl: 'https://www.unimib.it/',
+    jobtitle: 'Ricercatore Post-Dottorato',
+    startYear: '04/2026',
+    endYear: 'Attuale',
+    description: (
+      <p>
+        Sviluppo di interfacce conversazionali utilizzando AI Generative e
+        Machine Learning per sistemi di screening e addestramento
       </p>
     ),
   },
