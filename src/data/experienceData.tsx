@@ -63,6 +63,7 @@ export const experienceDataEN: ExperienceType[] = [
       </p> */
     ),
   },
+  /*
   {
     id: 4,
     company: 'University of Brescia',
@@ -77,6 +78,7 @@ export const experienceDataEN: ExperienceType[] = [
       </ul>
     ),
   },
+  */
   {
     id: 5,
     company: 'University of Brescia',
@@ -154,6 +156,7 @@ export const experienceDataIT: ExperienceType[] = [
       </p> */
     ),
   },
+  /*
   {
     id: 4,
     company: 'Università degli Studi di Brescia',
@@ -168,6 +171,7 @@ export const experienceDataIT: ExperienceType[] = [
       </ul>
     ),
   },
+  */
   {
     id: 5,
     company: 'Università degli Studi di Brescia',
