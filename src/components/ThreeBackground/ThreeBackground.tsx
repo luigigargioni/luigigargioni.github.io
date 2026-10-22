@@ -11,7 +11,7 @@ interface ParticleSceneProps {
 const ParticleScene: React.FC<ParticleSceneProps> = ({ isMobile }) => {
   const particleSystemRef = useRef<ParticleSystem | null>(null)
   const groupRef = useRef<THREE.Group>(null)
-  const { camera, size } = useThree()
+  const { size } = useThree()
 
   const config: ParticleSystemConfig = useMemo(
     () => ({
@@ -63,10 +63,6 @@ const ParticleScene: React.FC<ParticleSceneProps> = ({ isMobile }) => {
       groupRef.current.rotation.y += 0.0002
     }
   })
-
-  useEffect(() => {
-    camera.position.z = 50
-  }, [camera])
 
   return <group ref={groupRef} />
 }
