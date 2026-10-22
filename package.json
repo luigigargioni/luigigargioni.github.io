@@ -54,6 +54,10 @@
     "vite": "^8.0.3",
     "vitest": "^4.1.4"
   },
+  "engines": {
+    "node": "24.x",
+    "npm": ">=11.0.0"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
