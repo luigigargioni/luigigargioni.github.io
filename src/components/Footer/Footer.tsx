@@ -4,6 +4,8 @@ import './Footer.css'
 import { useCustomTheme } from 'style/themeProvider'
 import { AiOutlineCopyrightCircle, AiOutlineHighlight } from 'react-icons/ai'
 
+const currentYear = new Date().getFullYear()
+
 export const Footer = () => {
   const { t } = useTranslation()
   const customTheme = useCustomTheme()
@@ -18,7 +20,7 @@ export const Footer = () => {
         }}
       >
         <AiOutlineCopyrightCircle style={{ marginRight: '0.5rem' }} />{' '}
-        {t('header.name')} {new Date().getFullYear()}
+        {t('header.name')} {currentYear}
         {' - '}
         <a
           href="https://reactjsexample.com/developer-portfolio-built-with-the-help-of-a-react-template/"

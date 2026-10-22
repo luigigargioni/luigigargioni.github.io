@@ -19,6 +19,7 @@
     "sourceMap": true,                     /* Generates corresponding '.map' file. */
     // "outFile": "./",                       /* Concatenate and emit output to single file. */
     "outDir": "build" /* Redirect output structure to the directory. */,
+    "rootDir": "./src",                    /* Specify the root directory of input files. */
     // "rootDir": "./",                       /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
     // "composite": true,                     /* Enable project compilation */
     // "tsBuildInfoFile": "./",               /* Specify file to store incremental compilation information */
@@ -48,25 +49,23 @@
 
     /* Module Resolution Options */
     "moduleResolution": "bundler" /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */,
-    "ignoreDeprecations": "6.0",
-    "baseUrl": "./src",                       /* Base directory to resolve non-absolute module names. */
     "paths": {
-      "App": ["./App.tsx"],
-      "components": ["./components/index.ts"],
-      "components/*": ["./components/*"],
-      "hooks": ["./hooks/index.ts"],
-      "hooks/*": ["./hooks/*"],
-      "utils": ["./utils/index.ts"],
-      "utils/*": ["./utils/*"],
-      "data": ["./data/index.ts"],
-      "data/*": ["./data/*"],
-      "style": ["./style/index.ts"],
-      "style/*": ["./style/*"],
-      "context": ["./context/index.tsx"],
-      "context/*": ["./context/*"],
-      "assets": ["./assets/index.ts"],
-      "assets/*": ["./assets/*"]
-    },                           /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
+      "App": ["./src/App.tsx"],
+      "components": ["./src/components/index.ts"],
+      "components/*": ["./src/components/*"],
+      "hooks": ["./src/hooks/index.ts"],
+      "hooks/*": ["./src/hooks/*"],
+      "utils": ["./src/utils/index.ts"],
+      "utils/*": ["./src/utils/*"],
+      "data": ["./src/data/index.ts"],
+      "data/*": ["./src/data/*"],
+      "style": ["./src/style/index.ts"],
+      "style/*": ["./src/style/*"],
+      "context": ["./src/context/index.tsx"],
+      "context/*": ["./src/context/*"],
+      "assets": ["./src/assets/index.ts"],
+      "assets/*": ["./src/assets/*"]
+    },                           /* A series of entries which re-map imports to lookup locations relative to this tsconfig. */
     // "rootDirs": [],                        /* List of root folders whose combined content represents the structure of the project at runtime. */
     // "typeRoots": [],                       /* List of folders to include type definitions from. */
     "types": ["vite/client", "vitest/globals"],                  /* Type declaration files to be included in compilation. */
