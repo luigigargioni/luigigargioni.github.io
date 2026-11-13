@@ -4,7 +4,6 @@
 # Allow all search engines to crawl the entire site
 User-agent: *
 Allow: /
-Disallow: /404/
 Disallow: /404.html
 
 # Sitemap location
@@ -16,18 +15,15 @@ Crawl-delay: 1
 # Specific rules for major search engines
 User-agent: Googlebot
 Allow: /
-Disallow: /404/
 
 User-agent: Googlebot-Image
 Allow: /
 
 User-agent: Bingbot
 Allow: /
-Disallow: /404/
 
 User-agent: Slurp
 Allow: /
-Disallow: /404/
 
 # Block bad bots (optional - uncomment if needed)
 # User-agent: AhrefsBot
