@@ -3,9 +3,9 @@ import { useTranslation } from 'react-i18next'
 import {
   FaGithub,
   FaLinkedinIn,
-  FaOrcid,
-  FaResearchgate,
-  FaStackOverflow,
+  // FaOrcid,
+  // FaResearchgate,
+  // FaStackOverflow,
 } from 'react-icons/fa'
 import { IoMdSchool } from 'react-icons/io'
 
@@ -119,18 +119,19 @@ export const usePortfolio = () => {
         url: socialsData.scholar,
         icon: <IoMdSchool />,
       },
-      {
-        name: 'ResearchGate',
-        url: socialsData.researchGate,
-        icon: <FaResearchgate />,
-      },
-      { name: 'ORCID', url: socialsData.orcId, icon: <FaOrcid /> },
+      // Hidden for now: uncomment (and the icon imports above) to show again.
+      // {
+      //   name: 'ResearchGate',
+      //   url: socialsData.researchGate,
+      //   icon: <FaResearchgate />,
+      // },
+      // { name: 'ORCID', url: socialsData.orcId, icon: <FaOrcid /> },
       { name: 'GitHub', url: socialsData.github, icon: <FaGithub /> },
-      {
-        name: 'Stack Overflow',
-        url: socialsData.stackOverflow,
-        icon: <FaStackOverflow />,
-      },
+      // {
+      //   name: 'Stack Overflow',
+      //   url: socialsData.stackOverflow,
+      //   icon: <FaStackOverflow />,
+      // },
     ],
     copyright: `© ${t('header.name')} ${YEAR}`,
   }

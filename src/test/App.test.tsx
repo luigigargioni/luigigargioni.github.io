@@ -172,6 +172,10 @@ describe('App', () => {
       screen.getByRole('link', { name: /Brescia, Italy/ }),
     ).toHaveAttribute('href', expect.stringContaining('maps'))
     expect(screen.getAllByRole('link', { name: 'GitHub' })).toHaveLength(2)
+    // only LinkedIn, Scholar and GitHub are shown
+    expect(screen.queryByRole('link', { name: 'ResearchGate' })).toBeNull()
+    expect(screen.queryByRole('link', { name: 'ORCID' })).toBeNull()
+    expect(screen.queryByRole('link', { name: 'Stack Overflow' })).toBeNull()
     expect(
       screen.getByRole('link', { name: 'University of Milano-Bicocca' }),
     ).toHaveAttribute('href', 'https://www.unimib.it/')
