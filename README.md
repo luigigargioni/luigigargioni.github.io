@@ -1,254 +1,118 @@
 # :zap: Personal Website: luigigargioni.github.io
 
-[![Deploy](https://github.com/luigigargioni/luigigargioni.github.io/actions/workflows/deploy.yml/badge.svg?branch=master)](https://github.com/luigigargioni/luigigargioni.github.io/actions/workflows/deploy.yml)&ensp;
-[![pages-build-deployment](https://github.com/luigigargioni/luigigargioni.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/luigigargioni/luigigargioni.github.io/actions/workflows/pages/pages-build-deployment)
+[![Deploy](https://github.com/luigigargioni/luigigargioni.github.io/actions/workflows/deploy.yml/badge.svg?branch=master)](https://github.com/luigigargioni/luigigargioni.github.io/actions/workflows/deploy.yml)
 
-Modern, responsive portfolio website with Three.js animations, dark/light theme, and advanced SEO optimization.
+Single-page personal website of Luigi Gargioni, researcher and computer engineer.
+A WebGL particle cloud changes shape section after section while you scroll.
 
----
-
-## :rocket: Live Demo
-
-**Running on** <https://luigigargioni.github.io/>
+**Live:** <https://luigigargioni.github.io/>
 
 ---
 
 ## :sparkles: Features
 
-### :art: Modern Design
-- **Three.js Particle Background** - Animated geometric particles with mouse interaction
-- **Dark/Light Theme Toggle** - Smooth theme switching with localStorage persistence
-- **Modern UI/UX** - Glassmorphism, gradients, and micro-interactions
-- **Responsive Design** - Mobile-first approach with optimized layouts
-
-### :mag: SEO & Performance
-- **Advanced SEO** - Open Graph, Twitter Cards, Schema.org structured data
-- **GEO Optimization** - Location-based meta tags for local search
-- **Sitemap** - XML sitemap for better search engine indexing
-- **PWA Ready** - Progressive Web App manifest and optimizations
-- **Performance Optimized** - Code splitting, lazy loading, optimized builds
-
-### :iphone: Mobile Experience
-- **Scroll Progress Indicator** - Visual reading progress
-- **Touch Optimized** - Smooth gestures and interactions
-- **Reduced Motion Support** - Respects user accessibility preferences
-- **Optimized Animations** - Reduced particle count on mobile devices
+- **Morphing particle cloud** (Three.js): one shape per section (sphere, torus, wave, double helix, galaxy), blended while scrolling, leaning towards the mouse.
+- **Flying profile photo**: the photo next to the name moves up, shrinks and docks in the top-left corner as you scroll; the name appears beside it once the hero is gone.
+- **Section navigation**: counter in the top bar and dots on the right, both following the section in view.
+- **Italian / English**: switch in the top bar; the browser language is used on the first visit.
+- **Responsive**: on narrow screens the cloud stays centred and dimmed behind the text.
+- **Light first load**: Three.js is loaded in its own chunk after the text, and phones get fewer particles.
+- **Graceful fallback**: without WebGL the page works the same, just without particles.
 
 ---
 
-## :dart: Requirements
+## :star2: Quick start
 
-* [Node.js 18.x.x+](https://nodejs.org/it/download/)
-* [React 19.x.x](https://react.dev/)
-* npm or yarn package manager
-
----
-
-## :star2: Quick Start
-
-### 1. Install Dependencies
+Requires **Node.js 24** and **npm 11+**.
 
 ```bash
 npm install
+npm start          # dev server on http://localhost:3000
 ```
 
-This will install all required dependencies including:
-- Three.js for 3D animations
-- React Three Fiber for React integration
-- Material-UI for components
-- And more...
-
-### 2. Start Development Server
+### Scripts
 
 ```bash
-npm start
+npm start          # dev server (Vite) on port 3000
+npm run build      # production build in build/
+npm run serve      # preview the production build
+npm test           # tests with coverage (100% required)
+npm run checktypes # TypeScript type check
+npm run lint       # oxlint
+npm run lintfix    # oxlint with automatic fixes
+npm run pretty     # format with Prettier
 ```
 
-Visit `http://localhost:3000` to see your portfolio.
-
-### 3. Build for Production
-
-```bash
-npm run build
-```
-
-The optimized build will be in the `build/` directory.
+A Husky pre-commit hook runs `pretty`, `lint`, `checktypes`, `test` and `build`.
 
 ---
 
-## :wrench: Development
+## :pencil2: Editing the content
 
-### Available Scripts
+| What | Where |
+|---|---|
+| Name, role, quote, "About" text, section titles, page title | `src/i18n/locales/it.json`, `src/i18n/locales/en.json` |
+| Experience | `src/data/experienceData.tsx` |
+| Education | `src/data/educationData.tsx` |
+| Skills (two groups, name and icon) | `src/data/skillsData.ts`, icons in `src/assets/skills/` |
+| Services | `src/data/servicesData.tsx` |
+| E-mail and city | `src/data/contactsData.ts` |
+| Profile links (LinkedIn, Scholar, ...) | `src/data/socialsData.ts` |
+| Profile photo | `src/assets/jpg/profile.jpg` |
+| SEO meta tags, structured data (schema.org Person) | `index.html` |
+| Link preview image (1200×630) | `public/og-image.jpg` |
+| 404 page (standalone, no build step) | `public/404.html` |
 
-```bash
-npm start          # Start development server on port 3000
-npm run build      # Create production build
-npm run serve      # Preview production build
-npm run lint       # Run ESLint
-npm run lintfix    # Fix ESLint errors
-npm run pretty     # Format code with Prettier
-```
-
----
-
-## :books: Tech Stack
-
-### Core
-* **React 19.2.4** - UI library
-* **TypeScript 6.0.2** - Type safety
-* **Vite 8.0.3** - Build tool and dev server
-
-### UI & Styling
-* **Material-UI 7.3.9** - Component library
-* **Emotion** - CSS-in-JS styling
-* **Custom CSS Variables** - Theming system
-
-### 3D & Animations
-* **Three.js 0.183.2** - 3D graphics library
-* **React Three Fiber 9.5.0** - React renderer for Three.js
-* **React Awesome Reveal** - Scroll animations
-* **React Fast Marquee** - Smooth marquee animations
-
-### SEO & Performance
-* **React Helmet Async** - Meta tag management
-* **Code Splitting** - Lazy loading with React.lazy
-* **Vite Build Optimization** - Manual chunks and compression
+Experience and education are listed most recent first, ordered by `id`.
+An entry whose end is a word ("Present" / "Attuale") instead of a `MM/YYYY` date is shown as ongoing.
 
 ---
 
-## :file_folder: Project Structure
+## :books: Tech stack
 
-```
-luigigargioni.github.io/
-├── public/
-│   ├── fonts/              # Custom fonts
-│   ├── images/             # Static images
-│   ├── sitemap.xml         # SEO sitemap
-│   ├── geo.xml             # GEO data
-│   ├── manifest.json       # PWA manifest
-│   └── global.css          # Global styles
-├── src/
-│   ├── components/
-│   │   ├── ThreeBackground/    # 3D particle system
-│   │   ├── ThemeToggle/        # Dark/light theme switcher
-│   │   ├── ScrollProgress/     # Reading progress indicator
-│   │   ├── SEO/                # SEO component
-│   │   ├── Navbar/             # Navigation
-│   │   ├── Landing/            # Hero section
-│   │   ├── About/              # About section
-│   │   ├── Skills/             # Skills showcase
-│   │   ├── Experience/         # Work experience
-│   │   ├── Education/          # Education timeline
-│   │   ├── Services/           # Services offered
-│   │   ├── Contacts/           # Contact form
-│   │   └── Footer/             # Footer
-│   ├── hooks/
-│   │   └── useTheme.ts         # Theme management
-│   ├── styles/
-│   │   ├── variables.css       # CSS custom properties
-│   │   └── animations.css      # Reusable animations
-│   ├── data/                   # Content data
-│   ├── utils/                  # Utility functions
-│   ├── context/                # React context
-│   └── App.tsx                 # Main app component
-├── MODERNIZATION.md        # Modernization guide
-└── README.md              # This file
-```
+- **React 19** + **TypeScript**, built with **Vite**
+- **Three.js** for the particle cloud (plain WebGL, no React wrapper)
+- **i18next** / **react-i18next** for Italian and English
+- **react-icons**
+- **Vitest** + **Testing Library** for tests, **oxlint** and **Prettier** for code quality
+
+Styling is plain CSS: `src/styles/site.css` for the page, `public/global.css` for fonts and base rules.
 
 ---
 
-## :art: Customization
+## :file_folder: Project structure
 
-### Theme Colors
-
-Edit `src/styles/variables.css`:
-
-```css
-:root {
-  --primary: #3fc337;        /* Brand color */
-  --primary-400: #57d750;    /* Lighter variant */
-  --primary-600: #29c51f;    /* Darker variant */
-}
 ```
-
-### Particle System
-
-Edit `src/components/ThreeBackground/ThreeBackground.tsx`:
-
-```typescript
-const config: ParticleSystemConfig = {
-  particleCount: isMobile ? 50 : 150,
-  particleSize: isMobile ? 1.5 : 2,
-  particleColor: '#3fc337',
-  connectionDistance: isMobile ? 8 : 12,
-  mouseInfluence: 0.05,
-  animationSpeed: 1,
-}
+src/
+├── App.tsx                  # page layout: sections, top bar, dots, flying photo
+├── components/
+│   ├── ParticleField/       # WebGL cloud, loaded lazily (shapes.ts holds the shapes)
+│   ├── TopBar/              # photo slot + name, section counter, language switch
+│   ├── SectionDots/         # side navigation
+│   ├── Hero/  About/  Skills/  Journey/  Contacts/   # the five sections
+│   ├── Timeline/            # experience / education list
+│   ├── Socials/  LanguageSwitch/
+├── hooks/
+│   ├── usePortfolio.tsx     # all page content in the current language
+│   ├── useActiveSection.ts  # section crossing the middle of the viewport
+│   └── usePhotoFlight.ts    # scroll-linked flight of the profile photo
+├── data/                    # structured content (see table above)
+├── i18n/                    # i18next setup and translations
+├── styles/site.css
+└── test/                    # Vitest tests
+public/                      # global.css, fonts, favicon, og-image, 404.html, manifest, sitemap, robots
 ```
-
-### SEO Data
-
-Update meta tags in `index.html` or use the SEO component.
 
 ---
 
 ## :rocket: Deployment
 
-### GitHub Pages (Automatic)
-
-Push to master branch - GitHub Actions will automatically build and deploy:
-
-```bash
-git add .
-git commit -m "Update portfolio"
-git push origin master
-```
-
-### Manual Deployment
-
-```bash
-npm run build
-# Deploy the build/ directory to your hosting provider
-```
-
----
-
-## :chart_with_upwards_trend: Performance
-
-Target Lighthouse scores:
-- **Performance**: 95+
-- **SEO**: 100
-- **Accessibility**: 95+
-- **Best Practices**: 95+
-
----
-
-## :memo: Documentation
-
-For detailed modernization information, see [MODERNIZATION.md](./MODERNIZATION.md)
-
----
-
-## :handshake: Contributing
-
-This is a personal portfolio, but feel free to fork and use it as a template for your own portfolio!
-
----
-
-## :page_facing_up: License
-
-This project is open source and available under the MIT License.
+Every push to `master` triggers the GitHub Actions workflow in `.github/workflows/deploy.yml`, which builds the site and publishes `build/` to GitHub Pages.
 
 ---
 
 ## :mailbox: Contact
 
-Luigi Gargioni - Computer Engineer
-
-- Portfolio: [luigigargioni.github.io](https://luigigargioni.github.io)
-- LinkedIn: [linkedin.com/in/luigi-gargioni](https://linkedin.com/in/luigi-gargioni)
+- Website: [luigigargioni.github.io](https://luigigargioni.github.io)
+- LinkedIn: [linkedin.com/in/luigigargioni](https://www.linkedin.com/in/luigigargioni/)
 - GitHub: [@luigigargioni](https://github.com/luigigargioni)
-
----
-
-**Made with :heart: using React, TypeScript, and Three.js**

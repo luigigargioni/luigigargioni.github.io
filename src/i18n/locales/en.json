@@ -3,77 +3,35 @@
   "header": {
     "name": "Luigi Gargioni",
     "title": "Researcher & Computer Engineer",
-    "description": "\"There is beauty when something works and works intuitively\"",
-    "resumeBtn": "Resume",
+    "quote": "It is the duty of machines and those who design them to understand people.",
+    "quoteAuthor": "Don Norman",
     "contactBtn": "Contacts"
+  },
+  "nav": {
+    "home": "Home"
   },
   "about": {
     "title": "Who I am",
-    "description1": "Hello! My name is Luigi Gargioni. I'm a researcher and computer engineer based in Italy.",
-    "description2": "My work focuses on human-computer interaction and human-centred artificial intelligence, with the goal of developing innovative solutions that enhance the integration between humans and advanced technologies.",
-    "description3": "I combine technical and theoretical skills to tackle research challenges, with a particular interest in technology usability, which I believe should serve as a bridge, not a barrier, to achieving goals."
+    "lead": "I design intelligent technologies that people can actually use.",
+    "body": "I am a researcher and computer engineer working on human-robot interaction and human-centred artificial intelligence, so that technology is a bridge, not a barrier."
   },
   "skills": {
-    "title": "Skills"
+    "title": "Skills",
+    "groups": {
+      "ai": "AI & Robotics",
+      "web": "Web & Software"
+    }
   },
   "experience": {
-    "title": "Experience",
-    "present": "Present",
-    "jobs": {
-      "cb": {
-        "title": "Software Developer"
-      },
-      "kline": {
-        "title": "Research & Development Engineer"
-      },
-      "freelance": {
-        "title": "Full Stack Developer",
-        "company": "Freelance"
-      },
-      "teaching": {
-        "title": "Teaching Support"
-      },
-      "postdoc": {
-        "title": "Postdoctoral Researcher",
-        "description": "Human-Robot Interaction and Human-Centred Artificial Intelligence"
-      }
-    }
+    "title": "Experience"
   },
   "education": {
-    "title": "Education",
-    "present": "Present",
-    "degrees": {
-      "master": {
-        "course": "Master Degree, Computer Engineering",
-        "thesis": "Thesis: \"A Domain-Independent Environment for User-Oriented Programming of Collaborative Robots\""
-      },
-      "exam": {
-        "course": "Professional Practice Exam"
-      },
-      "visiting": {
-        "course": "Visiting PhD Student, Robotics and Interaction",
-        "description": "Theory of Mind and Large Language Models in Human-Robot Interaction"
-      },
-      "phd": {
-        "course": "PhD Student, Technology for Health",
-        "description": "Human-Robot Interaction and Human-Centred Artificial Intelligence"
-      }
-    }
+    "title": "Education"
   },
   "services": {
-    "title": "Services",
-    "description": "These are some of the services I offer. Reach out to me if I can help you with any!",
-    "items": {
-      "webApp": "Web Application",
-      "backend": "BackEnd Development",
-      "consulting": "Consulting",
-      "support": "Technical Support",
-      "tutoring": "Tutoring"
-    }
+    "title": "Services"
   },
   "contacts": {
-    "title": "Contacts",
-    "address": "Brescia, Italy",
-    "vat": "VAT number: ***REMOVED***"
+    "title": "Contacts"
   }
 }

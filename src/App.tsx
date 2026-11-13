@@ -1,179 +1,133 @@
-import React, { useEffect, useRef, lazy, Suspense } from 'react'
-import { ThemeProvider } from 'style/themeProvider'
+import React, { Suspense, lazy, useEffect, useRef, useState } from 'react'
 
-import { Navbar, Footer, Landing, ScrollProgress } from 'components'
+import {
+  About,
+  Contacts,
+  Hero,
+  Journey,
+  SectionDots,
+  Skills,
+  TopBar,
+} from 'components'
+import { useActiveSection } from 'hooks/useActiveSection'
+import { usePhotoFlight } from 'hooks/usePhotoFlight'
+import { usePortfolio } from 'hooks/usePortfolio'
+import './styles/site.css'
 
-const About = lazy(() =>
-  import('components/About/About').then((m) => ({ default: m.About })),
-)
-const Skills = lazy(() =>
-  import('components/Skills/Skills').then((m) => ({ default: m.Skills })),
-)
-const Education = lazy(() =>
-  import('components/Education/Education').then((m) => ({
-    default: m.Education,
+// Three.js is the heaviest dependency: load it in its own chunk, so the text
+// shows up first and the particles fade in when ready.
+const ParticleField = lazy(() =>
+  import('components/ParticleField/ParticleField').then((module) => ({
+    default: module.ParticleField,
   })),
 )
-const Experience = lazy(() =>
-  import('components/Experience/Experience').then((m) => ({
-    default: m.Experience,
-  })),
-)
-const Services = lazy(() =>
-  import('components/Services/Services').then((m) => ({ default: m.Services })),
-)
-const Contacts = lazy(() =>
-  import('components/Contacts/Contacts').then((m) => ({ default: m.Contacts })),
-)
+
+// Page order. The particle cloud takes one shape per section.
+const SECTION_IDS = ['home', 'about', 'skills', 'journey', 'contacts']
+const CONTACTS_INDEX = SECTION_IDS.length - 1
 
 export const App = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null)
+  const portfolio = usePortfolio()
+  const active = useActiveSection(SECTION_IDS)
+  const nameRef = useRef<HTMLHeadingElement>(null)
+  const [nameVisible, setNameVisible] = useState(true)
+  const [particlesOn, setParticlesOn] = useState(false)
+  const photoPlaceholderRef = useRef<HTMLSpanElement>(null)
+  const photoSlotRef = useRef<HTMLSpanElement>(null)
+  const photoRef = useRef<HTMLImageElement>(null)
+  usePhotoFlight(photoPlaceholderRef, photoSlotRef, photoRef)
 
   useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
-    const ctx = canvas.getContext('2d')
-    if (!ctx) return
+    document.title = portfolio.documentTitle
+    document.documentElement.lang = portfolio.italian ? 'it' : 'en'
+  }, [portfolio.documentTitle, portfolio.italian])
 
-    const resizeCanvas = () => {
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
+  // start the particle cloud once the browser is idle, so the text and the
+  // first interactions are not slowed down by WebGL set-up
+  useEffect(() => {
+    const start = () => setParticlesOn(true)
+    // not available in older Safari
+    if (typeof window.requestIdleCallback === 'function') {
+      const id = window.requestIdleCallback(start, { timeout: 2000 })
+      return () => window.cancelIdleCallback(id)
     }
-    resizeCanvas()
-    window.addEventListener('resize', resizeCanvas)
-
-    interface Particle {
-      x: number
-      y: number
-      vx: number
-      vy: number
-      size: number
-    }
-
-    const particles: Particle[] = []
-    const count = 100
-    const connectionDist = 150
-
-    for (let i = 0; i < count; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.8,
-        vy: (Math.random() - 0.5) * 0.8,
-        size: Math.random() * 3 + 2,
-      })
-    }
-
-    let mouseX = -1000
-    let mouseY = -1000
-    const handleMouseMove = (e: MouseEvent) => {
-      mouseX = e.clientX
-      mouseY = e.clientY
-    }
-    const handleMouseLeave = () => {
-      mouseX = -1000
-      mouseY = -1000
-    }
-    window.addEventListener('mousemove', handleMouseMove)
-    window.addEventListener('mouseleave', handleMouseLeave)
-
-    let animId: number
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
-
-      particles.forEach((p, i) => {
-        p.x += p.vx
-        p.y += p.vy
-        if (p.x < 0 || p.x > canvas.width) p.vx *= -1
-        if (p.y < 0 || p.y > canvas.height) p.vy *= -1
-
-        const dx = mouseX - p.x
-        const dy = mouseY - p.y
-        const dist = Math.sqrt(dx * dx + dy * dy)
-        if (dist < 80) {
-          p.x -= dx * 0.03
-          p.y -= dy * 0.03
-        }
-
-        // Particelle bianche sulla parte sinistra (verde), verdi sul resto
-        const isOnGreenSection = p.x < canvas.width * 0.35
-        const particleColor = isOnGreenSection ? '#ffffff' : '#3fc337'
-        const shadowColor = isOnGreenSection
-          ? 'rgba(255,255,255,0.8)'
-          : '#3fc337'
-
-        ctx.shadowBlur = 20
-        ctx.shadowColor = shadowColor
-        ctx.beginPath()
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2)
-        ctx.fillStyle = particleColor
-        ctx.fill()
-        ctx.shadowBlur = 0
-
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx2 = particles[j].x - p.x
-          const dy2 = particles[j].y - p.y
-          const d = Math.sqrt(dx2 * dx2 + dy2 * dy2)
-          if (d < connectionDist) {
-            const isJ_OnGreen = particles[j].x < canvas.width * 0.35
-            const lineColor =
-              isOnGreenSection && isJ_OnGreen
-                ? `rgba(255, 255, 255, ${(1 - d / connectionDist) * 0.6})`
-                : `rgba(63, 195, 55, ${(1 - d / connectionDist) * 0.8})`
-
-            ctx.beginPath()
-            ctx.moveTo(p.x, p.y)
-            ctx.lineTo(particles[j].x, particles[j].y)
-            ctx.strokeStyle = lineColor
-            ctx.lineWidth = 2
-            ctx.stroke()
-          }
-        }
-      })
-
-      animId = requestAnimationFrame(animate)
-    }
-    animate()
-
-    return () => {
-      cancelAnimationFrame(animId)
-      window.removeEventListener('resize', resizeCanvas)
-      window.removeEventListener('mousemove', handleMouseMove)
-      window.removeEventListener('mouseleave', handleMouseLeave)
-    }
+    const id = window.setTimeout(start, 300)
+    return () => window.clearTimeout(id)
   }, [])
 
+  // panels fade in the first time they enter the viewport
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) =>
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add('in')
+        }),
+      { threshold: 0.15 },
+    )
+    document
+      .querySelectorAll('.reveal')
+      .forEach((panel) => observer.observe(panel))
+    return () => observer.disconnect()
+  }, [])
+
+  // once the big name leaves the screen, the top bar shows photo and name
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setNameVisible(entry.isIntersecting),
+      { rootMargin: '-70px 0px 0px 0px' },
+    )
+    observer.observe(nameRef.current as Element)
+    return () => observer.disconnect()
+  }, [])
+
+  const labels = [
+    portfolio.home,
+    portfolio.about.title,
+    portfolio.skills.title,
+    `${portfolio.experience.title} · ${portfolio.education.title}`,
+    portfolio.contacts.title,
+  ]
+  const goTo = (index: number) =>
+    (document.getElementById(SECTION_IDS[index]) as HTMLElement).scrollIntoView(
+      { behavior: 'smooth' },
+    )
+
   return (
-    <ThemeProvider>
-      <canvas
-        ref={canvasRef}
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '100vw',
-          height: '100vh',
-          zIndex: -1,
-          pointerEvents: 'none',
-          background:
-            'radial-gradient(ellipse at center, #0a0a0a 0%, #000000 100%)',
-        }}
-      />
-      <ScrollProgress />
-      {/* <ThemeToggle /> */}
-      <Navbar />
-      <main>
-        <Landing />
-        <Suspense fallback={<div style={{ minHeight: '100vh' }} />}>
-          <About />
-          <Skills />
-          <Experience />
-          <Education />
-          <Services />
-          <Contacts />
+    <div className="site">
+      {particlesOn && (
+        <Suspense fallback={null}>
+          <ParticleField sectionIds={SECTION_IDS} />
         </Suspense>
+      )}
+      <div className="site-vignette" />
+      <TopBar
+        portfolio={portfolio}
+        labels={labels}
+        active={active}
+        showIdentity={!nameVisible}
+        onIdentityClick={() => goTo(0)}
+        photoSlotRef={photoSlotRef}
+      />
+      <img
+        className="flying-photo"
+        ref={photoRef}
+        src={portfolio.profile}
+        alt={portfolio.name}
+      />
+      <SectionDots labels={labels} active={active} onSelect={goTo} />
+      <main>
+        <Hero
+          id={SECTION_IDS[0]}
+          portfolio={portfolio}
+          nameRef={nameRef}
+          photoPlaceholderRef={photoPlaceholderRef}
+          onContactClick={() => goTo(CONTACTS_INDEX)}
+        />
+        <About id={SECTION_IDS[1]} portfolio={portfolio} />
+        <Skills id={SECTION_IDS[2]} portfolio={portfolio} />
+        <Journey id={SECTION_IDS[3]} portfolio={portfolio} />
+        <Contacts id={SECTION_IDS[4]} portfolio={portfolio} />
       </main>
-      <Footer />
-    </ThemeProvider>
+    </div>
   )
 }

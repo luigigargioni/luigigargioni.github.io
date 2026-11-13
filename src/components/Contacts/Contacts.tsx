@@ -1,157 +1,40 @@
 import React from 'react'
-import { useTranslation } from 'react-i18next'
-import {
-  FaLinkedinIn,
-  FaGithub,
-  FaStackOverflow,
-  /* FaMoneyCheck, */
-  FaResearchgate,
-  FaOrcid,
-} from 'react-icons/fa'
-import { /* FiPhone, */ FiAtSign } from 'react-icons/fi'
-import { HiOutlineLocationMarker } from 'react-icons/hi'
+import { FiMapPin } from 'react-icons/fi'
 
-import { IoMdSchool } from 'react-icons/io'
+import { Portfolio } from 'hooks/usePortfolio'
+import { Socials } from 'components/Socials/Socials'
 
-import { useCustomTheme } from 'style/themeProvider'
-import { socialsData } from 'data/socialsData'
-import { contactsDataEN, contactsDataIT } from 'data/contactsData'
-import './Contacts.css'
-import { DetailsIcon, SocialIcon } from './Contacts.style'
+type Props = { id: string; portfolio: Portfolio }
 
-export const Contacts = () => {
-  const { t, i18n } = useTranslation()
-  const customTheme = useCustomTheme()
-  const contactsData = i18n.language === 'en' ? contactsDataEN : contactsDataIT
-
-  return (
-    <div
-      className="contacts"
-      id="contacts"
-      style={{ backgroundColor: customTheme.secondary }}
-    >
-      <div className="contacts--container">
-        <h2 style={{ color: customTheme.primary }}>{t('contacts.title')}</h2>
-        <div className="contacts-body">
-          <div className="contacts-details">
-            <a
-              href={`mailto:${contactsData.email}`}
-              target="_blank"
-              className="personal-details"
-              rel="noreferrer"
-            >
-              <DetailsIcon>
-                <FiAtSign />
-              </DetailsIcon>
-              <p style={{ color: customTheme.tertiary }}>
-                {contactsData.email}
-              </p>
-            </a>
-            {/* <a href={`tel:${contactsData.phone}`} className="personal-details">
-              <DetailsIcon>
-                <FiPhone />
-              </DetailsIcon>
-              <p style={{ color: customTheme.tertiary }}>
-                {contactsData.phone}
-              </p>
-  </a> */}
-            <a
-              href="https://maps.app.goo.gl/BgjmGpkdn1vyqh6x7"
-              target="_blank"
-              className="personal-details"
-              rel="noreferrer"
-            >
-              <DetailsIcon>
-                <HiOutlineLocationMarker />
-              </DetailsIcon>
-              <p style={{ color: customTheme.tertiary }}>
-                {contactsData.address}
-              </p>
-            </a>
-            {/* <a
-              href="https://telematici.agenziaentrate.gov.it/VerificaPIVA/Scegli.do?parameter=verificaPiva"
-              target="_blank"
-              className="personal-details"
-              rel="noreferrer"
-            >
-              <DetailsIcon>
-                <FaMoneyCheck />
-              </DetailsIcon>
-              <p style={{ color: customTheme.tertiary }}>{contactsData.iva}</p>
-  </a> */}
-
-            <div className="socialmedia-icons">
-              {socialsData.linkedIn && (
-                <SocialIcon
-                  href={socialsData.linkedIn}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="LinkedIn"
-                >
-                  <FaLinkedinIn />
-                </SocialIcon>
-              )}
-              {socialsData.scholar && (
-                <SocialIcon
-                  href={socialsData.scholar}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Google Scholar"
-                >
-                  <IoMdSchool />
-                </SocialIcon>
-              )}
-              {socialsData.researchGate && (
-                <SocialIcon
-                  href={socialsData.researchGate}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="ResearchGate"
-                >
-                  <FaResearchgate />
-                </SocialIcon>
-              )}
-              {socialsData.orcId && (
-                <SocialIcon
-                  href={socialsData.orcId}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="ORCID"
-                >
-                  <FaOrcid />
-                </SocialIcon>
-              )}
-              {socialsData.github && (
-                <SocialIcon
-                  href={socialsData.github}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="GitHub"
-                >
-                  <FaGithub />
-                </SocialIcon>
-              )}
-              {socialsData.stackOverflow && (
-                <SocialIcon
-                  href={socialsData.stackOverflow}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Stack Overflow"
-                >
-                  <FaStackOverflow />
-                </SocialIcon>
-              )}
-            </div>
-          </div>
-        </div>
-      </div>
-      <img
-        src={customTheme.contactsimg}
-        alt="contacts"
-        className="contacts--img"
-        width="350"
-        height="350"
-      />
+export const Contacts = ({ id, portfolio }: Props) => (
+  <section
+    id={id}
+    className="site-section site-section--wide site-section--end"
+  >
+    <div className="panel reveal">
+      <h2 className="kicker">05 — {portfolio.contacts.title}</h2>
+      <a className="contact-mail" href={`mailto:${portfolio.contacts.email}`}>
+        {portfolio.contacts.email}
+      </a>
+      <a
+        className="contact-address"
+        href={portfolio.contacts.mapsUrl}
+        target="_blank"
+        rel="noreferrer"
+      >
+        <FiMapPin /> {portfolio.contacts.address}
+      </a>
+      <Socials portfolio={portfolio} />
+      <p className="services">
+        <b>{portfolio.services.title}</b>
+        {portfolio.services.items.map((service) => (
+          <span key={service.id}>
+            {service.icon}
+            {service.title}
+          </span>
+        ))}
+      </p>
+      <footer className="copyright">{portfolio.copyright}</footer>
     </div>
-  )
-}
+  </section>
+)

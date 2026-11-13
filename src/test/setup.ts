@@ -1,5 +1,11 @@
-import '@testing-library/jest-dom/vitest'
+import '@testing-library/jest-dom/vitest' // matcher types
+import * as matchers from '@testing-library/jest-dom/matchers'
 import { vi } from 'vitest'
+
+// Registered on the global expect (vitest 'globals: true'), which is the one
+// the tests use: the '@testing-library/jest-dom/vitest' entry point extends
+// the expect imported from 'vitest', and here that is a different object.
+expect.extend(matchers)
 
 // Mock localStorage
 const localStorageMock = (() => {

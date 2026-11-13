@@ -1,226 +1,181 @@
 import React from 'react'
-import { render, screen, act } from '@testing-library/react'
+import { act, fireEvent, render, screen } from '@testing-library/react'
+
+import i18n from '../i18n/config'
 import { App } from '../App'
 
-// Mock lazy loaded components
-vi.mock('../components/About/About', () => ({
-  About: () => <div data-testid="about">About</div>,
+// WebGL is not available in jsdom
+vi.mock('../components/ParticleField/ParticleField', () => ({
+  ParticleField: () => <canvas data-testid="particle-field" />,
 }))
 
-vi.mock('../components/Skills/Skills', () => ({
-  Skills: () => <div data-testid="skills">Skills</div>,
-}))
+type ObserverMock = {
+  trigger: (entries: Partial<IntersectionObserverEntry>[]) => void
+}
 
-vi.mock('../components/Education/Education', () => ({
-  Education: () => <div data-testid="education">Education</div>,
-}))
+// App creates two observers per mount: panels reveal first, hero name second
+const lastObservers = () => {
+  const all = (
+    globalThis as unknown as {
+      getIntersectionObserverInstances: () => ObserverMock[]
+    }
+  ).getIntersectionObserverInstances()
+  return { reveal: all[all.length - 2], name: all[all.length - 1] }
+}
 
-vi.mock('../components/Experience/Experience', () => ({
-  Experience: () => <div data-testid="experience">Experience</div>,
-}))
-
-vi.mock('../components/Services/Services', () => ({
-  Services: () => <div data-testid="services">Services</div>,
-}))
-
-vi.mock('../components/Contacts/Contacts', () => ({
-  Contacts: () => <div data-testid="contacts">Contacts</div>,
-}))
-
-vi.mock('../components/Landing/Landing', () => ({
-  Landing: () => <div data-testid="landing">Landing</div>,
-}))
-
-vi.mock('../components/Footer/Footer', () => ({
-  Footer: () => <div data-testid="footer">Footer</div>,
-}))
-
-vi.mock('../components/Navbar/Navbar', () => ({
-  Navbar: () => <div data-testid="navbar">Navbar</div>,
-}))
-
-vi.mock('../components/ScrollProgress/ScrollProgress', () => ({
-  ScrollProgress: () => <div data-testid="scroll-progress">ScrollProgress</div>,
-}))
-
-vi.mock('../components/ThreeBackground/ThreeBackground', () => ({
-  ThreeBackground: () => (
-    <div data-testid="three-background">ThreeBackground</div>
-  ),
-}))
+const renderIn = async (language: 'en' | 'it') => {
+  await act(async () => {
+    await i18n.changeLanguage(language)
+  })
+  return render(<App />)
+}
 
 describe('App', () => {
+  const scrollIntoView = vi.fn()
+
   beforeEach(() => {
-    vi.clearAllMocks()
+    scrollIntoView.mockClear()
+    Element.prototype.scrollIntoView = scrollIntoView
   })
 
-  it('should render canvas element', async () => {
-    await act(async () => {
-      render(<App />)
-    })
-    const canvas = document.querySelector('canvas')
-    expect(canvas).toBeInTheDocument()
+  it('renders every section in English', async () => {
+    await renderIn('en')
+
+    // started after a short delay and loaded lazily, in its own chunk
+    expect(
+      await screen.findByTestId('particle-field', {}, { timeout: 3000 }),
+    ).toBeInTheDocument()
+    expect(
+      screen.getByRole('heading', { level: 1, name: 'Luigi Gargioni' }),
+    ).toBeInTheDocument()
+    expect(screen.getByText('01 — Who I am')).toBeInTheDocument()
+    expect(screen.getByText('02 — Skills')).toBeInTheDocument()
+    expect(screen.getByText('03 — Experience')).toBeInTheDocument()
+    expect(screen.getByText('04 — Education')).toBeInTheDocument()
+    expect(screen.getByText('05 — Contacts')).toBeInTheDocument()
+    expect(screen.getByText('— Don Norman')).toBeInTheDocument()
+    expect(document.title).toBe(
+      'Luigi Gargioni | Researcher & Computer Engineer',
+    )
+    expect(document.documentElement.lang).toBe('en')
   })
 
-  it('should render ScrollProgress component', async () => {
-    await act(async () => {
-      render(<App />)
+  it('starts the particle cloud when the browser is idle', async () => {
+    const callbacks: (() => void)[] = []
+    const cancel = vi.fn()
+    Object.assign(window, {
+      requestIdleCallback: (callback: () => void) => callbacks.push(callback),
+      cancelIdleCallback: cancel,
     })
-    const scrollProgress = screen.getByTestId('scroll-progress')
-    expect(scrollProgress).toBeInTheDocument()
+    try {
+      const { unmount } = await renderIn('en')
+      expect(screen.queryByTestId('particle-field')).toBeNull()
+
+      await act(async () => callbacks.forEach((callback) => callback()))
+      expect(await screen.findByTestId('particle-field')).toBeInTheDocument()
+
+      unmount()
+      expect(cancel).toHaveBeenCalled()
+    } finally {
+      delete (window as Partial<Window>).requestIdleCallback
+      delete (window as Partial<Window>).cancelIdleCallback
+    }
   })
 
-  it('should render Navbar component', async () => {
-    await act(async () => {
-      render(<App />)
-    })
-    const navbar = screen.getByTestId('navbar')
-    expect(navbar).toBeInTheDocument()
+  it('renders in Italian', async () => {
+    await renderIn('it')
+
+    expect(screen.getByText('01 — Mi presento')).toBeInTheDocument()
+    expect(screen.getByText('03 — Esperienze')).toBeInTheDocument()
+    expect(screen.getByText('Libero Professionista')).toBeInTheDocument()
+    expect(document.documentElement.lang).toBe('it')
   })
 
-  it('should render Landing component', async () => {
-    await act(async () => {
-      render(<App />)
-    })
-    const landing = screen.getByTestId('landing')
-    expect(landing).toBeInTheDocument()
+  it('does not show phone number or VAT number', async () => {
+    const { container } = await renderIn('it')
+
+    expect(container.textContent).not.toMatch(/\+39|IVA|VAT/)
+    expect(container.querySelector('a[href^="tel:"]')).toBeNull()
   })
 
-  it('should render About component', async () => {
+  it('switches language from the top bar', async () => {
+    await renderIn('en')
+
     await act(async () => {
-      render(<App />)
+      fireEvent.click(screen.getByRole('button', { name: 'IT' }))
     })
-    const about = screen.getByTestId('about')
-    expect(about).toBeInTheDocument()
+    expect(screen.getByText('02 — Competenze')).toBeInTheDocument()
+
+    await act(async () => {
+      fireEvent.click(screen.getByRole('button', { name: 'EN' }))
+    })
+    expect(screen.getByText('02 — Skills')).toBeInTheDocument()
   })
 
-  it('should render Skills component', async () => {
-    await act(async () => {
-      render(<App />)
+  it('reveals a panel only once it enters the viewport', async () => {
+    const { container } = await renderIn('en')
+    const [first, second] = Array.from(container.querySelectorAll('.reveal'))
+
+    act(() => {
+      lastObservers().reveal.trigger([
+        { isIntersecting: true, target: first },
+        { isIntersecting: false, target: second },
+      ])
     })
-    const skills = screen.getByTestId('skills')
-    expect(skills).toBeInTheDocument()
+
+    expect(first).toHaveClass('in')
+    expect(second).not.toHaveClass('in')
   })
 
-  it('should render Education component', async () => {
-    await act(async () => {
-      render(<App />)
-    })
-    const education = screen.getByTestId('education')
-    expect(education).toBeInTheDocument()
-  })
+  it('shows photo and name in the top bar once the hero name is off screen', async () => {
+    const { container } = await renderIn('en')
+    const identity = container.querySelector('.topbar-me') as HTMLElement
+    expect(identity).not.toHaveClass('on')
+    expect(identity).toHaveAttribute('tabindex', '-1')
 
-  it('should render Experience component', async () => {
-    await act(async () => {
-      render(<App />)
+    act(() => {
+      lastObservers().name.trigger([{ isIntersecting: false }])
     })
-    const experience = screen.getByTestId('experience')
-    expect(experience).toBeInTheDocument()
-  })
+    expect(identity).toHaveClass('on')
+    expect(identity).toHaveAttribute('tabindex', '0')
 
-  it('should render Services component', async () => {
-    await act(async () => {
-      render(<App />)
-    })
-    const services = screen.getByTestId('services')
-    expect(services).toBeInTheDocument()
-  })
-
-  it('should render Contacts component', async () => {
-    await act(async () => {
-      render(<App />)
-    })
-    const contacts = screen.getByTestId('contacts')
-    expect(contacts).toBeInTheDocument()
-  })
-
-  it('should render Footer component', async () => {
-    await act(async () => {
-      render(<App />)
-    })
-    const footer = screen.getByTestId('footer')
-    expect(footer).toBeInTheDocument()
-  })
-
-  it('should add resize event listener on mount', async () => {
-    const addEventListenerSpy = vi.spyOn(window, 'addEventListener')
-    await act(async () => {
-      render(<App />)
-    })
-    expect(addEventListenerSpy).toHaveBeenCalledWith(
-      'resize',
-      expect.any(Function),
+    fireEvent.click(identity)
+    expect(scrollIntoView).toHaveBeenCalledTimes(1)
+    expect(scrollIntoView.mock.instances[0]).toBe(
+      document.getElementById('home'),
     )
   })
 
-  it('should remove resize event listener on unmount', async () => {
-    const removeEventListenerSpy = vi.spyOn(window, 'removeEventListener')
-    let unmount: () => void
-    await act(async () => {
-      ;({ unmount } = render(<App />))
-    })
-    unmount!()
-    expect(removeEventListenerSpy).toHaveBeenCalledWith(
-      'resize',
-      expect.any(Function),
+  it('scrolls to a section from the dots and from the contact button', async () => {
+    await renderIn('en')
+
+    fireEvent.click(screen.getByRole('button', { name: 'Skills' }))
+    expect(scrollIntoView.mock.instances[0]).toBe(
+      document.getElementById('skills'),
+    )
+
+    // the hero button (the dot with the same name comes first in the page)
+    const contactButtons = screen.getAllByRole('button', { name: 'Contacts' })
+    fireEvent.click(contactButtons[contactButtons.length - 1])
+    expect(scrollIntoView.mock.instances[1]).toBe(
+      document.getElementById('contacts'),
     )
   })
 
-  it('should add mousemove event listener on mount', async () => {
-    const addEventListenerSpy = vi.spyOn(window, 'addEventListener')
-    await act(async () => {
-      render(<App />)
-    })
-    expect(addEventListenerSpy).toHaveBeenCalledWith(
-      'mousemove',
-      expect.any(Function),
-    )
-  })
+  it('links e-mail, address, profiles and institutions', async () => {
+    await renderIn('en')
 
-  it('should remove mousemove event listener on unmount', async () => {
-    const removeEventListenerSpy = vi.spyOn(window, 'removeEventListener')
-    let unmount: () => void
-    await act(async () => {
-      ;({ unmount } = render(<App />))
-    })
-    unmount!()
-    expect(removeEventListenerSpy).toHaveBeenCalledWith(
-      'mousemove',
-      expect.any(Function),
-    )
-  })
-
-  it('should add mouseleave event listener on mount', async () => {
-    const addEventListenerSpy = vi.spyOn(window, 'addEventListener')
-    await act(async () => {
-      render(<App />)
-    })
-    expect(addEventListenerSpy).toHaveBeenCalledWith(
-      'mouseleave',
-      expect.any(Function),
-    )
-  })
-
-  it('should remove mouseleave event listener on unmount', async () => {
-    const removeEventListenerSpy = vi.spyOn(window, 'removeEventListener')
-    let unmount: () => void
-    await act(async () => {
-      ;({ unmount } = render(<App />))
-    })
-    unmount!()
-    expect(removeEventListenerSpy).toHaveBeenCalledWith(
-      'mouseleave',
-      expect.any(Function),
-    )
-  })
-
-  it('should cancel animation frame on unmount', async () => {
-    const cancelAnimationFrameSpy = vi.spyOn(window, 'cancelAnimationFrame')
-    let unmount: () => void
-    await act(async () => {
-      ;({ unmount } = render(<App />))
-    })
-    unmount!()
-    expect(cancelAnimationFrameSpy).toHaveBeenCalled()
+    expect(
+      screen.getByRole('link', { name: 'luigi.gargioni@gmail.com' }),
+    ).toHaveAttribute('href', 'mailto:luigi.gargioni@gmail.com')
+    expect(
+      screen.getByRole('link', { name: /Brescia, Italy/ }),
+    ).toHaveAttribute('href', expect.stringContaining('maps'))
+    expect(screen.getAllByRole('link', { name: 'GitHub' })).toHaveLength(2)
+    expect(
+      screen.getByRole('link', { name: 'University of Milano-Bicocca' }),
+    ).toHaveAttribute('href', 'https://www.unimib.it/')
+    // freelance has no company link
+    expect(screen.getByText('Freelance').closest('a')).toBeNull()
   })
 })
