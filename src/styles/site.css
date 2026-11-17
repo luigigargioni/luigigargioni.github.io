@@ -385,19 +385,27 @@
   background: rgba(6, 12, 18, 0.78);
   font-size: 14px;
   font-weight: 500;
+  cursor: default;
   opacity: 0;
-  transform: scale(0.8);
-  transition:
-    opacity 0.5s,
-    transform 0.5s cubic-bezier(0.2, 1.4, 0.4, 1),
-    border-color 0.2s;
+  transition: all 0.2s;
 }
+/* staggered pop-in when the section is revealed (delay set inline); an
+   animation, not a transition, so the hover effect below has no delay */
 .reveal.in .skill {
   opacity: 1;
-  transform: none;
+  animation: skill-in 0.5s cubic-bezier(0.2, 1.4, 0.4, 1) backwards;
 }
+@keyframes skill-in {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+/* same effect as the services */
 .site .skill:hover {
   border-color: var(--g);
+  color: var(--g);
+  transform: translateY(-3px);
 }
 .site .skill img {
   width: 22px;
@@ -511,8 +519,7 @@
   .reveal,
   .site .skill {
     opacity: 1;
-    transform: none;
-    transition: none;
+    animation: none !important;
   }
   .hero-panel {
     animation: none;

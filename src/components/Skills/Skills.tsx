@@ -17,7 +17,7 @@ export const Skills = ({ id, portfolio }: Props) => (
               key={skill.name}
               // staggered pop-in when the section is revealed
               style={{
-                transitionDelay: `${(groupIndex * group.items.length + index) * 30}ms`,
+                animationDelay: `${(groupIndex * group.items.length + index) * 30}ms`,
               }}
             >
               <img src={skill.icon} alt="" />

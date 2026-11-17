@@ -162,7 +162,7 @@ describe('App', () => {
     )
   })
 
-  it('links e-mail, address, profiles and institutions', async () => {
+  it('links e-mail, address and profiles', async () => {
     await renderIn('en')
 
     expect(
@@ -176,10 +176,10 @@ describe('App', () => {
     expect(screen.queryByRole('link', { name: 'ResearchGate' })).toBeNull()
     expect(screen.queryByRole('link', { name: 'ORCID' })).toBeNull()
     expect(screen.queryByRole('link', { name: 'Stack Overflow' })).toBeNull()
+    // experience and education are plain text, without links
     expect(
-      screen.getByRole('link', { name: 'University of Milano-Bicocca' }),
-    ).toHaveAttribute('href', 'https://www.unimib.it/')
-    // freelance has no company link
-    expect(screen.getByText('Freelance').closest('a')).toBeNull()
+      screen.getByText('University of Milano-Bicocca').closest('a'),
+    ).toBeNull()
+    expect(document.querySelector('#journey a')).toBeNull()
   })
 })

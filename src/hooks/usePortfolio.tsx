@@ -20,9 +20,7 @@ import { socialsData } from 'data/socialsData'
 export type TimelineEntry = {
   key: string
   title: string
-  titleUrl: string
   place: string
-  placeUrl: string
   start: string
   end: string
   description: React.ReactNode
@@ -52,9 +50,7 @@ export const usePortfolio = () => {
     .map((e) => ({
       key: `experience-${e.id}`,
       title: e.jobtitle,
-      titleUrl: '',
       place: e.company,
-      placeUrl: e.companyUrl,
       start: e.startYear,
       end: e.endYear,
       description: e.description,
@@ -68,9 +64,7 @@ export const usePortfolio = () => {
     .map((e) => ({
       key: `education-${e.id}`,
       title: e.course,
-      titleUrl: e.courseUrl,
       place: e.institution,
-      placeUrl: e.institutionUrl,
       start: e.startYear,
       end: e.endYear,
       description: e.description,
